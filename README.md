@@ -30,7 +30,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 After installation, activate Miniforge with:
 ```bash
 
-source ~/miniconda3/bin/activate
+source ~/miniforge3/bin/activate
 ```
 
 
