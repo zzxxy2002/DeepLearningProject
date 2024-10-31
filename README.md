@@ -17,13 +17,32 @@ If Miniforge is not yet installed, use the following commands to download and ru
 # Using curl:
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
+```bash
 
 # OR using wget:
+```bash
+
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
+```bash
 
 
 After installation, activate Miniforge with:
+```bash
 
 source ~/miniconda3/bin/activate
+```bash
+
+
+### Step 2: Configure `full_flow_xilinx.py`
+
+1. Open the `full_flow_xilinx.py` file.
+2. Locate **line 25**.
+3. Change the `WORK_DIR_TOP` path to your custom destination folder:
+
+   ```python
+   WORK_DIR_TOP = pathlib.Path("/home/hice1/xxu425/scratch")
+   ```python
+
+
 
