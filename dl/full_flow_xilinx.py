@@ -27,7 +27,7 @@ WORK_DIR = WORK_DIR_TOP / "demo_full_flow_xilinx"
 remove_and_make_new_dir_if_exists(WORK_DIR)
 
 # Number of cores to run stuff in parallel
-N_JOBS = 32
+N_JOBS = 22
 CPU_AFFINITY = list(range(N_JOBS))
 
 
