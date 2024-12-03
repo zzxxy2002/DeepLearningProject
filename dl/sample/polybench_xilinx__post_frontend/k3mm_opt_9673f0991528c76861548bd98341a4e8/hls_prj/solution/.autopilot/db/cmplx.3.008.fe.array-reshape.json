@@ -1,0 +1,19 @@
+{
+  "0": {
+    "basicblocks": 33,
+    "calls": "",
+    "file": "k3mm.c",
+    "fileloc": 8,
+    "instructions": 862,
+    "loads": {
+      "L": 210,
+      "T": 8
+    },
+    "name": "k3mm",
+    "stores": {
+      "L": 20,
+      "T": 2
+    },
+    "total_instructions": 862
+  }
+}

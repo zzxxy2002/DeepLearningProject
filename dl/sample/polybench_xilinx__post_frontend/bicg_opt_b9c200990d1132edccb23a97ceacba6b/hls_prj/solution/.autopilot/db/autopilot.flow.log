@@ -1,0 +1,784 @@
+INFO-FLOW: Workspace /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution opened at Mon Dec 02 12:52:24 EST 2024
+Execute       send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute     set_part xczu9eg-ffvb1156-2-i 
+INFO: [HLS 200-1510] Running: set_part xczu9eg-ffvb1156-2-i 
+Execute       create_platform xczu9eg-ffvb1156-2-i -board  
+DBG:HLSDevice: Trying to load device library: /tools/software/xilinx/Vitis_HLS/2023.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/software/xilinx/Vivado/2023.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-i'
+Command       create_platform done; 1.97 sec.
+Execute       source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-i -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 2.15 sec.
+Execute     create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute       ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     source opt.tcl 
+INFO: [HLS 200-1510] Running: source opt.tcl
+Execute       set_directive_resource -core RAM_1P bicg A 
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg A 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+Execute       set_directive_resource -core RAM_1P bicg r 
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg r 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+Execute       set_directive_resource -core RAM_1P bicg p 
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg p 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+Execute       set_directive_interface -mode ap_fifo bicg s_out 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo bicg s_out 
+Execute       set_directive_interface -mode ap_fifo bicg q_out 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo bicg q_out 
+Execute       set_directive_pipeline bicg/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lprd_2 
+Execute       set_directive_pipeline bicg/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lpwr 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg A 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg buff_A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg buff_A 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_p 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_p 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_r 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_r 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_s_out 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_s_out 
+Execute       set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_q_out 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_q_out 
+Execute       set_directive_unroll -factor 2 bicg/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lprd_2 
+Execute       set_directive_unroll -factor 2 bicg/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lpwr 
+Execute       set_directive_pipeline bicg/lp1 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lp1 
+Execute       set_directive_unroll -factor 1 bicg/lp1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 1 bicg/lp1 
+Execute       set_directive_unroll -factor 2 bicg/lp4 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lp4 
+Execute     csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute       elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 293.020 MB.
+Execute         set_directive_top bicg -name=bicg 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO: [HLS 200-10] Analyzing design file 'src/bicg.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling src/bicg.c as C
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang src/bicg.c -foptimization-record-file=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /tools/software/xilinx/Vitis_HLS/2023.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -insert-hls-directive=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -I /usr/include/x86_64-linux-gnu -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -hls-platform-db-name=/tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_1824.000000_DSP_2520.000000_FF_548160.000000_LUT_274080.000000_SLICE_34260.000000_URAM_0.000000 -device-name-info=xczu9eg-ffvb1156-2-i > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.c.clang.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.c.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.5 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -hls-platform-db-name=/tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_1824.000000_DSP_2520.000000_FF_548160.000000_LUT_274080.000000_SLICE_34260.000000_URAM_0.000000 -device-name-info=xczu9eg-ffvb1156-2-i > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/clang.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/clang.err.log
+Execute         clang_tidy xilinx-systemc-detector -desc systemc-detector /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c std=gnu99 -target fpga  -directive=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/.systemc_flag -fix-errors /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute         clang_tidy xilinx-directive2pragma -desc directive2pragma /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c std=gnu99 -target fpga  -directive=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/all.directive.json -fix-errors /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute         clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang-tidy.loop-label.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang-tidy.loop-label.err.log
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.xilinx-dataflow-lawyer.diag.yml /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.xilinx-dataflow-lawyer.err.log
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=10 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/autopilot -I /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.bc -hls-platform-db-name=/tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_1824.000000_DSP_2520.000000_FF_548160.000000_LUT_274080.000000_SLICE_34260.000000_URAM_0.000000 -device-name-info=xczu9eg-ffvb1156-2-i > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c.clang.err.log
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:1:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:2:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:3:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.73 seconds. Elapsed time: 2.17 seconds; current allocated memory: 296.168 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute         run_link_or_opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc -args  "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.g.bc"  
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.g.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc -args /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+INFO-FLOW: Linking math bc lib
+Execute         run_link_or_opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc -args /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libhlsm_39.bc /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libhlsm_39.bc /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libhlsmc++_39.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+INFO-FLOW: 
+Command         run_link_or_opt done; 3.58 sec.
+Execute         run_link_or_opt -opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -args /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=bicg -reflow-float-conversion 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=bicg -reflow-float-conversion -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command         run_link_or_opt done; 0.95 sec.
+Execute         run_link_or_opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc -args /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/lib/libfloatconversion_39.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+INFO-FLOW: 
+Execute         run_link_or_opt -opt -out /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -args /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=bicg 
+INFO-FLOW: run_clang exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc > /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: 
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute         send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute         is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: /tools/software/xilinx/Vitis_HLS/2023.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=bicg -mllvm -hls-db-dir -mllvm /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -enable-fp-thr=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -assume-maxi-align=1 -mllvm -reflow-pipeline-style-llvm-setting=2 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=10 -x ir /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.5.gdce.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynquplus_medium -device-resource-info=BRAM_1824.000000_DSP_2520.000000_FF_548160.000000_LUT_274080.000000_SLICE_34260.000000_URAM_0.000000 -device-name-info=xczu9eg-ffvb1156-2-i 2> /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 165 Compile/Link /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 165 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 646 Unroll/Inline (step 1) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 646 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 557 Unroll/Inline (step 2) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 557 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 612 Unroll/Inline (step 3) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 612 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 612 Unroll/Inline (step 4) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 612 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 919 Array/Struct (step 1) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 919 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 687 Array/Struct (step 2) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 687 Array/Struct (step 3) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 687 Array/Struct (step 4) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 747 Array/Struct (step 5) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 747 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 682 Performance (step 1) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 682 Performance (step 2) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 682 Performance (step 3) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 682 Performance (step 4) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 695 HW Transforms (step 1) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 695 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+Execute         send_msg_by_id INFO @200-1995@%s%s%s 730 HW Transforms (step 2) /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 730 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:1:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:3:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:2:9)
+INFO: [HLS 214-291] Loop 'lp2' is marked as complete unroll implied by the pipeline pragma (src/bicg.c:24:14)
+INFO: [HLS 214-188] Unrolling loop 'lpwr' (src/bicg.c:35:8) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-188] Unrolling loop 'lp4' (src/bicg.c:30:14) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-186] Unrolling loop 'lp2' (src/bicg.c:24:14) in function 'bicg' completely with a factor of 64 (src/bicg.c:4:0)
+INFO: [HLS 214-188] Unrolling loop 'lprd_2' (src/bicg.c:18:11) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-248] Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2. (src/bicg.c:7:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_p': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:8:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_r': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:9:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_s_out': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:10:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_q_out': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:11:8)
+INFO: [HLS 214-248] Applying array_partition to 'A': Cyclic partitioning with factor 2 on dimension 2. (src/bicg.c:4:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< lp4> at src/bicg.c:30:14 
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 's_out' (src/bicg.c:4:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'q_out' (src/bicg.c:4:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.7 seconds. CPU system time: 0.45 seconds. Elapsed time: 9.95 seconds; current allocated memory: 297.855 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 297.855 MB.
+Execute         opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute           cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute           transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top bicg -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.0.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 298.793 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute           transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.1.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute           transform -syn-check /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.2.prechk.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 299.043 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.g.1.bc to /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute           transform -hls -tmp /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -scalar-auto-dep-elim -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.1.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.1.tmp.bc -f 
+Command           transform done; 0.16 sec.
+INFO-FLOW: Presyn 2...
+Execute           transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.1.tmp.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 322.871 MB.
+INFO-FLOW: Building ssdm...
+Execute           transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dce -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric -cdfg-build /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.2.bc -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [HLS 200-960] Cannot flatten loop 'lprd_1' (src/bicg.c:13:10) in function 'bicg' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'lp3' (src/bicg.c:29:7) in function 'bicg' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Execute             auto_get_db
+Command           transform done; 0.22 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.22 seconds; current allocated memory: 355.883 MB.
+INFO-FLOW: Finish building internal data model.
+Command         opt_and_import_c done; 0.55 sec.
+Command       elaborate done; 12.7 sec.
+Execute       ap_eval exec zip -j /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute       autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'bicg' ...
+Execute         ap_set_top_model bicg 
+Execute         get_model_list bicg -filter all-wo-channel -topdown 
+Execute         preproc_iomode -model bicg 
+Execute         preproc_iomode -model bicg_Pipeline_lpwr 
+Execute         preproc_iomode -model bicg_Pipeline_lp4 
+Execute         preproc_iomode -model bicg_Pipeline_lp1 
+Execute         preproc_iomode -model bicg_Pipeline_lprd_2 
+Execute         get_model_list bicg -filter all-wo-channel 
+INFO-FLOW: Model list for configure: bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO-FLOW: Configuring Module : bicg_Pipeline_lprd_2 ...
+Execute         set_default_model bicg_Pipeline_lprd_2 
+Execute         apply_spec_resource_limit bicg_Pipeline_lprd_2 
+INFO-FLOW: Configuring Module : bicg_Pipeline_lp1 ...
+Execute         set_default_model bicg_Pipeline_lp1 
+Execute         apply_spec_resource_limit bicg_Pipeline_lp1 
+INFO-FLOW: Configuring Module : bicg_Pipeline_lp4 ...
+Execute         set_default_model bicg_Pipeline_lp4 
+Execute         apply_spec_resource_limit bicg_Pipeline_lp4 
+INFO-FLOW: Configuring Module : bicg_Pipeline_lpwr ...
+Execute         set_default_model bicg_Pipeline_lpwr 
+Execute         apply_spec_resource_limit bicg_Pipeline_lpwr 
+INFO-FLOW: Configuring Module : bicg ...
+Execute         set_default_model bicg 
+Execute         apply_spec_resource_limit bicg 
+INFO-FLOW: Model list for preprocess: bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO-FLOW: Preprocessing Module: bicg_Pipeline_lprd_2 ...
+Execute         set_default_model bicg_Pipeline_lprd_2 
+Execute         cdfg_preprocess -model bicg_Pipeline_lprd_2 
+Execute         rtl_gen_preprocess bicg_Pipeline_lprd_2 
+INFO-FLOW: Preprocessing Module: bicg_Pipeline_lp1 ...
+Execute         set_default_model bicg_Pipeline_lp1 
+Execute         cdfg_preprocess -model bicg_Pipeline_lp1 
+Execute         rtl_gen_preprocess bicg_Pipeline_lp1 
+INFO-FLOW: Preprocessing Module: bicg_Pipeline_lp4 ...
+Execute         set_default_model bicg_Pipeline_lp4 
+Execute         cdfg_preprocess -model bicg_Pipeline_lp4 
+Execute         rtl_gen_preprocess bicg_Pipeline_lp4 
+INFO-FLOW: Preprocessing Module: bicg_Pipeline_lpwr ...
+Execute         set_default_model bicg_Pipeline_lpwr 
+Execute         cdfg_preprocess -model bicg_Pipeline_lpwr 
+Execute         rtl_gen_preprocess bicg_Pipeline_lpwr 
+INFO-FLOW: Preprocessing Module: bicg ...
+Execute         set_default_model bicg 
+Execute         cdfg_preprocess -model bicg 
+Execute         rtl_gen_preprocess bicg 
+INFO-FLOW: Model list for synthesis: bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model bicg_Pipeline_lprd_2 
+Execute         schedule -model bicg_Pipeline_lprd_2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lprd_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lprd_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.17 seconds; current allocated memory: 356.430 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.verbose.sched.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.sched.adb -f 
+INFO-FLOW: Finish scheduling bicg_Pipeline_lprd_2.
+Execute         set_default_model bicg_Pipeline_lprd_2 
+Execute         bind -model bicg_Pipeline_lprd_2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 356.883 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.verbose.bind.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.bind.adb -f 
+INFO-FLOW: Finish binding bicg_Pipeline_lprd_2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model bicg_Pipeline_lp1 
+Execute         schedule -model bicg_Pipeline_lp1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp1'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp1' (loop 'lp1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('add18_write_ln25', src/bicg.c:25) of variable 'add', src/bicg.c:25 on local variable 'add18' and 'load' operation 32 bit ('add18_load', src/bicg.c:25) on local variable 'add18'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp1' (loop 'lp1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('add18_write_ln25', src/bicg.c:25) of variable 'add', src/bicg.c:25 on local variable 'add18' and 'load' operation 32 bit ('add18_load', src/bicg.c:25) on local variable 'add18'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 11, loop 'lp1'
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.46 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.44 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.51 seconds; current allocated memory: 362.660 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.verbose.sched.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.sched.adb -f 
+INFO-FLOW: Finish scheduling bicg_Pipeline_lp1.
+Execute         set_default_model bicg_Pipeline_lp1 
+Execute         bind -model bicg_Pipeline_lp1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 362.699 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.verbose.bind.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.bind.adb -f 
+INFO-FLOW: Finish binding bicg_Pipeline_lp1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model bicg_Pipeline_lp4 
+Execute         schedule -model bicg_Pipeline_lp4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp4'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 13, loop 'lp4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 363.145 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.verbose.sched.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.sched.adb -f 
+INFO-FLOW: Finish scheduling bicg_Pipeline_lp4.
+Execute         set_default_model bicg_Pipeline_lp4 
+Execute         bind -model bicg_Pipeline_lp4 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 363.254 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.verbose.bind.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.bind.adb -f 
+INFO-FLOW: Finish binding bicg_Pipeline_lp4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model bicg_Pipeline_lpwr 
+Execute         schedule -model bicg_Pipeline_lpwr 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lpwr'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lpwr' (loop 'lpwr'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between fifo write operation ('s_out_write_ln36', src/bicg.c:36) on port 's_out' (src/bicg.c:36) and fifo write operation ('s_out_write_ln36', src/bicg.c:36) on port 's_out' (src/bicg.c:36).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'lpwr'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 363.531 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.verbose.sched.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.sched.adb -f 
+INFO-FLOW: Finish scheduling bicg_Pipeline_lpwr.
+Execute         set_default_model bicg_Pipeline_lpwr 
+Execute         bind -model bicg_Pipeline_lpwr 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 363.648 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.verbose.bind.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.bind.adb -f 
+INFO-FLOW: Finish binding bicg_Pipeline_lpwr.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         set_default_model bicg 
+Execute         schedule -model bicg 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command         schedule done; 0.19 sec.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 367.543 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.verbose.sched.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.sched.adb -f 
+INFO-FLOW: Finish scheduling bicg.
+Execute         set_default_model bicg 
+Execute         bind -model bicg 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command         bind done; 0.18 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 367.543 MB.
+Execute         syn_report -verbosereport -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.verbose.bind.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.bind.adb -f 
+INFO-FLOW: Finish binding bicg.
+Execute         get_model_list bicg -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute         rtl_gen_preprocess bicg_Pipeline_lprd_2 
+Execute         rtl_gen_preprocess bicg_Pipeline_lp1 
+Execute         rtl_gen_preprocess bicg_Pipeline_lp4 
+Execute         rtl_gen_preprocess bicg_Pipeline_lpwr 
+Execute         rtl_gen_preprocess bicg 
+INFO-FLOW: Model list for RTL generation: bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model bicg_Pipeline_lprd_2 -top_prefix bicg_ -sub_prefix bicg_ -mg_file /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lprd_2' pipeline 'lprd_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lprd_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 367.543 MB.
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         gen_rtl bicg_Pipeline_lprd_2 -style xilinx -f -lang vhdl -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/vhdl/bicg_bicg_Pipeline_lprd_2 
+Execute         gen_rtl bicg_Pipeline_lprd_2 -style xilinx -f -lang vlog -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/verilog/bicg_bicg_Pipeline_lprd_2 
+Execute         syn_report -csynth -model bicg_Pipeline_lprd_2 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lprd_2_csynth.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -rtlxml -model bicg_Pipeline_lprd_2 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lprd_2_csynth.xml 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -verbosereport -model bicg_Pipeline_lprd_2 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.verbose.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -model bicg_Pipeline_lprd_2 -f -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.adb 
+Execute         db_write -model bicg_Pipeline_lprd_2 -bindview -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info bicg_Pipeline_lprd_2 -p /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model bicg_Pipeline_lp1 -top_prefix bicg_ -sub_prefix bicg_ -mg_file /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lp1' pipeline 'lp1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 22 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 22 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lp1'.
+Command         create_rtl_model done; 0.24 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.06 seconds; current allocated memory: 372.582 MB.
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         gen_rtl bicg_Pipeline_lp1 -style xilinx -f -lang vhdl -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/vhdl/bicg_bicg_Pipeline_lp1 
+Execute         gen_rtl bicg_Pipeline_lp1 -style xilinx -f -lang vlog -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/verilog/bicg_bicg_Pipeline_lp1 
+Execute         syn_report -csynth -model bicg_Pipeline_lp1 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lp1_csynth.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -rtlxml -model bicg_Pipeline_lp1 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lp1_csynth.xml 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -verbosereport -model bicg_Pipeline_lp1 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.verbose.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Command         syn_report done; 0.13 sec.
+Execute         db_write -model bicg_Pipeline_lp1 -f -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.adb 
+Execute         db_write -model bicg_Pipeline_lp1 -bindview -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info bicg_Pipeline_lp1 -p /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model bicg_Pipeline_lp4 -top_prefix bicg_ -sub_prefix bicg_ -mg_file /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lp4' pipeline 'lp4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lp4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.63 seconds; current allocated memory: 387.422 MB.
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         gen_rtl bicg_Pipeline_lp4 -style xilinx -f -lang vhdl -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/vhdl/bicg_bicg_Pipeline_lp4 
+Execute         gen_rtl bicg_Pipeline_lp4 -style xilinx -f -lang vlog -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/verilog/bicg_bicg_Pipeline_lp4 
+Execute         syn_report -csynth -model bicg_Pipeline_lp4 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lp4_csynth.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -rtlxml -model bicg_Pipeline_lp4 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lp4_csynth.xml 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -verbosereport -model bicg_Pipeline_lp4 -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.verbose.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -model bicg_Pipeline_lp4 -f -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.adb 
+Execute         db_write -model bicg_Pipeline_lp4 -bindview -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info bicg_Pipeline_lp4 -p /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model bicg_Pipeline_lpwr -top_prefix bicg_ -sub_prefix bicg_ -mg_file /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lpwr' pipeline 'lpwr' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lpwr'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 387.422 MB.
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         gen_rtl bicg_Pipeline_lpwr -style xilinx -f -lang vhdl -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/vhdl/bicg_bicg_Pipeline_lpwr 
+Execute         gen_rtl bicg_Pipeline_lpwr -style xilinx -f -lang vlog -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/verilog/bicg_bicg_Pipeline_lpwr 
+Execute         syn_report -csynth -model bicg_Pipeline_lpwr -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lpwr_csynth.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -rtlxml -model bicg_Pipeline_lpwr -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_Pipeline_lpwr_csynth.xml 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -verbosereport -model bicg_Pipeline_lpwr -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.verbose.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -model bicg_Pipeline_lpwr -f -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.adb 
+Execute         db_write -model bicg_Pipeline_lpwr -bindview -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info bicg_Pipeline_lpwr -p /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute         create_rtl_model bicg -top_prefix  -sub_prefix bicg_ -mg_file /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/A_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/p' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/s_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/q_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bicg' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg'.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_A_RAM_1WNR_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_p_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_s_out_RAM_AUTO_1R1W' using auto RAMs.
+Command         create_rtl_model done; 0.21 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 390.562 MB.
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         gen_rtl bicg -istop -style xilinx -f -lang vhdl -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/vhdl/bicg 
+Execute         gen_rtl bicg -istop -style xilinx -f -lang vlog -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/verilog/bicg 
+Execute         syn_report -csynth -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_csynth.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -rtlxml -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/bicg_csynth.xml 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -verbosereport -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.verbose.rpt 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         db_write -model bicg -f -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.adb 
+Execute         db_write -model bicg -bindview -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/design.bindinfo.xml 
+Execute         gen_tb_info bicg -p /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg 
+Execute         export_constraint_db -f -tool general -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.constraint.tcl 
+Execute         syn_report -designview -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.design.xml 
+Execute         syn_report -csynthDesign -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth.rpt -MHOut /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute           list_part -family xczu9eg-ffvb1156-2-i 
+Execute             ap_family_info -name xczu9eg-ffvb1156-2-i -data names 
+Execute             ap_part_info -quiet -name xczu9eg-ffvb1156-2-i -data family 
+Execute         syn_report -wcfg -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_dataflow_ana.wcfg 
+Execute         syn_report -protoinst -model bicg -o /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.protoinst 
+Execute         sc_get_clocks bicg 
+Execute         sc_get_portdomain bicg 
+INFO-FLOW: Model list for RTL component generation: bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO-FLOW: Handling components in module [bicg_Pipeline_lprd_2] ... 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.compgen.tcl 
+INFO-FLOW: Found component bicg_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bicg_Pipeline_lp1] ... 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.compgen.tcl 
+INFO-FLOW: Found component bicg_fadd_32ns_32ns_32_4_full_dsp_1.
+INFO-FLOW: Append model bicg_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: Found component bicg_fmul_32ns_32ns_32_3_max_dsp_1.
+INFO-FLOW: Append model bicg_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: Found component bicg_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bicg_Pipeline_lp4] ... 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.compgen.tcl 
+INFO-FLOW: Found component bicg_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bicg_Pipeline_lpwr] ... 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.compgen.tcl 
+INFO-FLOW: Found component bicg_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [bicg] ... 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.compgen.tcl 
+INFO-FLOW: Found component bicg_fadd_32ns_32ns_32_4_full_dsp_1.
+INFO-FLOW: Append model bicg_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: Found component bicg_fmul_32ns_32ns_32_3_max_dsp_1.
+INFO-FLOW: Append model bicg_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: Found component bicg_buff_A_RAM_1WNR_AUTO_1R1W.
+INFO-FLOW: Append model bicg_buff_A_RAM_1WNR_AUTO_1R1W
+INFO-FLOW: Found component bicg_buff_p_RAM_AUTO_1R1W.
+INFO-FLOW: Append model bicg_buff_p_RAM_AUTO_1R1W
+INFO-FLOW: Found component bicg_buff_s_out_RAM_AUTO_1R1W.
+INFO-FLOW: Append model bicg_buff_s_out_RAM_AUTO_1R1W
+INFO-FLOW: Append model bicg_Pipeline_lprd_2
+INFO-FLOW: Append model bicg_Pipeline_lp1
+INFO-FLOW: Append model bicg_Pipeline_lp4
+INFO-FLOW: Append model bicg_Pipeline_lpwr
+INFO-FLOW: Append model bicg
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: bicg_flow_control_loop_pipe_sequential_init bicg_fadd_32ns_32ns_32_4_full_dsp_1 bicg_fmul_32ns_32ns_32_3_max_dsp_1 bicg_flow_control_loop_pipe_sequential_init bicg_flow_control_loop_pipe_sequential_init bicg_flow_control_loop_pipe_sequential_init bicg_fadd_32ns_32ns_32_4_full_dsp_1 bicg_fmul_32ns_32ns_32_3_max_dsp_1 bicg_buff_A_RAM_1WNR_AUTO_1R1W bicg_buff_p_RAM_AUTO_1R1W bicg_buff_s_out_RAM_AUTO_1R1W bicg_Pipeline_lprd_2 bicg_Pipeline_lp1 bicg_Pipeline_lp4 bicg_Pipeline_lpwr bicg
+INFO-FLOW: Generating /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bicg_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: To file: write model bicg_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: To file: write model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bicg_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model bicg_fadd_32ns_32ns_32_4_full_dsp_1
+INFO-FLOW: To file: write model bicg_fmul_32ns_32ns_32_3_max_dsp_1
+INFO-FLOW: To file: write model bicg_buff_A_RAM_1WNR_AUTO_1R1W
+INFO-FLOW: To file: write model bicg_buff_p_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model bicg_buff_s_out_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model bicg_Pipeline_lprd_2
+INFO-FLOW: To file: write model bicg_Pipeline_lp1
+INFO-FLOW: To file: write model bicg_Pipeline_lp4
+INFO-FLOW: To file: write model bicg_Pipeline_lpwr
+INFO-FLOW: To file: write model bicg
+INFO-FLOW: Generating /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/common.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/generic/autopilot/interface.gen 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/util.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source /tools/software/xilinx/Vitis_HLS/2023.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/vhdl' dstVlogDir='/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/vlog' tclDir='/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db' modelList='bicg_flow_control_loop_pipe_sequential_init
+bicg_fadd_32ns_32ns_32_4_full_dsp_1
+bicg_fmul_32ns_32ns_32_3_max_dsp_1
+bicg_flow_control_loop_pipe_sequential_init
+bicg_flow_control_loop_pipe_sequential_init
+bicg_flow_control_loop_pipe_sequential_init
+bicg_fadd_32ns_32ns_32_4_full_dsp_1
+bicg_fmul_32ns_32ns_32_3_max_dsp_1
+bicg_buff_A_RAM_1WNR_AUTO_1R1W
+bicg_buff_p_RAM_AUTO_1R1W
+bicg_buff_s_out_RAM_AUTO_1R1W
+bicg_Pipeline_lprd_2
+bicg_Pipeline_lp1
+bicg_Pipeline_lp4
+bicg_Pipeline_lpwr
+bicg
+' expOnly='0'
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data names -quiet 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data info -quiet 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.compgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.compgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.compgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.compgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.36 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.11 seconds; current allocated memory: 398.121 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='bicg_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.2 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='bicg_flow_control_loop_pipe_sequential_init
+bicg_fadd_32ns_32ns_32_4_full_dsp_1
+bicg_fmul_32ns_32ns_32_3_max_dsp_1
+bicg_flow_control_loop_pipe_sequential_init
+bicg_flow_control_loop_pipe_sequential_init
+bicg_flow_control_loop_pipe_sequential_init
+bicg_fadd_32ns_32ns_32_4_full_dsp_1
+bicg_fmul_32ns_32ns_32_3_max_dsp_1
+bicg_buff_A_RAM_1WNR_AUTO_1R1W
+bicg_buff_p_RAM_AUTO_1R1W
+bicg_buff_s_out_RAM_AUTO_1R1W
+bicg_Pipeline_lprd_2
+bicg_Pipeline_lp1
+bicg_Pipeline_lp4
+bicg_Pipeline_lpwr
+bicg
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/top-io-be.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.rtl_wrap.cfg.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.compgen.dataonly.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lprd_2.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp1.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lp4.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg_Pipeline_lpwr.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.tbgen.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data names -quiet 
+Execute         ap_part_info -name xczu9eg-ffvb1156-2-i -data info -quiet 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.constraint.tcl 
+Execute         sc_get_clocks bicg 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/global.setting.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/impl/misc/bicg_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl 
+Execute         source /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/impl/misc/bicg_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} report_dict {TOPINST bicg MODULE2INSTS {bicg bicg bicg_Pipeline_lprd_2 grp_bicg_Pipeline_lprd_2_fu_1096 bicg_Pipeline_lp1 grp_bicg_Pipeline_lp1_fu_1107 bicg_Pipeline_lpwr grp_bicg_Pipeline_lpwr_fu_1247 bicg_Pipeline_lp4 grp_bicg_Pipeline_lp4_fu_1259} INST2MODULE {bicg bicg grp_bicg_Pipeline_lprd_2_fu_1096 bicg_Pipeline_lprd_2 grp_bicg_Pipeline_lp1_fu_1107 bicg_Pipeline_lp1 grp_bicg_Pipeline_lpwr_fu_1247 bicg_Pipeline_lpwr grp_bicg_Pipeline_lp4_fu_1259 bicg_Pipeline_lp4} INSTDATA {bicg {DEPTH 1 CHILDREN {grp_bicg_Pipeline_lprd_2_fu_1096 grp_bicg_Pipeline_lp1_fu_1107 grp_bicg_Pipeline_lpwr_fu_1247 grp_bicg_Pipeline_lp4_fu_1259}} grp_bicg_Pipeline_lprd_2_fu_1096 {DEPTH 2 CHILDREN {}} grp_bicg_Pipeline_lp1_fu_1107 {DEPTH 2 CHILDREN {}} grp_bicg_Pipeline_lpwr_fu_1247 {DEPTH 2 CHILDREN {}} grp_bicg_Pipeline_lp4_fu_1259 {DEPTH 2 CHILDREN {}}} MODULEDATA {bicg_Pipeline_lprd_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln18_fu_152_p2 SOURCE src/bicg.c:18 VARIABLE add_ln18 LOOP lprd_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} bicg_Pipeline_lp1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln23_fu_2598_p2 SOURCE src/bicg.c:23 VARIABLE add_ln23 LOOP lp1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U29 SOURCE src/bicg.c:25 VARIABLE mul_1 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U7 SOURCE src/bicg.c:25 VARIABLE add_1 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U30 SOURCE src/bicg.c:25 VARIABLE mul_2 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U8 SOURCE src/bicg.c:25 VARIABLE add_2 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U31 SOURCE src/bicg.c:25 VARIABLE mul_3 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U9 SOURCE src/bicg.c:25 VARIABLE add_3 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U32 SOURCE src/bicg.c:25 VARIABLE mul_4 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U10 SOURCE src/bicg.c:25 VARIABLE add_4 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U33 SOURCE src/bicg.c:25 VARIABLE mul_5 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U11 SOURCE src/bicg.c:25 VARIABLE add_5 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U34 SOURCE src/bicg.c:25 VARIABLE mul_6 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U12 SOURCE src/bicg.c:25 VARIABLE add_6 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U35 SOURCE src/bicg.c:25 VARIABLE mul_7 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U13 SOURCE src/bicg.c:25 VARIABLE add_7 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U36 SOURCE src/bicg.c:25 VARIABLE mul_8 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U14 SOURCE src/bicg.c:25 VARIABLE add_8 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U37 SOURCE src/bicg.c:25 VARIABLE mul_9 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U15 SOURCE src/bicg.c:25 VARIABLE add_9 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U38 SOURCE src/bicg.c:25 VARIABLE mul_s LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U16 SOURCE src/bicg.c:25 VARIABLE add_s LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U39 SOURCE src/bicg.c:25 VARIABLE mul_10 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U17 SOURCE src/bicg.c:25 VARIABLE add_10 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U40 SOURCE src/bicg.c:25 VARIABLE mul_11 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U18 SOURCE src/bicg.c:25 VARIABLE add_11 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U41 SOURCE src/bicg.c:25 VARIABLE mul_12 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U19 SOURCE src/bicg.c:25 VARIABLE add_12 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U42 SOURCE src/bicg.c:25 VARIABLE mul_13 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U20 SOURCE src/bicg.c:25 VARIABLE add_13 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U43 SOURCE src/bicg.c:25 VARIABLE mul_14 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U21 SOURCE src/bicg.c:25 VARIABLE add_14 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U44 SOURCE src/bicg.c:25 VARIABLE mul_15 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U22 SOURCE src/bicg.c:25 VARIABLE add_15 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U45 SOURCE src/bicg.c:25 VARIABLE mul_16 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U23 SOURCE src/bicg.c:25 VARIABLE add_16 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U46 SOURCE src/bicg.c:25 VARIABLE mul_17 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U24 SOURCE src/bicg.c:25 VARIABLE add_17 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U47 SOURCE src/bicg.c:25 VARIABLE mul_18 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U25 SOURCE src/bicg.c:25 VARIABLE add_18 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U48 SOURCE src/bicg.c:25 VARIABLE mul_19 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U26 SOURCE src/bicg.c:25 VARIABLE add_19 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U49 SOURCE src/bicg.c:25 VARIABLE mul_20 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U27 SOURCE src/bicg.c:25 VARIABLE add_20 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U29 SOURCE src/bicg.c:25 VARIABLE mul_22 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U7 SOURCE src/bicg.c:25 VARIABLE add_22 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U30 SOURCE src/bicg.c:25 VARIABLE mul_23 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U8 SOURCE src/bicg.c:25 VARIABLE add_23 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U31 SOURCE src/bicg.c:25 VARIABLE mul_24 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U9 SOURCE src/bicg.c:25 VARIABLE add_24 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U32 SOURCE src/bicg.c:25 VARIABLE mul_25 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U10 SOURCE src/bicg.c:25 VARIABLE add_25 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U33 SOURCE src/bicg.c:25 VARIABLE mul_26 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U11 SOURCE src/bicg.c:25 VARIABLE add_26 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U34 SOURCE src/bicg.c:25 VARIABLE mul_27 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U12 SOURCE src/bicg.c:25 VARIABLE add_27 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U35 SOURCE src/bicg.c:25 VARIABLE mul_28 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U13 SOURCE src/bicg.c:25 VARIABLE add_28 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U36 SOURCE src/bicg.c:25 VARIABLE mul_29 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U14 SOURCE src/bicg.c:25 VARIABLE add_29 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U37 SOURCE src/bicg.c:25 VARIABLE mul_30 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U15 SOURCE src/bicg.c:25 VARIABLE add_30 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U38 SOURCE src/bicg.c:25 VARIABLE mul_31 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U16 SOURCE src/bicg.c:25 VARIABLE add_31 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U39 SOURCE src/bicg.c:25 VARIABLE mul_32 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U17 SOURCE src/bicg.c:25 VARIABLE add_32 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U40 SOURCE src/bicg.c:25 VARIABLE mul_33 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U18 SOURCE src/bicg.c:25 VARIABLE add_33 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U41 SOURCE src/bicg.c:25 VARIABLE mul_34 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U19 SOURCE src/bicg.c:25 VARIABLE add_34 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U42 SOURCE src/bicg.c:25 VARIABLE mul_35 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U20 SOURCE src/bicg.c:25 VARIABLE add_35 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U43 SOURCE src/bicg.c:25 VARIABLE mul_36 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U21 SOURCE src/bicg.c:25 VARIABLE add_36 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U44 SOURCE src/bicg.c:25 VARIABLE mul_37 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U22 SOURCE src/bicg.c:25 VARIABLE add_37 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U45 SOURCE src/bicg.c:25 VARIABLE mul_38 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U23 SOURCE src/bicg.c:25 VARIABLE add_38 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U46 SOURCE src/bicg.c:25 VARIABLE mul_39 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U24 SOURCE src/bicg.c:25 VARIABLE add_39 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U47 SOURCE src/bicg.c:25 VARIABLE mul_40 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U25 SOURCE src/bicg.c:25 VARIABLE add_40 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U48 SOURCE src/bicg.c:25 VARIABLE mul_41 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U26 SOURCE src/bicg.c:25 VARIABLE add_41 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U49 SOURCE src/bicg.c:25 VARIABLE mul_42 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U27 SOURCE src/bicg.c:25 VARIABLE add_42 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U29 SOURCE src/bicg.c:25 VARIABLE mul_44 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U7 SOURCE src/bicg.c:25 VARIABLE add_44 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U30 SOURCE src/bicg.c:25 VARIABLE mul_45 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U8 SOURCE src/bicg.c:25 VARIABLE add_45 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U31 SOURCE src/bicg.c:25 VARIABLE mul_46 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U9 SOURCE src/bicg.c:25 VARIABLE add_46 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U32 SOURCE src/bicg.c:25 VARIABLE mul_47 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U10 SOURCE src/bicg.c:25 VARIABLE add_47 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U33 SOURCE src/bicg.c:25 VARIABLE mul_48 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U11 SOURCE src/bicg.c:25 VARIABLE add_48 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U34 SOURCE src/bicg.c:25 VARIABLE mul_49 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U12 SOURCE src/bicg.c:25 VARIABLE add_49 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U35 SOURCE src/bicg.c:25 VARIABLE mul_50 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U13 SOURCE src/bicg.c:25 VARIABLE add_50 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U36 SOURCE src/bicg.c:25 VARIABLE mul_51 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U14 SOURCE src/bicg.c:25 VARIABLE add_51 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U37 SOURCE src/bicg.c:25 VARIABLE mul_52 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U15 SOURCE src/bicg.c:25 VARIABLE add_52 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U38 SOURCE src/bicg.c:25 VARIABLE mul_53 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U16 SOURCE src/bicg.c:25 VARIABLE add_53 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U39 SOURCE src/bicg.c:25 VARIABLE mul_54 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U17 SOURCE src/bicg.c:25 VARIABLE add_54 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U40 SOURCE src/bicg.c:25 VARIABLE mul_55 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U18 SOURCE src/bicg.c:25 VARIABLE add_55 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U41 SOURCE src/bicg.c:25 VARIABLE mul_56 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U19 SOURCE src/bicg.c:25 VARIABLE add_56 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U42 SOURCE src/bicg.c:25 VARIABLE mul_57 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U20 SOURCE src/bicg.c:25 VARIABLE add_57 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U43 SOURCE src/bicg.c:25 VARIABLE mul_58 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U21 SOURCE src/bicg.c:25 VARIABLE add_58 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U44 SOURCE src/bicg.c:25 VARIABLE mul_59 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U22 SOURCE src/bicg.c:25 VARIABLE add_59 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U45 SOURCE src/bicg.c:25 VARIABLE mul_60 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U23 SOURCE src/bicg.c:25 VARIABLE add_60 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U46 SOURCE src/bicg.c:25 VARIABLE mul_61 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U24 SOURCE src/bicg.c:25 VARIABLE add_61 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}} {BINDTYPE op ID {} IMPL maxdsp LATENCY 2 OPTYPE fmul PRAGMA {} RTLNAME fmul_32ns_32ns_32_3_max_dsp_1_U47 SOURCE src/bicg.c:25 VARIABLE mul_62 LOOP lp1 BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fmul}} {BINDTYPE op ID {} IMPL fulldsp LATENCY 3 OPTYPE fadd PRAGMA {} RTLNAME fadd_32ns_32ns_32_4_full_dsp_1_U25 SOURCE src/bicg.c:25 VARIABLE add_62 LOOP lp1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op fadd}}} AREA {DSP 105 BRAM 0 URAM 0}} bicg_Pipeline_lp4 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_fu_192_p2 SOURCE src/bicg.c:30 VARIABLE add_ln30 LOOP lp4 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} bicg_Pipeline_lpwr {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_154_p2 SOURCE src/bicg.c:35 VARIABLE add_ln35 LOOP lpwr BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}} bicg {BINDINFO {{BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_np PRAGMA {} RTLNAME buff_A_U SOURCE src/bicg.c:7 VARIABLE buff_A LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 2048 1} STORAGEUSAGE {rom_np array} DISPNAME {bind_storage rom_np}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_np PRAGMA {} RTLNAME buff_A_1_U SOURCE src/bicg.c:7 VARIABLE buff_A_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 2048 1} STORAGEUSAGE {rom_np array} DISPNAME {bind_storage rom_np}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_p_U SOURCE src/bicg.c:8 VARIABLE buff_p LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_p_1_U SOURCE src/bicg.c:8 VARIABLE buff_p_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_r_U SOURCE src/bicg.c:9 VARIABLE buff_r LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_r_1_U SOURCE src/bicg.c:9 VARIABLE buff_r_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME buff_s_out_U SOURCE src/bicg.c:10 VARIABLE buff_s_out LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_t2p PRAGMA {} RTLNAME buff_s_out_1_U SOURCE src/bicg.c:10 VARIABLE buff_s_out_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_t2p array} DISPNAME {bind_storage ram_t2p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_q_out_U SOURCE src/bicg.c:11 VARIABLE buff_q_out LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME buff_q_out_1_U SOURCE src/bicg.c:11 VARIABLE buff_q_out_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE {ram_1p array} DISPNAME {bind_storage ram_1p}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln13_fu_1288_p2 SOURCE src/bicg.c:13 VARIABLE add_ln13 LOOP lprd_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln29_fu_1615_p2 SOURCE src/bicg.c:29 VARIABLE add_ln29 LOOP lp3 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add}}} AREA {DSP 110 BRAM 90 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.42 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.78 seconds; current allocated memory: 403.484 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for bicg.
+INFO: [VLOG 209-307] Generating Verilog RTL for bicg.
+Execute         syn_report -model bicg -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 142.53 MHz
+Command       autosyn done; 6.42 sec.
+Command     csynth_design done; 19.25 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.3 seconds. CPU system time: 1.38 seconds. Elapsed time: 19.25 seconds; current allocated memory: 111.156 MB.
+Execute     close_project 
+INFO: [HLS 200-1510] Running: close_project 
+Execute       close_solution 
+Execute         cleanup_all 
+Execute         cleanup_all 

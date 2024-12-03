@@ -1,0 +1,305 @@
+
+
+================================================================
+== Synthesis Summary Report of 'bicg'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 12:52:44 2024
+    * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+    * Project:        hls_prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu9eg-ffvb1156-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+    |          Modules         | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |          |            |            |     |
+    |          & Loops         | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+    |+ bicg                    |     -|  0.28|    19695|  1.970e+05|         -|    19696|     -|        no|  90 (4%)|  110 (4%)|  16631 (3%)|  13338 (4%)|    -|
+    | + bicg_Pipeline_lp1      |     -|  0.28|      201|  2.010e+03|         -|      201|     -|        no|        -|  105 (4%)|  13720 (2%)|  10721 (3%)|    -|
+    |  o lp1                   |    II|  7.30|      199|  1.990e+03|        11|        3|    64|       yes|        -|         -|           -|           -|    -|
+    | + bicg_Pipeline_lpwr     |     -|  4.43|       66|    660.000|         -|       66|     -|        no|        -|         -|    77 (~0%)|   138 (~0%)|    -|
+    |  o lpwr                  |    II|  7.30|       64|    640.000|         3|        2|    32|       yes|        -|         -|           -|           -|    -|
+    | o lprd_1                 |     -|  7.30|     2368|  2.368e+04|        37|        -|    64|        no|        -|         -|           -|           -|    -|
+    |  + bicg_Pipeline_lprd_2  |     -|  4.83|       34|    340.000|         -|       34|     -|        no|        -|         -|    21 (~0%)|    52 (~0%)|    -|
+    |   o lprd_2               |     -|  7.30|       32|    320.000|         2|        1|    32|       yes|        -|         -|           -|           -|    -|
+    | o lp3                    |     -|  7.30|    17024|  1.702e+05|       266|        -|    64|        no|        -|         -|           -|           -|    -|
+    |  + bicg_Pipeline_lp4     |     -|  0.28|      262|  2.620e+03|         -|      262|     -|        no|        -|         -|   275 (~0%)|   184 (~0%)|    -|
+    |   o lp4                  |    II|  7.30|      260|  2.600e+03|        13|        8|    32|       yes|        -|         -|           -|           -|    -|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+-----------+------------+
+| Interface | Direction | Data Width |
++-----------+-----------+------------+
+| q_out     | out       | 32         |
+| s_out     | out       | 32         |
++-----------+-----------+------------+
+
+* AP_MEMORY
++--------------+-----------+----------+
+| Port         | Direction | Bitwidth |
++--------------+-----------+----------+
+| A_0_address0 | out       | 11       |
+| A_0_q0       | in        | 32       |
+| A_1_address0 | out       | 11       |
+| A_1_q0       | in        | 32       |
+| p_address0   | out       | 6        |
+| p_q0         | in        | 32       |
+| r_address0   | out       | 6        |
+| r_q0         | in        | 32       |
++--------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| p        | in        | float*   |
+| r        | in        | float*   |
+| s_out    | out       | float*   |
+| q_out    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+
+| Argument | HW Interface | HW Type   | HW Usage |
++----------+--------------+-----------+----------+
+| A        | A_0_address0 | port      | offset   |
+| A        | A_0_ce0      | port      |          |
+| A        | A_0_q0       | port      |          |
+| A        | A_1_address0 | port      | offset   |
+| A        | A_1_ce0      | port      |          |
+| A        | A_1_q0       | port      |          |
+| p        | p_address0   | port      | offset   |
+| p        | p_ce0        | port      |          |
+| p        | p_q0         | port      |          |
+| r        | r_address0   | port      | offset   |
+| r        | r_ce0        | port      |          |
+| r        | r_q0         | port      |          |
+| s_out    | s_out        | interface |          |
+| q_out    | q_out        | interface |          |
++----------+--------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+----------+------+---------+---------+
+| Name                                  | DSP | Pragma | Variable | Op   | Impl    | Latency |
++---------------------------------------+-----+--------+----------+------+---------+---------+
+| + bicg                                | 110 |        |          |      |         |         |
+|   add_ln13_fu_1288_p2                 |     |        | add_ln13 | add  | fabric  | 0       |
+|   add_ln29_fu_1615_p2                 |     |        | add_ln29 | add  | fabric  | 0       |
+|  + bicg_Pipeline_lprd_2               | 0   |        |          |      |         |         |
+|    add_ln18_fu_152_p2                 |     |        | add_ln18 | add  | fabric  | 0       |
+|  + bicg_Pipeline_lp1                  | 105 |        |          |      |         |         |
+|    add_ln23_fu_2598_p2                |     |        | add_ln23 | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U29  | 3   |        | mul_1    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U7  | 2   |        | add_1    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U30  | 3   |        | mul_2    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U8  | 2   |        | add_2    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U31  | 3   |        | mul_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U9  | 2   |        | add_3    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U32  | 3   |        | mul_4    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U10 | 2   |        | add_4    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U33  | 3   |        | mul_5    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U11 | 2   |        | add_5    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U34  | 3   |        | mul_6    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U12 | 2   |        | add_6    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U35  | 3   |        | mul_7    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U13 | 2   |        | add_7    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U36  | 3   |        | mul_8    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U14 | 2   |        | add_8    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U37  | 3   |        | mul_9    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U15 | 2   |        | add_9    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U38  | 3   |        | mul_s    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U16 | 2   |        | add_s    | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U39  | 3   |        | mul_10   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U17 | 2   |        | add_10   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U40  | 3   |        | mul_11   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U18 | 2   |        | add_11   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U41  | 3   |        | mul_12   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U19 | 2   |        | add_12   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U42  | 3   |        | mul_13   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U20 | 2   |        | add_13   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U43  | 3   |        | mul_14   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U21 | 2   |        | add_14   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U44  | 3   |        | mul_15   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U22 | 2   |        | add_15   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U45  | 3   |        | mul_16   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U23 | 2   |        | add_16   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U46  | 3   |        | mul_17   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U24 | 2   |        | add_17   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U47  | 3   |        | mul_18   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U25 | 2   |        | add_18   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U48  | 3   |        | mul_19   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U26 | 2   |        | add_19   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U49  | 3   |        | mul_20   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U27 | 2   |        | add_20   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U29  | 3   |        | mul_22   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U7  | 2   |        | add_22   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U30  | 3   |        | mul_23   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U8  | 2   |        | add_23   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U31  | 3   |        | mul_24   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U9  | 2   |        | add_24   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U32  | 3   |        | mul_25   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U10 | 2   |        | add_25   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U33  | 3   |        | mul_26   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U11 | 2   |        | add_26   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U34  | 3   |        | mul_27   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U12 | 2   |        | add_27   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U35  | 3   |        | mul_28   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U13 | 2   |        | add_28   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U36  | 3   |        | mul_29   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U14 | 2   |        | add_29   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U37  | 3   |        | mul_30   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U15 | 2   |        | add_30   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U38  | 3   |        | mul_31   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U16 | 2   |        | add_31   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U39  | 3   |        | mul_32   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U17 | 2   |        | add_32   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U40  | 3   |        | mul_33   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U18 | 2   |        | add_33   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U41  | 3   |        | mul_34   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U19 | 2   |        | add_34   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U42  | 3   |        | mul_35   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U20 | 2   |        | add_35   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U43  | 3   |        | mul_36   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U21 | 2   |        | add_36   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U44  | 3   |        | mul_37   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U22 | 2   |        | add_37   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U45  | 3   |        | mul_38   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U23 | 2   |        | add_38   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U46  | 3   |        | mul_39   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U24 | 2   |        | add_39   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U47  | 3   |        | mul_40   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U25 | 2   |        | add_40   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U48  | 3   |        | mul_41   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U26 | 2   |        | add_41   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U49  | 3   |        | mul_42   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U27 | 2   |        | add_42   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U29  | 3   |        | mul_44   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U7  | 2   |        | add_44   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U30  | 3   |        | mul_45   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U8  | 2   |        | add_45   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U31  | 3   |        | mul_46   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U9  | 2   |        | add_46   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U32  | 3   |        | mul_47   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U10 | 2   |        | add_47   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U33  | 3   |        | mul_48   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U11 | 2   |        | add_48   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U34  | 3   |        | mul_49   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U12 | 2   |        | add_49   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U35  | 3   |        | mul_50   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U13 | 2   |        | add_50   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U36  | 3   |        | mul_51   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U14 | 2   |        | add_51   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U37  | 3   |        | mul_52   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U15 | 2   |        | add_52   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U38  | 3   |        | mul_53   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U16 | 2   |        | add_53   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U39  | 3   |        | mul_54   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U17 | 2   |        | add_54   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U40  | 3   |        | mul_55   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U18 | 2   |        | add_55   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U41  | 3   |        | mul_56   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U19 | 2   |        | add_56   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U42  | 3   |        | mul_57   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U20 | 2   |        | add_57   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U43  | 3   |        | mul_58   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U21 | 2   |        | add_58   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U44  | 3   |        | mul_59   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U22 | 2   |        | add_59   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U45  | 3   |        | mul_60   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U23 | 2   |        | add_60   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U46  | 3   |        | mul_61   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U24 | 2   |        | add_61   | fadd | fulldsp | 3       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U47  | 3   |        | mul_62   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U25 | 2   |        | add_62   | fadd | fulldsp | 3       |
+|  + bicg_Pipeline_lpwr                 | 0   |        |          |      |         |         |
+|    add_ln35_fu_154_p2                 |     |        | add_ln35 | add  | fabric  | 0       |
+|  + bicg_Pipeline_lp4                  | 0   |        |          |      |         |         |
+|    add_ln30_fu_192_p2                 |     |        | add_ln30 | add  | fabric  | 0       |
++---------------------------------------+-----+--------+----------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| Name             | Usage         | Type | BRAM | URAM | Pragma | Variable     | Impl | Latency | Bitwidth, Depth, |
+|                  |               |      |      |      |        |              |      |         | Banks            |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| + bicg           |               |      | 90   | 0    |        |              |      |         |                  |
+|   buff_A_U       | rom_np array  |      | 4    |      |        | buff_A       | auto | 1       | 32, 2048, 1      |
+|   buff_A_1_U     | rom_np array  |      | 4    |      |        | buff_A_1     | auto | 1       | 32, 2048, 1      |
+|   buff_p_U       | ram_1p array  |      | 1    |      |        | buff_p       | auto | 1       | 32, 32, 1        |
+|   buff_p_1_U     | ram_1p array  |      | 1    |      |        | buff_p_1     | auto | 1       | 32, 32, 1        |
+|   buff_r_U       | ram_1p array  |      | 1    |      |        | buff_r       | auto | 1       | 32, 32, 1        |
+|   buff_r_1_U     | ram_1p array  |      | 1    |      |        | buff_r_1     | auto | 1       | 32, 32, 1        |
+|   buff_s_out_U   | ram_t2p array |      | 2    |      |        | buff_s_out   | auto | 1       | 32, 32, 1        |
+|   buff_s_out_1_U | ram_t2p array |      | 2    |      |        | buff_s_out_1 | auto | 1       | 32, 32, 1        |
+|   buff_q_out_U   | ram_1p array  |      | 1    |      |        | buff_q_out   | auto | 1       | 32, 32, 1        |
+|   buff_q_out_1_U | ram_1p array  |      | 1    |      |        | buff_q_out_1 | auto | 1       | 32, 32, 1        |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                | Location             | Messages                                                                                                                         |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | core=RAM_1P variable=A | opt.tcl:1 in bicg, A | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=p | opt.tcl:3 in bicg, p | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=r | opt.tcl:2 in bicg, r | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------------+-------------------------------------------+--------------------------------+
+| Type            | Options                                   | Location                       |
++-----------------+-------------------------------------------+--------------------------------+
+| array_partition | cyclic dim=2 factor=2 variable=A          | opt.tcl:9 in bicg, A           |
+| array_partition | cyclic dim=2 factor=2 variable=buff_A     | opt.tcl:10 in bicg, buff_A     |
+| array_partition | cyclic dim=1 factor=2 variable=buff_p     | opt.tcl:11 in bicg, buff_p     |
+| array_partition | cyclic dim=1 factor=2 variable=buff_q_out | opt.tcl:14 in bicg, buff_q_out |
+| array_partition | cyclic dim=1 factor=2 variable=buff_r     | opt.tcl:12 in bicg, buff_r     |
+| array_partition | cyclic dim=1 factor=2 variable=buff_s_out | opt.tcl:13 in bicg, buff_s_out |
+| interface       | ap_fifo port=q_out                        | opt.tcl:5 in bicg, q_out       |
+| interface       | ap_fifo port=s_out                        | opt.tcl:4 in bicg, s_out       |
+| pipeline        |                                           | opt.tcl:6 in bicg              |
+| pipeline        |                                           | opt.tcl:7 in bicg              |
+| pipeline        |                                           | opt.tcl:18 in bicg             |
+| unroll          | factor=2                                  | opt.tcl:15 in bicg             |
+| unroll          | factor=2                                  | opt.tcl:16 in bicg             |
+| unroll          | factor=1                                  | opt.tcl:19 in bicg             |
+| unroll          | factor=2                                  | opt.tcl:21 in bicg             |
++-----------------+-------------------------------------------+--------------------------------+
+
+

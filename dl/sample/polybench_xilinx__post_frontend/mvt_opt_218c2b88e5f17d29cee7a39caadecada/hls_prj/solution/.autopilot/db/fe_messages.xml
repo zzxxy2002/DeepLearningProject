@@ -1,0 +1,132 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:1:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=A" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=2 factor=2 variable=A" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:2:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=x1" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:3:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=x2" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:4:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=y1" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_fifo port=y2" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_fifo port=x1_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_fifo port=x2_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_template.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mvt" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=2 factor=2 variable=buff_A" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=1 factor=2 variable=buff_x1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=1 factor=2 variable=buff_x2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:15:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=1 factor=2 variable=buff_y1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="cyclic dim=1 factor=2 variable=buff_y2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=2" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mvt" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:1:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl Line 1 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:2:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl Line 2 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:3:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl Line 3 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:4:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl Line 4 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/mvt.c:24:11" msg_body="Loop 'lp2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="lp2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/mvt.c:5:0" msg_body="Unrolling loop 'lpwr' (src/mvt.c:35:8) in function 'mvt' partially with a factor of 2">
+        <args Factor="2" LoopLoc="src/mvt.c:35:8" LoopName="lpwr"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/mvt.c:5:0" msg_body="Unrolling loop 'lp4' (src/mvt.c:30:8) in function 'mvt' partially with a factor of 2">
+        <args Factor="2" LoopLoc="src/mvt.c:30:8" LoopName="lp4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/mvt.c:5:0" msg_body="Unrolling loop 'lp2' (src/mvt.c:24:11) in function 'mvt' completely with a factor of 64">
+        <args Factor="64" LoopLoc="src/mvt.c:24:11" LoopName="lp2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/mvt.c:5:0" msg_body="Unrolling loop 'lprd_2' (src/mvt.c:18:14) in function 'mvt' partially with a factor of 2">
+        <args Factor="2" LoopLoc="src/mvt.c:18:14" LoopName="lprd_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:7:8" msg_body="Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="buff_A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:8:8" msg_body="Applying array_partition to 'buff_x1': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_x1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:9:8" msg_body="Applying array_partition to 'buff_x2': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_x2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:10:8" msg_body="Applying array_partition to 'buff_y1': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_y1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:11:8" msg_body="Applying array_partition to 'buff_y2': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_y2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/mvt.c:5:0" msg_body="Applying array_partition to 'A': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="A"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/mvt.c:5:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'y2'">
+        <args Name="y2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/mvt.c:5:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'x1_out'">
+        <args Name="x1_out"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/mvt.c:5:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'x2_out'">
+        <args Name="x2_out"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

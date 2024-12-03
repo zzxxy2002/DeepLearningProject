@@ -1,0 +1,9 @@
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/hls_prj/solution/.autopilot/db/gesummv.pp.0.c:3223:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/hls_prj/solution/.autopilot/db/gesummv.pp.0.c:3227:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=B
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/hls_prj/solution/.autopilot/db/gesummv.pp.0.c:3231:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=x
+        ^

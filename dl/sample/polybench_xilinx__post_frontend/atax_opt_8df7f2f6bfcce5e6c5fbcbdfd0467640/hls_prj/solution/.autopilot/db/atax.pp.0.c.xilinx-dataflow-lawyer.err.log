@@ -1,0 +1,6 @@
+'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead
+Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all 
+'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead
+Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all 
+2 warnings and 2 errors generated.
+Error while processing /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/hls_prj/solution/.autopilot/db/atax.pp.0.c.

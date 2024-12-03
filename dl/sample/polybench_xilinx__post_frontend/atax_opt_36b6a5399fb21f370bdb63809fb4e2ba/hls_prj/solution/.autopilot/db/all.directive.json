@@ -1,0 +1,392 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 1,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "x"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 2,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "ap_fifo",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "y_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 3,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 3,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lprd_2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 4,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 4,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lpwr_1",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 5,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 5,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "ARRAY_PARTITION",
+      "option": [
+        {
+          "name": "cyclic",
+          "value": ""
+        },
+        {
+          "name": "dim",
+          "value": "2"
+        },
+        {
+          "name": "factor",
+          "value": "2"
+        },
+        {
+          "name": "variable",
+          "value": "A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 6,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "ARRAY_PARTITION",
+      "option": [
+        {
+          "name": "cyclic",
+          "value": ""
+        },
+        {
+          "name": "dim",
+          "value": "2"
+        },
+        {
+          "name": "factor",
+          "value": "2"
+        },
+        {
+          "name": "variable",
+          "value": "buff_A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 8,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 7,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "ARRAY_PARTITION",
+      "option": [
+        {
+          "name": "cyclic",
+          "value": ""
+        },
+        {
+          "name": "dim",
+          "value": "1"
+        },
+        {
+          "name": "factor",
+          "value": "2"
+        },
+        {
+          "name": "variable",
+          "value": "tmp1"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 9,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 8,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "ARRAY_PARTITION",
+      "option": [
+        {
+          "name": "cyclic",
+          "value": ""
+        },
+        {
+          "name": "dim",
+          "value": "1"
+        },
+        {
+          "name": "factor",
+          "value": "2"
+        },
+        {
+          "name": "variable",
+          "value": "buff_x"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 10,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 9,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "ARRAY_PARTITION",
+      "option": [
+        {
+          "name": "cyclic",
+          "value": ""
+        },
+        {
+          "name": "dim",
+          "value": "1"
+        },
+        {
+          "name": "factor",
+          "value": "2"
+        },
+        {
+          "name": "variable",
+          "value": "buff_y_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 11,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 10,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lprd_2",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "2"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 12,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 11,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lpwr_1",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "2"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 13,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 12,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp1",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 15,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 13,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp1",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "1"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 16,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 14,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp4",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "2"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/opt.tcl",
+    "sourceLine": 18,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "atax",
+    "id": 15,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "atax"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_36b6a5399fb21f370bdb63809fb4e2ba/hls_template.tcl",
+    "sourceLine": 9,
+    "success": true
+  }
+]

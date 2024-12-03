@@ -1,0 +1,181 @@
+
+
+================================================================
+== Vitis HLS Report for 'gesummv_Pipeline_lp5'
+================================================================
+* Date:           Mon Dec  2 12:52:42 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        hls_prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.437 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       71|       71|  0.710 us|  0.710 us|   71|   71|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- lp5     |       69|       69|         7|          1|          1|    64|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      95|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|      36|    -|
+|Register         |        -|     -|     319|      96|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|     319|     227|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     1824|  2520|  548160|  274080|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln37_fu_140_p2       |         +|   0|  0|  14|           7|           1|
+    |icmp_ln37_fu_134_p2      |      icmp|   0|  0|  15|           7|           8|
+    |select_ln38_1_fu_182_p3  |    select|   0|  0|  32|           1|          32|
+    |select_ln38_fu_175_p3    |    select|   0|  0|  32|           1|          32|
+    |ap_enable_pp0            |       xor|   0|  0|   2|           1|           2|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0|  95|          17|          75|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_2     |   9|          2|    7|         14|
+    |i_fu_42                  |   9|          2|    7|         14|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  36|          8|   16|         32|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add1_reg_246                      |  32|   0|   32|          0|
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg  |   1|   0|    1|          0|
+    |buff_y_out_1_addr_reg_231         |   5|   0|    5|          0|
+    |buff_y_out_addr_reg_226           |   5|   0|    5|          0|
+    |i_fu_42                           |   7|   0|    7|          0|
+    |select_ln38_1_reg_241             |  32|   0|   32|          0|
+    |select_ln38_reg_236               |  32|   0|   32|          0|
+    |trunc_ln37_reg_200                |   1|   0|    1|          0|
+    |buff_y_out_1_addr_reg_231         |  64|  32|    5|          0|
+    |buff_y_out_addr_reg_226           |  64|  32|    5|          0|
+    |trunc_ln37_reg_200                |  64|  32|    1|          0|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 319|  96|  138|          0|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++-----------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_1838_p_din0     |  out|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_1838_p_din1     |  out|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_1838_p_opcode   |  out|    2|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_1838_p_dout0    |   in|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_1838_p_ce       |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|buff_y_out_1_address0  |  out|    5|   ap_memory|          buff_y_out_1|         array|
+|buff_y_out_1_ce0       |  out|    1|   ap_memory|          buff_y_out_1|         array|
+|buff_y_out_1_we0       |  out|    1|   ap_memory|          buff_y_out_1|         array|
+|buff_y_out_1_d0        |  out|   32|   ap_memory|          buff_y_out_1|         array|
+|buff_y_out_address0    |  out|    5|   ap_memory|            buff_y_out|         array|
+|buff_y_out_ce0         |  out|    1|   ap_memory|            buff_y_out|         array|
+|buff_y_out_we0         |  out|    1|   ap_memory|            buff_y_out|         array|
+|buff_y_out_d0          |  out|   32|   ap_memory|            buff_y_out|         array|
+|tmp1_address0          |  out|    5|   ap_memory|                  tmp1|         array|
+|tmp1_ce0               |  out|    1|   ap_memory|                  tmp1|         array|
+|tmp1_q0                |   in|   32|   ap_memory|                  tmp1|         array|
+|tmp1_1_address0        |  out|    5|   ap_memory|                tmp1_1|         array|
+|tmp1_1_ce0             |  out|    1|   ap_memory|                tmp1_1|         array|
+|tmp1_1_q0              |   in|   32|   ap_memory|                tmp1_1|         array|
+|tmp2_address0          |  out|    5|   ap_memory|                  tmp2|         array|
+|tmp2_ce0               |  out|    1|   ap_memory|                  tmp2|         array|
+|tmp2_q0                |   in|   32|   ap_memory|                  tmp2|         array|
+|tmp2_1_address0        |  out|    5|   ap_memory|                tmp2_1|         array|
+|tmp2_1_ce0             |  out|    1|   ap_memory|                tmp2_1|         array|
+|tmp2_1_q0              |   in|   32|   ap_memory|                tmp2_1|         array|
++-----------------------+-----+-----+------------+----------------------+--------------+
+

@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vitis HLS Report for 'mvt_Pipeline_lpwr'
+================================================================
+* Date:           Mon Dec  2 12:52:41 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        hls_prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.873 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       66|       66|  0.660 us|  0.660 us|   66|   66|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- lpwr    |       64|       64|         3|          2|          1|    32|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 2, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [src/mvt.c:6]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x2_out, void @empty_1, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %x1_out, void @empty_1, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.42ns)   --->   "%store_ln6 = store i7 0, i7 %i" [src/mvt.c:6]   --->   Operation 9 'store' 'store_ln6' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc86"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%i_1 = load i7 %i" [src/mvt.c:35]   --->   Operation 11 'load' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i7.i32, i7 %i_1, i32 6" [src/mvt.c:35]   --->   Operation 12 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %tmp, void %for.inc86.split, void %for.end88.exitStub" [src/mvt.c:35]   --->   Operation 13 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%lshr_ln6_4 = partselect i5 @_ssdm_op_PartSelect.i5.i7.i32.i32, i7 %i_1, i32 1, i32 5" [src/mvt.c:6]   --->   Operation 14 'partselect' 'lshr_ln6_4' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln6 = zext i5 %lshr_ln6_4" [src/mvt.c:6]   --->   Operation 15 'zext' 'zext_ln6' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%buff_x1_addr = getelementptr i32 %buff_x1, i64 0, i64 %zext_ln6" [src/mvt.c:36]   --->   Operation 16 'getelementptr' 'buff_x1_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 17 [2/2] (1.23ns)   --->   "%buff_x1_load = load i5 %buff_x1_addr" [src/mvt.c:36]   --->   Operation 17 'load' 'buff_x1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%buff_x2_addr = getelementptr i32 %buff_x2, i64 0, i64 %zext_ln6" [src/mvt.c:37]   --->   Operation 18 'getelementptr' 'buff_x2_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 19 [2/2] (1.23ns)   --->   "%buff_x2_load = load i5 %buff_x2_addr" [src/mvt.c:37]   --->   Operation 19 'load' 'buff_x2_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%buff_x1_1_addr = getelementptr i32 %buff_x1_1, i64 0, i64 %zext_ln6" [src/mvt.c:36]   --->   Operation 20 'getelementptr' 'buff_x1_1_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 21 [2/2] (1.23ns)   --->   "%buff_x1_1_load = load i5 %buff_x1_1_addr" [src/mvt.c:36]   --->   Operation 21 'load' 'buff_x1_1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%buff_x2_1_addr = getelementptr i32 %buff_x2_1, i64 0, i64 %zext_ln6" [src/mvt.c:37]   --->   Operation 22 'getelementptr' 'buff_x2_1_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (1.23ns)   --->   "%buff_x2_1_load = load i5 %buff_x2_1_addr" [src/mvt.c:37]   --->   Operation 23 'load' 'buff_x2_1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_1 : Operation 24 [1/1] (0.77ns)   --->   "%add_ln35 = add i7 %i_1, i7 2" [src/mvt.c:35]   --->   Operation 24 'add' 'add_ln35' <Predicate = (!tmp)> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [1/1] (0.42ns)   --->   "%store_ln6 = store i7 %add_ln35, i7 %i" [src/mvt.c:6]   --->   Operation 25 'store' 'store_ln6' <Predicate = (!tmp)> <Delay = 0.42>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 42 'ret' 'ret_ln0' <Predicate = (tmp)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.87>
+ST_2 : Operation 26 [1/2] (1.23ns)   --->   "%buff_x1_load = load i5 %buff_x1_addr" [src/mvt.c:36]   --->   Operation 26 'load' 'buff_x1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%bitcast_ln36 = bitcast i32 %buff_x1_load" [src/mvt.c:36]   --->   Operation 27 'bitcast' 'bitcast_ln36' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (1.63ns)   --->   "%write_ln36 = write void @_ssdm_op_Write.ap_fifo.volatile.i32P0A, i32 %x1_out, i32 %bitcast_ln36" [src/mvt.c:36]   --->   Operation 28 'write' 'write_ln36' <Predicate = (!tmp)> <Delay = 1.63> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_2 : Operation 29 [1/2] (1.23ns)   --->   "%buff_x2_load = load i5 %buff_x2_addr" [src/mvt.c:37]   --->   Operation 29 'load' 'buff_x2_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%bitcast_ln37 = bitcast i32 %buff_x2_load" [src/mvt.c:37]   --->   Operation 30 'bitcast' 'bitcast_ln37' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.63ns)   --->   "%write_ln37 = write void @_ssdm_op_Write.ap_fifo.volatile.i32P0A, i32 %x2_out, i32 %bitcast_ln37" [src/mvt.c:37]   --->   Operation 31 'write' 'write_ln37' <Predicate = (!tmp)> <Delay = 1.63> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_2 : Operation 32 [1/2] (1.23ns)   --->   "%buff_x1_1_load = load i5 %buff_x1_1_addr" [src/mvt.c:36]   --->   Operation 32 'load' 'buff_x1_1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 33 [1/2] (1.23ns)   --->   "%buff_x2_1_load = load i5 %buff_x2_1_addr" [src/mvt.c:37]   --->   Operation 33 'load' 'buff_x2_1_load' <Predicate = (!tmp)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+
+State 3 <SV = 2> <Delay = 1.63>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specpipeline_ln9 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:9]   --->   Operation 34 'specpipeline' 'specpipeline_ln9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%speclooptripcount_ln6 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 32, i64 32, i64 32" [src/mvt.c:6]   --->   Operation 35 'speclooptripcount' 'speclooptripcount_ln6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%specloopname_ln35 = specloopname void @_ssdm_op_SpecLoopName, void @empty_3" [src/mvt.c:35]   --->   Operation 36 'specloopname' 'specloopname_ln35' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%bitcast_ln36_1 = bitcast i32 %buff_x1_1_load" [src/mvt.c:36]   --->   Operation 37 'bitcast' 'bitcast_ln36_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (1.63ns)   --->   "%write_ln36 = write void @_ssdm_op_Write.ap_fifo.volatile.i32P0A, i32 %x1_out, i32 %bitcast_ln36_1" [src/mvt.c:36]   --->   Operation 38 'write' 'write_ln36' <Predicate = true> <Delay = 1.63> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%bitcast_ln37_1 = bitcast i32 %buff_x2_1_load" [src/mvt.c:37]   --->   Operation 39 'bitcast' 'bitcast_ln37_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (1.63ns)   --->   "%write_ln37 = write void @_ssdm_op_Write.ap_fifo.volatile.i32P0A, i32 %x2_out, i32 %bitcast_ln37_1" [src/mvt.c:37]   --->   Operation 40 'write' 'write_ln37' <Predicate = true> <Delay = 1.63> <CoreInst = "FIFO">   --->   Core 78 'FIFO' <Latency = 0> <II = 1> <Delay = 1.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln35 = br void %for.inc86" [src/mvt.c:35]   --->   Operation 41 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.664ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln6', src/mvt.c:6) of constant 0 on local variable 'i', src/mvt.c:6 [10]  (0.427 ns)
+	'load' operation 7 bit ('i', src/mvt.c:35) on local variable 'i', src/mvt.c:6 [13]  (0.000 ns)
+	'getelementptr' operation 5 bit ('buff_x1_addr', src/mvt.c:36) [22]  (0.000 ns)
+	'load' operation 32 bit ('buff_x1_load', src/mvt.c:36) on array 'buff_x1' [23]  (1.237 ns)
+
+ <State 2>: 2.873ns
+The critical path consists of the following:
+	'load' operation 32 bit ('buff_x1_load', src/mvt.c:36) on array 'buff_x1' [23]  (1.237 ns)
+	fifo write operation ('write_ln36', src/mvt.c:36) on port 'x1_out' (src/mvt.c:36) [25]  (1.636 ns)
+
+ <State 3>: 1.636ns
+The critical path consists of the following:
+	fifo write operation ('write_ln36', src/mvt.c:36) on port 'x1_out' (src/mvt.c:36) [33]  (1.636 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

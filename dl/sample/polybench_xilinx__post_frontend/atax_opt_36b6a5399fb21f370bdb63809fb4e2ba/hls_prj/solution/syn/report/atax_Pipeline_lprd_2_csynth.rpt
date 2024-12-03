@@ -1,0 +1,150 @@
+
+
+================================================================
+== Vitis HLS Report for 'atax_Pipeline_lprd_2'
+================================================================
+* Date:           Mon Dec  2 12:52:43 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        hls_prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.474 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       34|       34|  0.340 us|  0.340 us|   34|   34|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- lprd_2  |       32|       32|         2|          1|          1|    32|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      16|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|      36|    -|
+|Register         |        -|     -|      21|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|      21|      52|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     1824|  2520|  548160|  274080|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+----+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+----+---+----+------------+------------+
+    |add_ln15_fu_152_p2  |         +|   0|  0|  14|           7|           2|
+    |ap_enable_pp0       |       xor|   0|  0|   2|           1|           2|
+    +--------------------+----------+----+---+----+------------+------------+
+    |Total               |          |   0|  0|  16|           8|           4|
+    +--------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_j_1     |   9|          2|    7|         14|
+    |j_fu_50                  |   9|          2|    7|         14|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  36|          8|   16|         32|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |j_fu_50                  |   7|   0|    7|          0|
+    |zext_ln16_reg_183        |  11|   0|   64|         53|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  21|   0|   74|         53|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+----------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++-------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  atax_Pipeline_lprd_2|  return value|
+|i                  |   in|    6|     ap_none|                     i|        scalar|
+|A_0_address0       |  out|   11|   ap_memory|                   A_0|         array|
+|A_0_ce0            |  out|    1|   ap_memory|                   A_0|         array|
+|A_0_q0             |   in|   32|   ap_memory|                   A_0|         array|
+|A_1_address0       |  out|   11|   ap_memory|                   A_1|         array|
+|A_1_ce0            |  out|    1|   ap_memory|                   A_1|         array|
+|A_1_q0             |   in|   32|   ap_memory|                   A_1|         array|
+|buff_A_address0    |  out|   11|   ap_memory|                buff_A|         array|
+|buff_A_ce0         |  out|    1|   ap_memory|                buff_A|         array|
+|buff_A_we0         |  out|    1|   ap_memory|                buff_A|         array|
+|buff_A_d0          |  out|   32|   ap_memory|                buff_A|         array|
+|buff_A_1_address0  |  out|   11|   ap_memory|              buff_A_1|         array|
+|buff_A_1_ce0       |  out|    1|   ap_memory|              buff_A_1|         array|
+|buff_A_1_we0       |  out|    1|   ap_memory|              buff_A_1|         array|
+|buff_A_1_d0        |  out|   32|   ap_memory|              buff_A_1|         array|
++-------------------+-----+-----+------------+----------------------+--------------+
+

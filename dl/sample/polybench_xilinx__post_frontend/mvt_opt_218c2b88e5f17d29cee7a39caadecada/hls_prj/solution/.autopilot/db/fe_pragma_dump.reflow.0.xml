@@ -1,0 +1,22 @@
+<pragmas>
+<pragma file="src/mvt.c" line="18" pragmaType="unroll" parentfunction="mvt" factor="2" skip_exit_check="0"/>
+<pragma file="src/mvt.c" line="9" pragmaType="pipeline" parentfunction="mvt" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/mvt.c" line="23" pragmaType="unroll" parentfunction="mvt" factor="2" skip_exit_check="0"/>
+<pragma file="src/mvt.c" line="21" pragmaType="unroll" parentfunction="mvt" factor="1" skip_exit_check="0"/>
+<pragma file="src/mvt.c" line="20" pragmaType="pipeline" parentfunction="mvt" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/mvt.c" line="17" pragmaType="unroll" parentfunction="mvt" factor="2" skip_exit_check="0"/>
+<pragma file="src/mvt.c" line="8" pragmaType="pipeline" parentfunction="mvt" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/mvt.c" line="1" pragmaType="bind_storage" parentfunction="mvt" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/mvt.c" line="11" pragmaType="array_partition" parentfunction="mvt" dim="2" factor="2" mode="cyclic" dynamic="0" variable="A"/>
+<pragma file="src/mvt.c" line="2" pragmaType="bind_storage" parentfunction="mvt" op="666" impl="17" latency="-1" variable="x1"/>
+<pragma file="src/mvt.c" line="3" pragmaType="bind_storage" parentfunction="mvt" op="666" impl="17" latency="-1" variable="x2"/>
+<pragma file="src/mvt.c" line="4" pragmaType="bind_storage" parentfunction="mvt" op="666" impl="17" latency="-1" variable="y1"/>
+<pragma file="src/mvt.c" line="5" pragmaType="interface" parentfunction="mvt" mode="ap_fifo" port="y2" register="0" name="" depth="-1"/>
+<pragma file="src/mvt.c" line="6" pragmaType="interface" parentfunction="mvt" mode="ap_fifo" port="x1_out" register="0" name="" depth="-1"/>
+<pragma file="src/mvt.c" line="7" pragmaType="interface" parentfunction="mvt" mode="ap_fifo" port="x2_out" register="0" name="" depth="-1"/>
+<pragma file="src/mvt.c" line="12" pragmaType="array_partition" parentfunction="mvt" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_A"/>
+<pragma file="src/mvt.c" line="13" pragmaType="array_partition" parentfunction="mvt" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_x1"/>
+<pragma file="src/mvt.c" line="14" pragmaType="array_partition" parentfunction="mvt" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_x2"/>
+<pragma file="src/mvt.c" line="15" pragmaType="array_partition" parentfunction="mvt" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_y1"/>
+<pragma file="src/mvt.c" line="16" pragmaType="array_partition" parentfunction="mvt" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_y2"/>
+</pragmas>

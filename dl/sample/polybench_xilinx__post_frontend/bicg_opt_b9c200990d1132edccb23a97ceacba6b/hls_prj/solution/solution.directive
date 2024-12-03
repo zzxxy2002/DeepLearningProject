@@ -1,0 +1,117 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="A"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="r"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="p"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_fifo" value="" positionalBoolean="mode"/>
+                <option name="port" positionalBoolean="4" value="s_out"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_fifo" value="" positionalBoolean="mode"/>
+                <option name="port" positionalBoolean="4" value="q_out"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="lprd_2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="bicg" label="lpwr" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="2"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="A"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="2"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="buff_A"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="buff_p"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="buff_r"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="buff_s_out"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="cyclic" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="buff_q_out"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="lprd_2" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="lpwr" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="lp1" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="bicg" label="lp1" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="lp4" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="2"/>
+            </pragma>
+        </directive>
+        <directive functionName="bicg" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="bicg"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

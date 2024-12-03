@@ -1,0 +1,85 @@
+{
+    "0": {
+        "name": "gemm",
+        "file": "src\/gemm.c",
+        "fileloc": "3",
+        "instructions": "150",
+        "total_instructions": "1147",
+        "calls": "2 3 1 4",
+        "basicblocks": "1"
+    },
+    "1": {
+        "name": "gemm_Pipeline_lp4_lp5",
+        "file": "src\/gemm.c",
+        "fileloc": "5",
+        "instructions": "39",
+        "total_instructions": "39",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "gemm_Pipeline_lprd_1_lprd_2",
+        "file": "src\/gemm.c",
+        "fileloc": "5",
+        "instructions": "436",
+        "total_instructions": "436",
+        "calls": "",
+        "basicblocks": "134",
+        "loads": {
+            "L": "3",
+            "T": "3"
+        },
+        "stores": {
+            "L": "136"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "gemm_Pipeline_lp1_lp2",
+        "file": "src\/gemm.c",
+        "fileloc": "5",
+        "instructions": "485",
+        "total_instructions": "485",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "132"
+        },
+        "stores": {
+            "L": "7"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "gemm_Pipeline_lpwr_1_lpwr_2",
+        "file": "src\/gemm.c",
+        "fileloc": "5",
+        "instructions": "37",
+        "total_instructions": "37",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "6",
+            "T": "1"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

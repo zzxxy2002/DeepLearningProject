@@ -1,0 +1,272 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2.2 (64-bit)
+  **** SW Build 4101106 on Feb  9 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /tools/software/xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/software/xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'xxu425' on host 'chao-srv1.ece.gatech.edu' (Linux_x86_64 version 4.18.0-553.16.1.el8_10.x86_64) on Mon Dec 02 12:52:25 EST 2024
+INFO: [HLS 200-10] On os "Red Hat Enterprise Linux release 8.10 (Ootpa)"
+INFO: [HLS 200-10] In directory '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'dataset_hls.tcl'
+INFO: [HLS 200-1510] Running: source dataset_hls.tcl
+INFO: [HLS 200-1510] Running: source hls_template.tcl
+INFO: [HLS 200-1510] Running: open_project -reset hls_prj 
+INFO: [HLS 200-10] Creating and opening project '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj'.
+INFO: [HLS 200-1510] Running: set_top gesummv 
+INFO: [HLS 200-1510] Running: add_files src/gesummv.c 
+INFO: [HLS 200-10] Adding design file 'src/gesummv.c' to the project
+INFO: [HLS 200-1510] Running: add_files src/gesummv.h 
+INFO: [HLS 200-10] Adding design file 'src/gesummv.h' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution 
+INFO: [HLS 200-10] Creating and opening solution '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xczu9eg-ffvb1156-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: source opt.tcl
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P gesummv A 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P gesummv B 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P gesummv x 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo gesummv y_out 
+INFO: [HLS 200-1510] Running: set_directive_pipeline gesummv/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline gesummv/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_pipeline gesummv/lp2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 gesummv/lp2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline gesummv/lp4 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 4 gesummv/lp4 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 258.039 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/gesummv.c' ... 
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:1:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:2:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:3:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.45 seconds. CPU system time: 0.75 seconds. Elapsed time: 2.17 seconds; current allocated memory: 261.098 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 180 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 192 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 161 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 147 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 150 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 148 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 325 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 209 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 215 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 249 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_prj/solution/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:1:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:2:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:3:9)
+INFO: [HLS 214-188] Unrolling loop 'lp4' (src/gesummv.c:32:14) in function 'gesummv' partially with a factor of 4 (src/gesummv.c:5:0)
+INFO: [HLS 214-188] Unrolling loop 'lp2' (src/gesummv.c:26:14) in function 'gesummv' partially with a factor of 4 (src/gesummv.c:5:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< lp5> at src/gesummv.c:37:7 
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'buff_A' due to pipeline pragma (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:9:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'buff_B' due to pipeline pragma (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:12:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'buff_x' due to pipeline pragma (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:9:9)
+INFO: [HLS 214-248] Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2. (src/gesummv.c:7:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_B': Cyclic partitioning with factor 2 on dimension 2. (src/gesummv.c:8:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_x': Cyclic partitioning with factor 2 on dimension 1. (src/gesummv.c:9:8)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'y_out' (src/gesummv.c:5:0)
+Resolution: For help on HLS 214-142 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=214-142.html
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.37 seconds. CPU system time: 0.45 seconds. Elapsed time: 9.86 seconds; current allocated memory: 262.941 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 262.941 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 263.293 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 263.418 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 285.723 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'lp1'(src/gesummv.c:25:10) and 'lp2'(src/gesummv.c:26:14) in function 'gesummv' into perfectly nested loops.
+INFO: [HLS 200-2061] Successfully converted nested loops 'lp3'(src/gesummv.c:31:7) and 'lp4'(src/gesummv.c:32:14) in function 'gesummv' into perfectly nested loops.
+WARNING: [HLS 200-960] Cannot flatten loop 'lprd_1' (src/gesummv.c:14:10) in function 'gesummv' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'lp1' (src/gesummv.c:25:10) in function 'gesummv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'lp3' (src/gesummv.c:31:7) in function 'gesummv'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 325.035 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'gesummv' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lprd_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lprd_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.12 seconds; current allocated memory: 325.602 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 326.035 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv_Pipeline_lp1_lp2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lp1_lp2'.
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp1_lp2' (loop 'lp1_lp2'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add_3', src/gesummv.c:27) and 'fadd' operation 32 bit ('add', src/gesummv.c:27).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 25, loop 'lp1_lp2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 326.359 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 326.477 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv_Pipeline_lp3_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lp3_lp4'.
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 11, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'gesummv_Pipeline_lp3_lp4' (loop 'lp3_lp4'): Unable to enforce a carried dependence constraint (II = 15, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add68_3', src/gesummv.c:33) and 'fadd' operation 32 bit ('add2', src/gesummv.c:33).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 16, Depth = 25, loop 'lp3_lp4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 327.188 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 327.336 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv_Pipeline_lp5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lp5'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 7, loop 'lp5'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 327.570 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 327.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lpwr'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lpwr'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 327.777 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 327.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gesummv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 328.211 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 328.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gesummv_Pipeline_lprd_2' pipeline 'lprd_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv_Pipeline_lprd_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 328.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv_Pipeline_lp1_lp2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gesummv_Pipeline_lp1_lp2' pipeline 'lp1_lp2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv_Pipeline_lp1_lp2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 329.723 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv_Pipeline_lp3_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gesummv_Pipeline_lp3_lp4' pipeline 'lp3_lp4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv_Pipeline_lp3_lp4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.25 seconds; current allocated memory: 332.031 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv_Pipeline_lp5' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gesummv_Pipeline_lp5' pipeline 'lp5' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv_Pipeline_lp5'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.31 seconds; current allocated memory: 333.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'gesummv_Pipeline_lpwr' pipeline 'lpwr' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv_Pipeline_lpwr'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 334.848 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gesummv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/alpha' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/beta' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/A' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/B' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/x' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'gesummv/y_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'gesummv' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gesummv'.
+INFO: [RTMG 210-278] Implementing memory 'gesummv_buff_A_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gesummv_buff_x_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gesummv_buff_y_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.02 seconds; current allocated memory: 337.105 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.24 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.94 seconds; current allocated memory: 340.781 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.57 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.05 seconds; current allocated memory: 343.098 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for gesummv.
+INFO: [VLOG 209-307] Generating Verilog RTL for gesummv.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 142.53 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 5.78 seconds. CPU system time: 1.4 seconds. Elapsed time: 18.11 seconds; current allocated memory: 85.449 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 7.88 seconds. Total CPU system time: 1.85 seconds. Total elapsed time: 20.77 seconds; peak allocated memory: 343.488 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Dec  2 12:52:45 2024...

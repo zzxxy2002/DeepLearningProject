@@ -1,0 +1,26 @@
+<pragmas>
+<pragma file="src/k3mm.c" line="22" pragmaType="unroll" parentfunction="k3mm" factor="2" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="7" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="27" pragmaType="unroll" parentfunction="k3mm" factor="2" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="25" pragmaType="unroll" parentfunction="k3mm" factor="1" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="24" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="21" pragmaType="unroll" parentfunction="k3mm" factor="2" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="6" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="1" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/k3mm.c" line="10" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="B"/>
+<pragma file="src/k3mm.c" line="11" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="C"/>
+<pragma file="src/k3mm.c" line="12" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="D"/>
+<pragma file="src/k3mm.c" line="13" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="E_out"/>
+<pragma file="src/k3mm.c" line="2" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="B"/>
+<pragma file="src/k3mm.c" line="3" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="C"/>
+<pragma file="src/k3mm.c" line="4" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="D"/>
+<pragma file="src/k3mm.c" line="5" pragmaType="interface" parentfunction="k3mm" mode="ap_fifo" port="E_out" register="0" name="" depth="-1"/>
+<pragma file="src/k3mm.c" line="9" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="A"/>
+<pragma file="src/k3mm.c" line="14" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_A"/>
+<pragma file="src/k3mm.c" line="15" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_B"/>
+<pragma file="src/k3mm.c" line="16" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_C"/>
+<pragma file="src/k3mm.c" line="17" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_D"/>
+<pragma file="src/k3mm.c" line="18" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_E_out"/>
+<pragma file="src/k3mm.c" line="19" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="tmp1"/>
+<pragma file="src/k3mm.c" line="20" pragmaType="array_partition" parentfunction="k3mm" dim="2" factor="2" mode="cyclic" dynamic="0" variable="tmp2"/>
+</pragmas>

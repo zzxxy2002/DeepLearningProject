@@ -1,0 +1,587 @@
+
+
+================================================================
+== Synthesis Summary Report of 'k3mm'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 12:53:09 2024
+    * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+    * Project:        hls_prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu9eg-ffvb1156-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+-----------+-----------+--------------+-------------+-----+
+    |             Modules            | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |           |           |              |             |     |
+    |             & Loops            | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|   BRAM    |    DSP    |      FF      |     LUT     | URAM|
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+-----------+-----------+--------------+-------------+-----+
+    |+ k3mm                          |     -|  0.19|  1061144|  1.061e+07|         -|  1061145|      -|        no|  272 (14%)|  325 (12%)|  110188 (20%)|  83556 (30%)|    -|
+    | + k3mm_Pipeline_lprd_1_lprd_2  |     -|  3.69|     4098|  4.098e+04|         -|     4098|      -|        no|          -|          -|      68 (~0%)|    209 (~0%)|    -|
+    |  o lprd_1_lprd_2               |     -|  7.30|     4096|  4.096e+04|         2|        1|   4096|       yes|          -|          -|             -|            -|    -|
+    | + k3mm_Pipeline_lp1_lp2_lp3    |     -|  0.28|  1048583|  1.049e+07|         -|  1048583|      -|        no|          -|          -|     585 (~0%)|    537 (~0%)|    -|
+    |  o lp1_lp2_lp3                 |    II|  7.30|  1048581|  1.049e+07|        22|       16|  65536|       yes|          -|          -|             -|            -|    -|
+    | + k3mm_Pipeline_lp4_lp5        |     -|  0.19|     4357|  4.357e+04|         -|     4357|      -|        no|          -|    5 (~0%)|    27105 (4%)|   10938 (3%)|    -|
+    |  o lp4_lp5                     |     -|  7.30|     4355|  4.355e+04|       261|        1|   4096|       yes|          -|          -|             -|            -|    -|
+    | + k3mm_Pipeline_lp7_lp8        |     -|  0.28|     4358|  4.358e+04|         -|     4358|      -|        no|          -|          -|    43281 (7%)|   16706 (6%)|    -|
+    |  o lp7_lp8                     |    II|  7.30|     4356|  4.356e+04|       265|        4|   1024|       yes|          -|          -|             -|            -|    -|
+    | + k3mm_Pipeline_lpwr_1_lpwr_2  |     -|  3.90|     4098|  4.098e+04|         -|     4098|      -|        no|          -|          -|      32 (~0%)|    203 (~0%)|    -|
+    |  o lpwr_1_lpwr_2               |     -|  7.30|     4096|  4.096e+04|         2|        1|   4096|       yes|          -|          -|             -|            -|    -|
+    +--------------------------------+------+------+---------+-----------+----------+---------+-------+----------+-----------+-----------+--------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+-----------+------------+
+| Interface | Direction | Data Width |
++-----------+-----------+------------+
+| E_out     | out       | 32         |
++-----------+-----------+------------+
+
+* AP_MEMORY
++------------+-----------+----------+
+| Port       | Direction | Bitwidth |
++------------+-----------+----------+
+| A_address0 | out       | 12       |
+| A_q0       | in        | 32       |
+| B_address0 | out       | 12       |
+| B_q0       | in        | 32       |
+| C_address0 | out       | 12       |
+| C_q0       | in        | 32       |
+| D_address0 | out       | 12       |
+| D_q0       | in        | 32       |
++------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| B        | in        | float*   |
+| C        | in        | float*   |
+| D        | in        | float*   |
+| E_out    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+
+| Argument | HW Interface | HW Type   | HW Usage |
++----------+--------------+-----------+----------+
+| A        | A_address0   | port      | offset   |
+| A        | A_ce0        | port      |          |
+| A        | A_q0         | port      |          |
+| B        | B_address0   | port      | offset   |
+| B        | B_ce0        | port      |          |
+| B        | B_q0         | port      |          |
+| C        | C_address0   | port      | offset   |
+| C        | C_ce0        | port      |          |
+| C        | C_q0         | port      |          |
+| D        | D_address0   | port      | offset   |
+| D        | D_ce0        | port      |          |
+| D        | D_q0         | port      |          |
+| E_out    | E_out        | interface |          |
++----------+--------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                   | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++----------------------------------------+-----+--------+------------+------+---------+---------+
+| + k3mm                                 | 325 |        |            |      |         |         |
+|  + k3mm_Pipeline_lprd_1_lprd_2         | 0   |        |            |      |         |         |
+|    add_ln20_1_fu_6438_p2               |     |        | add_ln20_1 | add  | fabric  | 0       |
+|    add_ln20_fu_6450_p2                 |     |        | add_ln20   | add  | fabric  | 0       |
+|    add_ln22_fu_6512_p2                 |     |        | add_ln22   | add  | fabric  | 0       |
+|    add_ln23_fu_6996_p2                 |     |        | add_ln23   | add  | fabric  | 0       |
+|    add_ln21_fu_6831_p2                 |     |        | add_ln21   | add  | fabric  | 0       |
+|  + k3mm_Pipeline_lp1_lp2_lp3           | 0   |        |            |      |         |         |
+|    add_ln32_1_fu_270_p2                |     |        | add_ln32_1 | add  | fabric  | 0       |
+|    add_ln32_fu_285_p2                  |     |        | add_ln32   | add  | fabric  | 0       |
+|    add_ln33_fu_351_p2                  |     |        | add_ln33   | add  | fabric  | 0       |
+|    empty_72_fu_407_p2                  |     |        | empty_72   | add  | fabric  | 0       |
+|    add_ln35_fu_450_p2                  |     |        | add_ln35   | add  | fabric  | 0       |
+|    add_ln35_1_fu_490_p2                |     |        | add_ln35_1 | add  | fabric  | 0       |
+|    add_ln34_fu_544_p2                  |     |        | add_ln34   | add  | fabric  | 0       |
+|    add_ln33_1_fu_502_p2                |     |        | add_ln33_1 | add  | fabric  | 0       |
+|  + k3mm_Pipeline_lp4_lp5               | 5   |        |            |      |         |         |
+|    add_ln40_1_fu_7768_p2               |     |        | add_ln40_1 | add  | fabric  | 0       |
+|    add_ln40_fu_7780_p2                 |     |        | add_ln40   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U532  | 3   |        | mul96_62   | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U468 | 2   |        | add101_62  | fadd | fulldsp | 3       |
+|    add_ln41_fu_7836_p2                 |     |        | add_ln41   | add  | fabric  | 0       |
+|  + k3mm_Pipeline_lp7_lp8               | 0   |        |            |      |         |         |
+|    add_ln48_1_fu_5217_p2               |     |        | add_ln48_1 | add  | fabric  | 0       |
+|    add_ln48_fu_5229_p2                 |     |        | add_ln48   | add  | fabric  | 0       |
+|    add_ln49_fu_5727_p2                 |     |        | add_ln49   | add  | fabric  | 0       |
+|  + k3mm_Pipeline_lpwr_1_lpwr_2         | 0   |        |            |      |         |         |
+|    add_ln56_1_fu_163_p2                |     |        | add_ln56_1 | add  | fabric  | 0       |
+|    add_ln56_fu_175_p2                  |     |        | add_ln56   | add  | fabric  | 0       |
+|    add_ln57_fu_237_p2                  |     |        | add_ln57   | add  | fabric  | 0       |
++----------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| Name                                   | Usage         | Type | BRAM | URAM | Pragma | Variable     | Impl | Latency | Bitwidth, Depth, |
+|                                        |               |      |      |      |        |              |      |         | Banks            |
++----------------------------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| + k3mm                                 |               |      | 272  | 0    |        |              |      |         |                  |
+|   buff_A_U                             | ram_s2p array |      | 4    |      |        | buff_A       | auto | 1       | 32, 2048, 1      |
+|   buff_A_1_U                           | ram_s2p array |      | 4    |      |        | buff_A_1     | auto | 1       | 32, 2048, 1      |
+|   buff_B_U                             | ram_s2p array |      | 4    |      |        | buff_B       | auto | 1       | 32, 2048, 1      |
+|   buff_B_1_U                           | ram_s2p array |      | 4    |      |        | buff_B_1     | auto | 1       | 32, 2048, 1      |
+|   buff_C_U                             | ram_1p array  |      | 2    |      |        | buff_C       | auto | 1       | 32, 64, 1        |
+|   buff_C_1_U                           | ram_1p array  |      | 2    |      |        | buff_C_1     | auto | 1       | 32, 64, 1        |
+|   buff_C_2_U                           | ram_1p array  |      | 2    |      |        | buff_C_2     | auto | 1       | 32, 64, 1        |
+|   buff_C_3_U                           | ram_1p array  |      | 2    |      |        | buff_C_3     | auto | 1       | 32, 64, 1        |
+|   buff_C_4_U                           | ram_1p array  |      | 2    |      |        | buff_C_4     | auto | 1       | 32, 64, 1        |
+|   buff_C_5_U                           | ram_1p array  |      | 2    |      |        | buff_C_5     | auto | 1       | 32, 64, 1        |
+|   buff_C_6_U                           | ram_1p array  |      | 2    |      |        | buff_C_6     | auto | 1       | 32, 64, 1        |
+|   buff_C_7_U                           | ram_1p array  |      | 2    |      |        | buff_C_7     | auto | 1       | 32, 64, 1        |
+|   buff_C_8_U                           | ram_1p array  |      | 2    |      |        | buff_C_8     | auto | 1       | 32, 64, 1        |
+|   buff_C_9_U                           | ram_1p array  |      | 2    |      |        | buff_C_9     | auto | 1       | 32, 64, 1        |
+|   buff_C_10_U                          | ram_1p array  |      | 2    |      |        | buff_C_10    | auto | 1       | 32, 64, 1        |
+|   buff_C_11_U                          | ram_1p array  |      | 2    |      |        | buff_C_11    | auto | 1       | 32, 64, 1        |
+|   buff_C_12_U                          | ram_1p array  |      | 2    |      |        | buff_C_12    | auto | 1       | 32, 64, 1        |
+|   buff_C_13_U                          | ram_1p array  |      | 2    |      |        | buff_C_13    | auto | 1       | 32, 64, 1        |
+|   buff_C_14_U                          | ram_1p array  |      | 2    |      |        | buff_C_14    | auto | 1       | 32, 64, 1        |
+|   buff_C_15_U                          | ram_1p array  |      | 2    |      |        | buff_C_15    | auto | 1       | 32, 64, 1        |
+|   buff_C_16_U                          | ram_1p array  |      | 2    |      |        | buff_C_16    | auto | 1       | 32, 64, 1        |
+|   buff_C_17_U                          | ram_1p array  |      | 2    |      |        | buff_C_17    | auto | 1       | 32, 64, 1        |
+|   buff_C_18_U                          | ram_1p array  |      | 2    |      |        | buff_C_18    | auto | 1       | 32, 64, 1        |
+|   buff_C_19_U                          | ram_1p array  |      | 2    |      |        | buff_C_19    | auto | 1       | 32, 64, 1        |
+|   buff_C_20_U                          | ram_1p array  |      | 2    |      |        | buff_C_20    | auto | 1       | 32, 64, 1        |
+|   buff_C_21_U                          | ram_1p array  |      | 2    |      |        | buff_C_21    | auto | 1       | 32, 64, 1        |
+|   buff_C_22_U                          | ram_1p array  |      | 2    |      |        | buff_C_22    | auto | 1       | 32, 64, 1        |
+|   buff_C_23_U                          | ram_1p array  |      | 2    |      |        | buff_C_23    | auto | 1       | 32, 64, 1        |
+|   buff_C_24_U                          | ram_1p array  |      | 2    |      |        | buff_C_24    | auto | 1       | 32, 64, 1        |
+|   buff_C_25_U                          | ram_1p array  |      | 2    |      |        | buff_C_25    | auto | 1       | 32, 64, 1        |
+|   buff_C_26_U                          | ram_1p array  |      | 2    |      |        | buff_C_26    | auto | 1       | 32, 64, 1        |
+|   buff_C_27_U                          | ram_1p array  |      | 2    |      |        | buff_C_27    | auto | 1       | 32, 64, 1        |
+|   buff_C_28_U                          | ram_1p array  |      | 2    |      |        | buff_C_28    | auto | 1       | 32, 64, 1        |
+|   buff_C_29_U                          | ram_1p array  |      | 2    |      |        | buff_C_29    | auto | 1       | 32, 64, 1        |
+|   buff_C_30_U                          | ram_1p array  |      | 2    |      |        | buff_C_30    | auto | 1       | 32, 64, 1        |
+|   buff_C_31_U                          | ram_1p array  |      | 2    |      |        | buff_C_31    | auto | 1       | 32, 64, 1        |
+|   buff_C_32_U                          | ram_1p array  |      | 2    |      |        | buff_C_32    | auto | 1       | 32, 64, 1        |
+|   buff_C_33_U                          | ram_1p array  |      | 2    |      |        | buff_C_33    | auto | 1       | 32, 64, 1        |
+|   buff_C_34_U                          | ram_1p array  |      | 2    |      |        | buff_C_34    | auto | 1       | 32, 64, 1        |
+|   buff_C_35_U                          | ram_1p array  |      | 2    |      |        | buff_C_35    | auto | 1       | 32, 64, 1        |
+|   buff_C_36_U                          | ram_1p array  |      | 2    |      |        | buff_C_36    | auto | 1       | 32, 64, 1        |
+|   buff_C_37_U                          | ram_1p array  |      | 2    |      |        | buff_C_37    | auto | 1       | 32, 64, 1        |
+|   buff_C_38_U                          | ram_1p array  |      | 2    |      |        | buff_C_38    | auto | 1       | 32, 64, 1        |
+|   buff_C_39_U                          | ram_1p array  |      | 2    |      |        | buff_C_39    | auto | 1       | 32, 64, 1        |
+|   buff_C_40_U                          | ram_1p array  |      | 2    |      |        | buff_C_40    | auto | 1       | 32, 64, 1        |
+|   buff_C_41_U                          | ram_1p array  |      | 2    |      |        | buff_C_41    | auto | 1       | 32, 64, 1        |
+|   buff_C_42_U                          | ram_1p array  |      | 2    |      |        | buff_C_42    | auto | 1       | 32, 64, 1        |
+|   buff_C_43_U                          | ram_1p array  |      | 2    |      |        | buff_C_43    | auto | 1       | 32, 64, 1        |
+|   buff_C_44_U                          | ram_1p array  |      | 2    |      |        | buff_C_44    | auto | 1       | 32, 64, 1        |
+|   buff_C_45_U                          | ram_1p array  |      | 2    |      |        | buff_C_45    | auto | 1       | 32, 64, 1        |
+|   buff_C_46_U                          | ram_1p array  |      | 2    |      |        | buff_C_46    | auto | 1       | 32, 64, 1        |
+|   buff_C_47_U                          | ram_1p array  |      | 2    |      |        | buff_C_47    | auto | 1       | 32, 64, 1        |
+|   buff_C_48_U                          | ram_1p array  |      | 2    |      |        | buff_C_48    | auto | 1       | 32, 64, 1        |
+|   buff_C_49_U                          | ram_1p array  |      | 2    |      |        | buff_C_49    | auto | 1       | 32, 64, 1        |
+|   buff_C_50_U                          | ram_1p array  |      | 2    |      |        | buff_C_50    | auto | 1       | 32, 64, 1        |
+|   buff_C_51_U                          | ram_1p array  |      | 2    |      |        | buff_C_51    | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U1380  | ram_1p array  |      | 2    |      |        | buff_C_52    | auto | 1       | 32, 64, 1        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U1379 | ram_1p array  |      | 2    |      |        | buff_C_53    | auto | 1       | 32, 64, 1        |
+|   buff_C_54_U                          | ram_1p array  |      | 2    |      |        | buff_C_54    | auto | 1       | 32, 64, 1        |
+|   buff_C_55_U                          | ram_1p array  |      | 2    |      |        | buff_C_55    | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U1380  | ram_1p array  |      | 2    |      |        | buff_C_56    | auto | 1       | 32, 64, 1        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U1379 | ram_1p array  |      | 2    |      |        | buff_C_57    | auto | 1       | 32, 64, 1        |
+|   buff_C_58_U                          | ram_1p array  |      | 2    |      |        | buff_C_58    | auto | 1       | 32, 64, 1        |
+|   buff_C_59_U                          | ram_1p array  |      | 2    |      |        | buff_C_59    | auto | 1       | 32, 64, 1        |
+|   buff_C_60_U                          | ram_1p array  |      | 2    |      |        | buff_C_60    | auto | 1       | 32, 64, 1        |
+|   buff_C_61_U                          | ram_1p array  |      | 2    |      |        | buff_C_61    | auto | 1       | 32, 64, 1        |
+|   buff_C_62_U                          | ram_1p array  |      | 2    |      |        | buff_C_62    | auto | 1       | 32, 64, 1        |
+|   buff_C_63_U                          | ram_1p array  |      | 2    |      |        | buff_C_63    | auto | 1       | 32, 64, 1        |
+|   buff_D_U                             | ram_1p array  |      | 2    |      |        | buff_D       | auto | 1       | 32, 64, 1        |
+|   buff_D_1_U                           | ram_1p array  |      | 2    |      |        | buff_D_1     | auto | 1       | 32, 64, 1        |
+|   buff_D_2_U                           | ram_1p array  |      | 2    |      |        | buff_D_2     | auto | 1       | 32, 64, 1        |
+|   buff_D_3_U                           | ram_1p array  |      | 2    |      |        | buff_D_3     | auto | 1       | 32, 64, 1        |
+|   buff_D_4_U                           | ram_1p array  |      | 2    |      |        | buff_D_4     | auto | 1       | 32, 64, 1        |
+|   buff_D_5_U                           | ram_1p array  |      | 2    |      |        | buff_D_5     | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U1380  | ram_1p array  |      | 2    |      |        | buff_D_6     | auto | 1       | 32, 64, 1        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U1379 | ram_1p array  |      | 2    |      |        | buff_D_7     | auto | 1       | 32, 64, 1        |
+|   buff_D_8_U                           | ram_1p array  |      | 2    |      |        | buff_D_8     | auto | 1       | 32, 64, 1        |
+|   buff_D_9_U                           | ram_1p array  |      | 2    |      |        | buff_D_9     | auto | 1       | 32, 64, 1        |
+|   fmul_32ns_32ns_32_3_max_dsp_1_U1380  | ram_1p array  |      | 2    |      |        | buff_D_10    | auto | 1       | 32, 64, 1        |
+|   fadd_32ns_32ns_32_4_full_dsp_1_U1379 | ram_1p array  |      | 2    |      |        | buff_D_11    | auto | 1       | 32, 64, 1        |
+|   buff_D_12_U                          | ram_1p array  |      | 2    |      |        | buff_D_12    | auto | 1       | 32, 64, 1        |
+|   buff_D_13_U                          | ram_1p array  |      | 2    |      |        | buff_D_13    | auto | 1       | 32, 64, 1        |
+|   buff_D_14_U                          | ram_1p array  |      | 2    |      |        | buff_D_14    | auto | 1       | 32, 64, 1        |
+|   buff_D_15_U                          | ram_1p array  |      | 2    |      |        | buff_D_15    | auto | 1       | 32, 64, 1        |
+|   buff_D_16_U                          | ram_1p array  |      | 2    |      |        | buff_D_16    | auto | 1       | 32, 64, 1        |
+|   buff_D_17_U                          | ram_1p array  |      | 2    |      |        | buff_D_17    | auto | 1       | 32, 64, 1        |
+|   buff_D_18_U                          | ram_1p array  |      | 2    |      |        | buff_D_18    | auto | 1       | 32, 64, 1        |
+|   buff_D_19_U                          | ram_1p array  |      | 2    |      |        | buff_D_19    | auto | 1       | 32, 64, 1        |
+|   buff_D_20_U                          | ram_1p array  |      | 2    |      |        | buff_D_20    | auto | 1       | 32, 64, 1        |
+|   buff_D_21_U                          | ram_1p array  |      | 2    |      |        | buff_D_21    | auto | 1       | 32, 64, 1        |
+|   buff_D_22_U                          | ram_1p array  |      | 2    |      |        | buff_D_22    | auto | 1       | 32, 64, 1        |
+|   buff_D_23_U                          | ram_1p array  |      | 2    |      |        | buff_D_23    | auto | 1       | 32, 64, 1        |
+|   buff_D_24_U                          | ram_1p array  |      | 2    |      |        | buff_D_24    | auto | 1       | 32, 64, 1        |
+|   buff_D_25_U                          | ram_1p array  |      | 2    |      |        | buff_D_25    | auto | 1       | 32, 64, 1        |
+|   buff_D_26_U                          | ram_1p array  |      | 2    |      |        | buff_D_26    | auto | 1       | 32, 64, 1        |
+|   buff_D_27_U                          | ram_1p array  |      | 2    |      |        | buff_D_27    | auto | 1       | 32, 64, 1        |
+|   buff_D_28_U                          | ram_1p array  |      | 2    |      |        | buff_D_28    | auto | 1       | 32, 64, 1        |
+|   buff_D_29_U                          | ram_1p array  |      | 2    |      |        | buff_D_29    | auto | 1       | 32, 64, 1        |
+|   buff_D_30_U                          | ram_1p array  |      | 2    |      |        | buff_D_30    | auto | 1       | 32, 64, 1        |
+|   buff_D_31_U                          | ram_1p array  |      | 2    |      |        | buff_D_31    | auto | 1       | 32, 64, 1        |
+|   buff_D_32_U                          | ram_1p array  |      | 2    |      |        | buff_D_32    | auto | 1       | 32, 64, 1        |
+|   buff_D_33_U                          | ram_1p array  |      | 2    |      |        | buff_D_33    | auto | 1       | 32, 64, 1        |
+|   buff_D_34_U                          | ram_1p array  |      | 2    |      |        | buff_D_34    | auto | 1       | 32, 64, 1        |
+|   buff_D_35_U                          | ram_1p array  |      | 2    |      |        | buff_D_35    | auto | 1       | 32, 64, 1        |
+|   buff_D_36_U                          | ram_1p array  |      | 2    |      |        | buff_D_36    | auto | 1       | 32, 64, 1        |
+|   buff_D_37_U                          | ram_1p array  |      | 2    |      |        | buff_D_37    | auto | 1       | 32, 64, 1        |
+|   buff_D_38_U                          | ram_1p array  |      | 2    |      |        | buff_D_38    | auto | 1       | 32, 64, 1        |
+|   buff_D_39_U                          | ram_1p array  |      | 2    |      |        | buff_D_39    | auto | 1       | 32, 64, 1        |
+|   buff_D_40_U                          | ram_1p array  |      | 2    |      |        | buff_D_40    | auto | 1       | 32, 64, 1        |
+|   buff_D_41_U                          | ram_1p array  |      | 2    |      |        | buff_D_41    | auto | 1       | 32, 64, 1        |
+|   buff_D_42_U                          | ram_1p array  |      | 2    |      |        | buff_D_42    | auto | 1       | 32, 64, 1        |
+|   buff_D_43_U                          | ram_1p array  |      | 2    |      |        | buff_D_43    | auto | 1       | 32, 64, 1        |
+|   buff_D_44_U                          | ram_1p array  |      | 2    |      |        | buff_D_44    | auto | 1       | 32, 64, 1        |
+|   buff_D_45_U                          | ram_1p array  |      | 2    |      |        | buff_D_45    | auto | 1       | 32, 64, 1        |
+|   buff_D_46_U                          | ram_1p array  |      | 2    |      |        | buff_D_46    | auto | 1       | 32, 64, 1        |
+|   buff_D_47_U                          | ram_1p array  |      | 2    |      |        | buff_D_47    | auto | 1       | 32, 64, 1        |
+|   buff_D_48_U                          | ram_1p array  |      | 2    |      |        | buff_D_48    | auto | 1       | 32, 64, 1        |
+|   buff_D_49_U                          | ram_1p array  |      | 2    |      |        | buff_D_49    | auto | 1       | 32, 64, 1        |
+|   buff_D_50_U                          | ram_1p array  |      | 2    |      |        | buff_D_50    | auto | 1       | 32, 64, 1        |
+|   buff_D_51_U                          | ram_1p array  |      | 2    |      |        | buff_D_51    | auto | 1       | 32, 64, 1        |
+|   buff_D_52_U                          | ram_1p array  |      | 2    |      |        | buff_D_52    | auto | 1       | 32, 64, 1        |
+|   buff_D_53_U                          | ram_1p array  |      | 2    |      |        | buff_D_53    | auto | 1       | 32, 64, 1        |
+|   buff_D_54_U                          | ram_1p array  |      | 2    |      |        | buff_D_54    | auto | 1       | 32, 64, 1        |
+|   buff_D_55_U                          | ram_1p array  |      | 2    |      |        | buff_D_55    | auto | 1       | 32, 64, 1        |
+|   buff_D_56_U                          | ram_1p array  |      | 2    |      |        | buff_D_56    | auto | 1       | 32, 64, 1        |
+|   buff_D_57_U                          | ram_1p array  |      | 2    |      |        | buff_D_57    | auto | 1       | 32, 64, 1        |
+|   buff_D_58_U                          | ram_1p array  |      | 2    |      |        | buff_D_58    | auto | 1       | 32, 64, 1        |
+|   buff_D_59_U                          | ram_1p array  |      | 2    |      |        | buff_D_59    | auto | 1       | 32, 64, 1        |
+|   buff_D_60_U                          | ram_1p array  |      | 2    |      |        | buff_D_60    | auto | 1       | 32, 64, 1        |
+|   buff_D_61_U                          | ram_1p array  |      | 2    |      |        | buff_D_61    | auto | 1       | 32, 64, 1        |
+|   buff_D_62_U                          | ram_1p array  |      | 2    |      |        | buff_D_62    | auto | 1       | 32, 64, 1        |
+|   buff_D_63_U                          | ram_1p array  |      | 2    |      |        | buff_D_63    | auto | 1       | 32, 64, 1        |
+|   buff_E_out_U                         | ram_s2p array |      | 2    |      |        | buff_E_out   | auto | 1       | 32, 1024, 1      |
+|   buff_E_out_1_U                       | ram_s2p array |      | 2    |      |        | buff_E_out_1 | auto | 1       | 32, 1024, 1      |
+|   buff_E_out_2_U                       | ram_s2p array |      | 2    |      |        | buff_E_out_2 | auto | 1       | 32, 1024, 1      |
+|   buff_E_out_3_U                       | ram_s2p array |      | 2    |      |        | buff_E_out_3 | auto | 1       | 32, 1024, 1      |
+|   tmp1_U                               | rom_np array  |      | 8    |      |        | tmp1         | auto | 1       | 32, 4096, 1      |
+|   tmp2_U                               | ram_s2p array |      |      |      |        | tmp2         | auto | 1       | 32, 16, 1        |
+|   tmp2_1_U                             | ram_s2p array |      |      |      |        | tmp2_1       | auto | 1       | 32, 16, 1        |
+|   tmp2_2_U                             | ram_s2p array |      |      |      |        | tmp2_2       | auto | 1       | 32, 16, 1        |
+|   tmp2_3_U                             | ram_s2p array |      |      |      |        | tmp2_3       | auto | 1       | 32, 16, 1        |
+|   tmp2_4_U                             | ram_s2p array |      |      |      |        | tmp2_4       | auto | 1       | 32, 16, 1        |
+|   tmp2_5_U                             | ram_s2p array |      |      |      |        | tmp2_5       | auto | 1       | 32, 16, 1        |
+|   tmp2_6_U                             | ram_s2p array |      |      |      |        | tmp2_6       | auto | 1       | 32, 16, 1        |
+|   tmp2_7_U                             | ram_s2p array |      |      |      |        | tmp2_7       | auto | 1       | 32, 16, 1        |
+|   tmp2_8_U                             | ram_s2p array |      |      |      |        | tmp2_8       | auto | 1       | 32, 16, 1        |
+|   tmp2_9_U                             | ram_s2p array |      |      |      |        | tmp2_9       | auto | 1       | 32, 16, 1        |
+|   tmp2_10_U                            | ram_s2p array |      |      |      |        | tmp2_10      | auto | 1       | 32, 16, 1        |
+|   tmp2_11_U                            | ram_s2p array |      |      |      |        | tmp2_11      | auto | 1       | 32, 16, 1        |
+|   tmp2_12_U                            | ram_s2p array |      |      |      |        | tmp2_12      | auto | 1       | 32, 16, 1        |
+|   tmp2_13_U                            | ram_s2p array |      |      |      |        | tmp2_13      | auto | 1       | 32, 16, 1        |
+|   tmp2_14_U                            | ram_s2p array |      |      |      |        | tmp2_14      | auto | 1       | 32, 16, 1        |
+|   tmp2_15_U                            | ram_s2p array |      |      |      |        | tmp2_15      | auto | 1       | 32, 16, 1        |
+|   tmp2_16_U                            | ram_s2p array |      |      |      |        | tmp2_16      | auto | 1       | 32, 16, 1        |
+|   tmp2_17_U                            | ram_s2p array |      |      |      |        | tmp2_17      | auto | 1       | 32, 16, 1        |
+|   tmp2_18_U                            | ram_s2p array |      |      |      |        | tmp2_18      | auto | 1       | 32, 16, 1        |
+|   tmp2_19_U                            | ram_s2p array |      |      |      |        | tmp2_19      | auto | 1       | 32, 16, 1        |
+|   tmp2_20_U                            | ram_s2p array |      |      |      |        | tmp2_20      | auto | 1       | 32, 16, 1        |
+|   tmp2_21_U                            | ram_s2p array |      |      |      |        | tmp2_21      | auto | 1       | 32, 16, 1        |
+|   tmp2_22_U                            | ram_s2p array |      |      |      |        | tmp2_22      | auto | 1       | 32, 16, 1        |
+|   tmp2_23_U                            | ram_s2p array |      |      |      |        | tmp2_23      | auto | 1       | 32, 16, 1        |
+|   tmp2_24_U                            | ram_s2p array |      |      |      |        | tmp2_24      | auto | 1       | 32, 16, 1        |
+|   tmp2_25_U                            | ram_s2p array |      |      |      |        | tmp2_25      | auto | 1       | 32, 16, 1        |
+|   tmp2_26_U                            | ram_s2p array |      |      |      |        | tmp2_26      | auto | 1       | 32, 16, 1        |
+|   tmp2_27_U                            | ram_s2p array |      |      |      |        | tmp2_27      | auto | 1       | 32, 16, 1        |
+|   tmp2_28_U                            | ram_s2p array |      |      |      |        | tmp2_28      | auto | 1       | 32, 16, 1        |
+|   tmp2_29_U                            | ram_s2p array |      |      |      |        | tmp2_29      | auto | 1       | 32, 16, 1        |
+|   tmp2_30_U                            | ram_s2p array |      |      |      |        | tmp2_30      | auto | 1       | 32, 16, 1        |
+|   tmp2_31_U                            | ram_s2p array |      |      |      |        | tmp2_31      | auto | 1       | 32, 16, 1        |
+|   tmp2_32_U                            | ram_s2p array |      |      |      |        | tmp2_32      | auto | 1       | 32, 16, 1        |
+|   tmp2_33_U                            | ram_s2p array |      |      |      |        | tmp2_33      | auto | 1       | 32, 16, 1        |
+|   tmp2_34_U                            | ram_s2p array |      |      |      |        | tmp2_34      | auto | 1       | 32, 16, 1        |
+|   tmp2_35_U                            | ram_s2p array |      |      |      |        | tmp2_35      | auto | 1       | 32, 16, 1        |
+|   tmp2_36_U                            | ram_s2p array |      |      |      |        | tmp2_36      | auto | 1       | 32, 16, 1        |
+|   tmp2_37_U                            | ram_s2p array |      |      |      |        | tmp2_37      | auto | 1       | 32, 16, 1        |
+|   tmp2_38_U                            | ram_s2p array |      |      |      |        | tmp2_38      | auto | 1       | 32, 16, 1        |
+|   tmp2_39_U                            | ram_s2p array |      |      |      |        | tmp2_39      | auto | 1       | 32, 16, 1        |
+|   tmp2_40_U                            | ram_s2p array |      |      |      |        | tmp2_40      | auto | 1       | 32, 16, 1        |
+|   tmp2_41_U                            | ram_s2p array |      |      |      |        | tmp2_41      | auto | 1       | 32, 16, 1        |
+|   tmp2_42_U                            | ram_s2p array |      |      |      |        | tmp2_42      | auto | 1       | 32, 16, 1        |
+|   tmp2_43_U                            | ram_s2p array |      |      |      |        | tmp2_43      | auto | 1       | 32, 16, 1        |
+|   tmp2_44_U                            | ram_s2p array |      |      |      |        | tmp2_44      | auto | 1       | 32, 16, 1        |
+|   tmp2_45_U                            | ram_s2p array |      |      |      |        | tmp2_45      | auto | 1       | 32, 16, 1        |
+|   tmp2_46_U                            | ram_s2p array |      |      |      |        | tmp2_46      | auto | 1       | 32, 16, 1        |
+|   tmp2_47_U                            | ram_s2p array |      |      |      |        | tmp2_47      | auto | 1       | 32, 16, 1        |
+|   tmp2_48_U                            | ram_s2p array |      |      |      |        | tmp2_48      | auto | 1       | 32, 16, 1        |
+|   tmp2_49_U                            | ram_s2p array |      |      |      |        | tmp2_49      | auto | 1       | 32, 16, 1        |
+|   tmp2_50_U                            | ram_s2p array |      |      |      |        | tmp2_50      | auto | 1       | 32, 16, 1        |
+|   tmp2_51_U                            | ram_s2p array |      |      |      |        | tmp2_51      | auto | 1       | 32, 16, 1        |
+|   tmp2_52_U                            | ram_s2p array |      |      |      |        | tmp2_52      | auto | 1       | 32, 16, 1        |
+|   tmp2_53_U                            | ram_s2p array |      |      |      |        | tmp2_53      | auto | 1       | 32, 16, 1        |
+|   tmp2_54_U                            | ram_s2p array |      |      |      |        | tmp2_54      | auto | 1       | 32, 16, 1        |
+|   tmp2_55_U                            | ram_s2p array |      |      |      |        | tmp2_55      | auto | 1       | 32, 16, 1        |
+|   tmp2_56_U                            | ram_s2p array |      |      |      |        | tmp2_56      | auto | 1       | 32, 16, 1        |
+|   tmp2_57_U                            | ram_s2p array |      |      |      |        | tmp2_57      | auto | 1       | 32, 16, 1        |
+|   tmp2_58_U                            | ram_s2p array |      |      |      |        | tmp2_58      | auto | 1       | 32, 16, 1        |
+|   tmp2_59_U                            | ram_s2p array |      |      |      |        | tmp2_59      | auto | 1       | 32, 16, 1        |
+|   tmp2_60_U                            | ram_s2p array |      |      |      |        | tmp2_60      | auto | 1       | 32, 16, 1        |
+|   tmp2_61_U                            | ram_s2p array |      |      |      |        | tmp2_61      | auto | 1       | 32, 16, 1        |
+|   tmp2_62_U                            | ram_s2p array |      |      |      |        | tmp2_62      | auto | 1       | 32, 16, 1        |
+|   tmp2_63_U                            | ram_s2p array |      |      |      |        | tmp2_63      | auto | 1       | 32, 16, 1        |
+|   tmp2_64_U                            | ram_s2p array |      |      |      |        | tmp2_64      | auto | 1       | 32, 16, 1        |
+|   tmp2_65_U                            | ram_s2p array |      |      |      |        | tmp2_65      | auto | 1       | 32, 16, 1        |
+|   tmp2_66_U                            | ram_s2p array |      |      |      |        | tmp2_66      | auto | 1       | 32, 16, 1        |
+|   tmp2_67_U                            | ram_s2p array |      |      |      |        | tmp2_67      | auto | 1       | 32, 16, 1        |
+|   tmp2_68_U                            | ram_s2p array |      |      |      |        | tmp2_68      | auto | 1       | 32, 16, 1        |
+|   tmp2_69_U                            | ram_s2p array |      |      |      |        | tmp2_69      | auto | 1       | 32, 16, 1        |
+|   tmp2_70_U                            | ram_s2p array |      |      |      |        | tmp2_70      | auto | 1       | 32, 16, 1        |
+|   tmp2_71_U                            | ram_s2p array |      |      |      |        | tmp2_71      | auto | 1       | 32, 16, 1        |
+|   tmp2_72_U                            | ram_s2p array |      |      |      |        | tmp2_72      | auto | 1       | 32, 16, 1        |
+|   tmp2_73_U                            | ram_s2p array |      |      |      |        | tmp2_73      | auto | 1       | 32, 16, 1        |
+|   tmp2_74_U                            | ram_s2p array |      |      |      |        | tmp2_74      | auto | 1       | 32, 16, 1        |
+|   tmp2_75_U                            | ram_s2p array |      |      |      |        | tmp2_75      | auto | 1       | 32, 16, 1        |
+|   tmp2_76_U                            | ram_s2p array |      |      |      |        | tmp2_76      | auto | 1       | 32, 16, 1        |
+|   tmp2_77_U                            | ram_s2p array |      |      |      |        | tmp2_77      | auto | 1       | 32, 16, 1        |
+|   tmp2_78_U                            | ram_s2p array |      |      |      |        | tmp2_78      | auto | 1       | 32, 16, 1        |
+|   tmp2_79_U                            | ram_s2p array |      |      |      |        | tmp2_79      | auto | 1       | 32, 16, 1        |
+|   tmp2_80_U                            | ram_s2p array |      |      |      |        | tmp2_80      | auto | 1       | 32, 16, 1        |
+|   tmp2_81_U                            | ram_s2p array |      |      |      |        | tmp2_81      | auto | 1       | 32, 16, 1        |
+|   tmp2_82_U                            | ram_s2p array |      |      |      |        | tmp2_82      | auto | 1       | 32, 16, 1        |
+|   tmp2_83_U                            | ram_s2p array |      |      |      |        | tmp2_83      | auto | 1       | 32, 16, 1        |
+|   tmp2_84_U                            | ram_s2p array |      |      |      |        | tmp2_84      | auto | 1       | 32, 16, 1        |
+|   tmp2_85_U                            | ram_s2p array |      |      |      |        | tmp2_85      | auto | 1       | 32, 16, 1        |
+|   tmp2_86_U                            | ram_s2p array |      |      |      |        | tmp2_86      | auto | 1       | 32, 16, 1        |
+|   tmp2_87_U                            | ram_s2p array |      |      |      |        | tmp2_87      | auto | 1       | 32, 16, 1        |
+|   tmp2_88_U                            | ram_s2p array |      |      |      |        | tmp2_88      | auto | 1       | 32, 16, 1        |
+|   tmp2_89_U                            | ram_s2p array |      |      |      |        | tmp2_89      | auto | 1       | 32, 16, 1        |
+|   tmp2_90_U                            | ram_s2p array |      |      |      |        | tmp2_90      | auto | 1       | 32, 16, 1        |
+|   tmp2_91_U                            | ram_s2p array |      |      |      |        | tmp2_91      | auto | 1       | 32, 16, 1        |
+|   tmp2_92_U                            | ram_s2p array |      |      |      |        | tmp2_92      | auto | 1       | 32, 16, 1        |
+|   tmp2_93_U                            | ram_s2p array |      |      |      |        | tmp2_93      | auto | 1       | 32, 16, 1        |
+|   tmp2_94_U                            | ram_s2p array |      |      |      |        | tmp2_94      | auto | 1       | 32, 16, 1        |
+|   tmp2_95_U                            | ram_s2p array |      |      |      |        | tmp2_95      | auto | 1       | 32, 16, 1        |
+|   tmp2_96_U                            | ram_s2p array |      |      |      |        | tmp2_96      | auto | 1       | 32, 16, 1        |
+|   tmp2_97_U                            | ram_s2p array |      |      |      |        | tmp2_97      | auto | 1       | 32, 16, 1        |
+|   tmp2_98_U                            | ram_s2p array |      |      |      |        | tmp2_98      | auto | 1       | 32, 16, 1        |
+|   tmp2_99_U                            | ram_s2p array |      |      |      |        | tmp2_99      | auto | 1       | 32, 16, 1        |
+|   tmp2_100_U                           | ram_s2p array |      |      |      |        | tmp2_100     | auto | 1       | 32, 16, 1        |
+|   tmp2_101_U                           | ram_s2p array |      |      |      |        | tmp2_101     | auto | 1       | 32, 16, 1        |
+|   tmp2_102_U                           | ram_s2p array |      |      |      |        | tmp2_102     | auto | 1       | 32, 16, 1        |
+|   tmp2_103_U                           | ram_s2p array |      |      |      |        | tmp2_103     | auto | 1       | 32, 16, 1        |
+|   tmp2_104_U                           | ram_s2p array |      |      |      |        | tmp2_104     | auto | 1       | 32, 16, 1        |
+|   tmp2_105_U                           | ram_s2p array |      |      |      |        | tmp2_105     | auto | 1       | 32, 16, 1        |
+|   tmp2_106_U                           | ram_s2p array |      |      |      |        | tmp2_106     | auto | 1       | 32, 16, 1        |
+|   tmp2_107_U                           | ram_s2p array |      |      |      |        | tmp2_107     | auto | 1       | 32, 16, 1        |
+|   tmp2_108_U                           | ram_s2p array |      |      |      |        | tmp2_108     | auto | 1       | 32, 16, 1        |
+|   tmp2_109_U                           | ram_s2p array |      |      |      |        | tmp2_109     | auto | 1       | 32, 16, 1        |
+|   tmp2_110_U                           | ram_s2p array |      |      |      |        | tmp2_110     | auto | 1       | 32, 16, 1        |
+|   tmp2_111_U                           | ram_s2p array |      |      |      |        | tmp2_111     | auto | 1       | 32, 16, 1        |
+|   tmp2_112_U                           | ram_s2p array |      |      |      |        | tmp2_112     | auto | 1       | 32, 16, 1        |
+|   tmp2_113_U                           | ram_s2p array |      |      |      |        | tmp2_113     | auto | 1       | 32, 16, 1        |
+|   tmp2_114_U                           | ram_s2p array |      |      |      |        | tmp2_114     | auto | 1       | 32, 16, 1        |
+|   tmp2_115_U                           | ram_s2p array |      |      |      |        | tmp2_115     | auto | 1       | 32, 16, 1        |
+|   tmp2_116_U                           | ram_s2p array |      |      |      |        | tmp2_116     | auto | 1       | 32, 16, 1        |
+|   tmp2_117_U                           | ram_s2p array |      |      |      |        | tmp2_117     | auto | 1       | 32, 16, 1        |
+|   tmp2_118_U                           | ram_s2p array |      |      |      |        | tmp2_118     | auto | 1       | 32, 16, 1        |
+|   tmp2_119_U                           | ram_s2p array |      |      |      |        | tmp2_119     | auto | 1       | 32, 16, 1        |
+|   tmp2_120_U                           | ram_s2p array |      |      |      |        | tmp2_120     | auto | 1       | 32, 16, 1        |
+|   tmp2_121_U                           | ram_s2p array |      |      |      |        | tmp2_121     | auto | 1       | 32, 16, 1        |
+|   tmp2_122_U                           | ram_s2p array |      |      |      |        | tmp2_122     | auto | 1       | 32, 16, 1        |
+|   tmp2_123_U                           | ram_s2p array |      |      |      |        | tmp2_123     | auto | 1       | 32, 16, 1        |
+|   tmp2_124_U                           | ram_s2p array |      |      |      |        | tmp2_124     | auto | 1       | 32, 16, 1        |
+|   tmp2_125_U                           | ram_s2p array |      |      |      |        | tmp2_125     | auto | 1       | 32, 16, 1        |
+|   tmp2_126_U                           | ram_s2p array |      |      |      |        | tmp2_126     | auto | 1       | 32, 16, 1        |
+|   tmp2_127_U                           | ram_s2p array |      |      |      |        | tmp2_127     | auto | 1       | 32, 16, 1        |
+|   tmp2_128_U                           | ram_s2p array |      |      |      |        | tmp2_128     | auto | 1       | 32, 16, 1        |
+|   tmp2_129_U                           | ram_s2p array |      |      |      |        | tmp2_129     | auto | 1       | 32, 16, 1        |
+|   tmp2_130_U                           | ram_s2p array |      |      |      |        | tmp2_130     | auto | 1       | 32, 16, 1        |
+|   tmp2_131_U                           | ram_s2p array |      |      |      |        | tmp2_131     | auto | 1       | 32, 16, 1        |
+|   tmp2_132_U                           | ram_s2p array |      |      |      |        | tmp2_132     | auto | 1       | 32, 16, 1        |
+|   tmp2_133_U                           | ram_s2p array |      |      |      |        | tmp2_133     | auto | 1       | 32, 16, 1        |
+|   tmp2_134_U                           | ram_s2p array |      |      |      |        | tmp2_134     | auto | 1       | 32, 16, 1        |
+|   tmp2_135_U                           | ram_s2p array |      |      |      |        | tmp2_135     | auto | 1       | 32, 16, 1        |
+|   tmp2_136_U                           | ram_s2p array |      |      |      |        | tmp2_136     | auto | 1       | 32, 16, 1        |
+|   tmp2_137_U                           | ram_s2p array |      |      |      |        | tmp2_137     | auto | 1       | 32, 16, 1        |
+|   tmp2_138_U                           | ram_s2p array |      |      |      |        | tmp2_138     | auto | 1       | 32, 16, 1        |
+|   tmp2_139_U                           | ram_s2p array |      |      |      |        | tmp2_139     | auto | 1       | 32, 16, 1        |
+|   tmp2_140_U                           | ram_s2p array |      |      |      |        | tmp2_140     | auto | 1       | 32, 16, 1        |
+|   tmp2_141_U                           | ram_s2p array |      |      |      |        | tmp2_141     | auto | 1       | 32, 16, 1        |
+|   tmp2_142_U                           | ram_s2p array |      |      |      |        | tmp2_142     | auto | 1       | 32, 16, 1        |
+|   tmp2_143_U                           | ram_s2p array |      |      |      |        | tmp2_143     | auto | 1       | 32, 16, 1        |
+|   tmp2_144_U                           | ram_s2p array |      |      |      |        | tmp2_144     | auto | 1       | 32, 16, 1        |
+|   tmp2_145_U                           | ram_s2p array |      |      |      |        | tmp2_145     | auto | 1       | 32, 16, 1        |
+|   tmp2_146_U                           | ram_s2p array |      |      |      |        | tmp2_146     | auto | 1       | 32, 16, 1        |
+|   tmp2_147_U                           | ram_s2p array |      |      |      |        | tmp2_147     | auto | 1       | 32, 16, 1        |
+|   tmp2_148_U                           | ram_s2p array |      |      |      |        | tmp2_148     | auto | 1       | 32, 16, 1        |
+|   tmp2_149_U                           | ram_s2p array |      |      |      |        | tmp2_149     | auto | 1       | 32, 16, 1        |
+|   tmp2_150_U                           | ram_s2p array |      |      |      |        | tmp2_150     | auto | 1       | 32, 16, 1        |
+|   tmp2_151_U                           | ram_s2p array |      |      |      |        | tmp2_151     | auto | 1       | 32, 16, 1        |
+|   tmp2_152_U                           | ram_s2p array |      |      |      |        | tmp2_152     | auto | 1       | 32, 16, 1        |
+|   tmp2_153_U                           | ram_s2p array |      |      |      |        | tmp2_153     | auto | 1       | 32, 16, 1        |
+|   tmp2_154_U                           | ram_s2p array |      |      |      |        | tmp2_154     | auto | 1       | 32, 16, 1        |
+|   tmp2_155_U                           | ram_s2p array |      |      |      |        | tmp2_155     | auto | 1       | 32, 16, 1        |
+|   tmp2_156_U                           | ram_s2p array |      |      |      |        | tmp2_156     | auto | 1       | 32, 16, 1        |
+|   tmp2_157_U                           | ram_s2p array |      |      |      |        | tmp2_157     | auto | 1       | 32, 16, 1        |
+|   tmp2_158_U                           | ram_s2p array |      |      |      |        | tmp2_158     | auto | 1       | 32, 16, 1        |
+|   tmp2_159_U                           | ram_s2p array |      |      |      |        | tmp2_159     | auto | 1       | 32, 16, 1        |
+|   tmp2_160_U                           | ram_s2p array |      |      |      |        | tmp2_160     | auto | 1       | 32, 16, 1        |
+|   tmp2_161_U                           | ram_s2p array |      |      |      |        | tmp2_161     | auto | 1       | 32, 16, 1        |
+|   tmp2_162_U                           | ram_s2p array |      |      |      |        | tmp2_162     | auto | 1       | 32, 16, 1        |
+|   tmp2_163_U                           | ram_s2p array |      |      |      |        | tmp2_163     | auto | 1       | 32, 16, 1        |
+|   tmp2_164_U                           | ram_s2p array |      |      |      |        | tmp2_164     | auto | 1       | 32, 16, 1        |
+|   tmp2_165_U                           | ram_s2p array |      |      |      |        | tmp2_165     | auto | 1       | 32, 16, 1        |
+|   tmp2_166_U                           | ram_s2p array |      |      |      |        | tmp2_166     | auto | 1       | 32, 16, 1        |
+|   tmp2_167_U                           | ram_s2p array |      |      |      |        | tmp2_167     | auto | 1       | 32, 16, 1        |
+|   tmp2_168_U                           | ram_s2p array |      |      |      |        | tmp2_168     | auto | 1       | 32, 16, 1        |
+|   tmp2_169_U                           | ram_s2p array |      |      |      |        | tmp2_169     | auto | 1       | 32, 16, 1        |
+|   tmp2_170_U                           | ram_s2p array |      |      |      |        | tmp2_170     | auto | 1       | 32, 16, 1        |
+|   tmp2_171_U                           | ram_s2p array |      |      |      |        | tmp2_171     | auto | 1       | 32, 16, 1        |
+|   tmp2_172_U                           | ram_s2p array |      |      |      |        | tmp2_172     | auto | 1       | 32, 16, 1        |
+|   tmp2_173_U                           | ram_s2p array |      |      |      |        | tmp2_173     | auto | 1       | 32, 16, 1        |
+|   tmp2_174_U                           | ram_s2p array |      |      |      |        | tmp2_174     | auto | 1       | 32, 16, 1        |
+|   tmp2_175_U                           | ram_s2p array |      |      |      |        | tmp2_175     | auto | 1       | 32, 16, 1        |
+|   tmp2_176_U                           | ram_s2p array |      |      |      |        | tmp2_176     | auto | 1       | 32, 16, 1        |
+|   tmp2_177_U                           | ram_s2p array |      |      |      |        | tmp2_177     | auto | 1       | 32, 16, 1        |
+|   tmp2_178_U                           | ram_s2p array |      |      |      |        | tmp2_178     | auto | 1       | 32, 16, 1        |
+|   tmp2_179_U                           | ram_s2p array |      |      |      |        | tmp2_179     | auto | 1       | 32, 16, 1        |
+|   tmp2_180_U                           | ram_s2p array |      |      |      |        | tmp2_180     | auto | 1       | 32, 16, 1        |
+|   tmp2_181_U                           | ram_s2p array |      |      |      |        | tmp2_181     | auto | 1       | 32, 16, 1        |
+|   tmp2_182_U                           | ram_s2p array |      |      |      |        | tmp2_182     | auto | 1       | 32, 16, 1        |
+|   tmp2_183_U                           | ram_s2p array |      |      |      |        | tmp2_183     | auto | 1       | 32, 16, 1        |
+|   tmp2_184_U                           | ram_s2p array |      |      |      |        | tmp2_184     | auto | 1       | 32, 16, 1        |
+|   tmp2_185_U                           | ram_s2p array |      |      |      |        | tmp2_185     | auto | 1       | 32, 16, 1        |
+|   tmp2_186_U                           | ram_s2p array |      |      |      |        | tmp2_186     | auto | 1       | 32, 16, 1        |
+|   tmp2_187_U                           | ram_s2p array |      |      |      |        | tmp2_187     | auto | 1       | 32, 16, 1        |
+|   tmp2_188_U                           | ram_s2p array |      |      |      |        | tmp2_188     | auto | 1       | 32, 16, 1        |
+|   tmp2_189_U                           | ram_s2p array |      |      |      |        | tmp2_189     | auto | 1       | 32, 16, 1        |
+|   tmp2_190_U                           | ram_s2p array |      |      |      |        | tmp2_190     | auto | 1       | 32, 16, 1        |
+|   tmp2_191_U                           | ram_s2p array |      |      |      |        | tmp2_191     | auto | 1       | 32, 16, 1        |
+|   tmp2_192_U                           | ram_s2p array |      |      |      |        | tmp2_192     | auto | 1       | 32, 16, 1        |
+|   tmp2_193_U                           | ram_s2p array |      |      |      |        | tmp2_193     | auto | 1       | 32, 16, 1        |
+|   tmp2_194_U                           | ram_s2p array |      |      |      |        | tmp2_194     | auto | 1       | 32, 16, 1        |
+|   tmp2_195_U                           | ram_s2p array |      |      |      |        | tmp2_195     | auto | 1       | 32, 16, 1        |
+|   tmp2_196_U                           | ram_s2p array |      |      |      |        | tmp2_196     | auto | 1       | 32, 16, 1        |
+|   tmp2_197_U                           | ram_s2p array |      |      |      |        | tmp2_197     | auto | 1       | 32, 16, 1        |
+|   tmp2_198_U                           | ram_s2p array |      |      |      |        | tmp2_198     | auto | 1       | 32, 16, 1        |
+|   tmp2_199_U                           | ram_s2p array |      |      |      |        | tmp2_199     | auto | 1       | 32, 16, 1        |
+|   tmp2_200_U                           | ram_s2p array |      |      |      |        | tmp2_200     | auto | 1       | 32, 16, 1        |
+|   tmp2_201_U                           | ram_s2p array |      |      |      |        | tmp2_201     | auto | 1       | 32, 16, 1        |
+|   tmp2_202_U                           | ram_s2p array |      |      |      |        | tmp2_202     | auto | 1       | 32, 16, 1        |
+|   tmp2_203_U                           | ram_s2p array |      |      |      |        | tmp2_203     | auto | 1       | 32, 16, 1        |
+|   tmp2_204_U                           | ram_s2p array |      |      |      |        | tmp2_204     | auto | 1       | 32, 16, 1        |
+|   tmp2_205_U                           | ram_s2p array |      |      |      |        | tmp2_205     | auto | 1       | 32, 16, 1        |
+|   tmp2_206_U                           | ram_s2p array |      |      |      |        | tmp2_206     | auto | 1       | 32, 16, 1        |
+|   tmp2_207_U                           | ram_s2p array |      |      |      |        | tmp2_207     | auto | 1       | 32, 16, 1        |
+|   tmp2_208_U                           | ram_s2p array |      |      |      |        | tmp2_208     | auto | 1       | 32, 16, 1        |
+|   tmp2_209_U                           | ram_s2p array |      |      |      |        | tmp2_209     | auto | 1       | 32, 16, 1        |
+|   tmp2_210_U                           | ram_s2p array |      |      |      |        | tmp2_210     | auto | 1       | 32, 16, 1        |
+|   tmp2_211_U                           | ram_s2p array |      |      |      |        | tmp2_211     | auto | 1       | 32, 16, 1        |
+|   tmp2_212_U                           | ram_s2p array |      |      |      |        | tmp2_212     | auto | 1       | 32, 16, 1        |
+|   tmp2_213_U                           | ram_s2p array |      |      |      |        | tmp2_213     | auto | 1       | 32, 16, 1        |
+|   tmp2_214_U                           | ram_s2p array |      |      |      |        | tmp2_214     | auto | 1       | 32, 16, 1        |
+|   tmp2_215_U                           | ram_s2p array |      |      |      |        | tmp2_215     | auto | 1       | 32, 16, 1        |
+|   tmp2_216_U                           | ram_s2p array |      |      |      |        | tmp2_216     | auto | 1       | 32, 16, 1        |
+|   tmp2_217_U                           | ram_s2p array |      |      |      |        | tmp2_217     | auto | 1       | 32, 16, 1        |
+|   tmp2_218_U                           | ram_s2p array |      |      |      |        | tmp2_218     | auto | 1       | 32, 16, 1        |
+|   tmp2_219_U                           | ram_s2p array |      |      |      |        | tmp2_219     | auto | 1       | 32, 16, 1        |
+|   tmp2_220_U                           | ram_s2p array |      |      |      |        | tmp2_220     | auto | 1       | 32, 16, 1        |
+|   tmp2_221_U                           | ram_s2p array |      |      |      |        | tmp2_221     | auto | 1       | 32, 16, 1        |
+|   tmp2_222_U                           | ram_s2p array |      |      |      |        | tmp2_222     | auto | 1       | 32, 16, 1        |
+|   tmp2_223_U                           | ram_s2p array |      |      |      |        | tmp2_223     | auto | 1       | 32, 16, 1        |
+|   tmp2_224_U                           | ram_s2p array |      |      |      |        | tmp2_224     | auto | 1       | 32, 16, 1        |
+|   tmp2_225_U                           | ram_s2p array |      |      |      |        | tmp2_225     | auto | 1       | 32, 16, 1        |
+|   tmp2_226_U                           | ram_s2p array |      |      |      |        | tmp2_226     | auto | 1       | 32, 16, 1        |
+|   tmp2_227_U                           | ram_s2p array |      |      |      |        | tmp2_227     | auto | 1       | 32, 16, 1        |
+|   tmp2_228_U                           | ram_s2p array |      |      |      |        | tmp2_228     | auto | 1       | 32, 16, 1        |
+|   tmp2_229_U                           | ram_s2p array |      |      |      |        | tmp2_229     | auto | 1       | 32, 16, 1        |
+|   tmp2_230_U                           | ram_s2p array |      |      |      |        | tmp2_230     | auto | 1       | 32, 16, 1        |
+|   tmp2_231_U                           | ram_s2p array |      |      |      |        | tmp2_231     | auto | 1       | 32, 16, 1        |
+|   tmp2_232_U                           | ram_s2p array |      |      |      |        | tmp2_232     | auto | 1       | 32, 16, 1        |
+|   tmp2_233_U                           | ram_s2p array |      |      |      |        | tmp2_233     | auto | 1       | 32, 16, 1        |
+|   tmp2_234_U                           | ram_s2p array |      |      |      |        | tmp2_234     | auto | 1       | 32, 16, 1        |
+|   tmp2_235_U                           | ram_s2p array |      |      |      |        | tmp2_235     | auto | 1       | 32, 16, 1        |
+|   tmp2_236_U                           | ram_s2p array |      |      |      |        | tmp2_236     | auto | 1       | 32, 16, 1        |
+|   tmp2_237_U                           | ram_s2p array |      |      |      |        | tmp2_237     | auto | 1       | 32, 16, 1        |
+|   tmp2_238_U                           | ram_s2p array |      |      |      |        | tmp2_238     | auto | 1       | 32, 16, 1        |
+|   tmp2_239_U                           | ram_s2p array |      |      |      |        | tmp2_239     | auto | 1       | 32, 16, 1        |
+|   tmp2_240_U                           | ram_s2p array |      |      |      |        | tmp2_240     | auto | 1       | 32, 16, 1        |
+|   tmp2_241_U                           | ram_s2p array |      |      |      |        | tmp2_241     | auto | 1       | 32, 16, 1        |
+|   tmp2_242_U                           | ram_s2p array |      |      |      |        | tmp2_242     | auto | 1       | 32, 16, 1        |
+|   tmp2_243_U                           | ram_s2p array |      |      |      |        | tmp2_243     | auto | 1       | 32, 16, 1        |
+|   tmp2_244_U                           | ram_s2p array |      |      |      |        | tmp2_244     | auto | 1       | 32, 16, 1        |
+|   tmp2_245_U                           | ram_s2p array |      |      |      |        | tmp2_245     | auto | 1       | 32, 16, 1        |
+|   tmp2_246_U                           | ram_s2p array |      |      |      |        | tmp2_246     | auto | 1       | 32, 16, 1        |
+|   tmp2_247_U                           | ram_s2p array |      |      |      |        | tmp2_247     | auto | 1       | 32, 16, 1        |
+|   tmp2_248_U                           | ram_s2p array |      |      |      |        | tmp2_248     | auto | 1       | 32, 16, 1        |
+|   tmp2_249_U                           | ram_s2p array |      |      |      |        | tmp2_249     | auto | 1       | 32, 16, 1        |
+|   tmp2_250_U                           | ram_s2p array |      |      |      |        | tmp2_250     | auto | 1       | 32, 16, 1        |
+|   tmp2_251_U                           | ram_s2p array |      |      |      |        | tmp2_251     | auto | 1       | 32, 16, 1        |
+|   tmp2_252_U                           | ram_s2p array |      |      |      |        | tmp2_252     | auto | 1       | 32, 16, 1        |
+|   tmp2_253_U                           | ram_s2p array |      |      |      |        | tmp2_253     | auto | 1       | 32, 16, 1        |
+|   tmp2_254_U                           | ram_s2p array |      |      |      |        | tmp2_254     | auto | 1       | 32, 16, 1        |
+|   tmp2_255_U                           | ram_s2p array |      |      |      |        | tmp2_255     | auto | 1       | 32, 16, 1        |
++----------------------------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                | Location             | Messages                                                                                                                         |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | core=RAM_1P variable=A | opt.tcl:1 in k3mm, A | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=B | opt.tcl:2 in k3mm, B | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=C | opt.tcl:3 in k3mm, C | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=D | opt.tcl:4 in k3mm, D | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+--------------------+--------------------------+
+| Type      | Options            | Location                 |
++-----------+--------------------+--------------------------+
+| interface | ap_fifo port=E_out | opt.tcl:5 in k3mm, E_out |
+| pipeline  |                    | opt.tcl:6 in k3mm        |
+| pipeline  |                    | opt.tcl:7 in k3mm        |
+| pipeline  |                    | opt.tcl:10 in k3mm       |
+| pipeline  |                    | opt.tcl:13 in k3mm       |
+| unroll    | factor=4           | opt.tcl:11 in k3mm       |
+| unroll    | factor=4           | opt.tcl:14 in k3mm       |
++-----------+--------------------+--------------------------+
+
+* Inferred Pragmas
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| Source Pragma       | Inferred Pragma | Options                                        | Location                    |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| pipeline opt.tcl:10 | array_partition | dim=2 type=cyclic factor=2 variable=buff_A     | variable buff_A in k3mm     |
+| pipeline opt.tcl:10 | array_partition | dim=1 type=cyclic factor=2 variable=buff_B     | variable buff_B in k3mm     |
+| pipeline opt.tcl:13 | array_partition | dim=2 type=cyclic factor=4 variable=buff_E_out | variable buff_E_out in k3mm |
+| pipeline opt.tcl:13 | array_partition | dim=1 type=complete  variable=tmp2             | variable tmp2 in k3mm       |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+
+

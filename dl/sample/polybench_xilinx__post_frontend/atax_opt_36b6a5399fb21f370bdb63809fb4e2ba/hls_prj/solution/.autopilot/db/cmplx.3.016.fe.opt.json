@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 25,
+    "calls": "",
+    "file": "atax.c",
+    "fileloc": 3,
+    "instructions": 573,
+    "loads": {
+      "L": 138,
+      "T": 3
+    },
+    "name": "atax",
+    "stores": {
+      "L": 14
+    },
+    "total_instructions": 573
+  }
+}

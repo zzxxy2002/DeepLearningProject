@@ -1,0 +1,264 @@
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                   Line: 1, Column: 9 }
+Function:        atax
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                       Line: 1, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                   Line: 2, Column: 9 }
+Function:        atax
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                       Line: 2, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/atax.c, Line: 4, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp4
+  - String:          ''' ('
+  - LoopLoc:         'src/atax.c:27:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          atax
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/atax.c, Line: 4, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp2
+  - String:          ''' ('
+  - LoopLoc:         'src/atax.c:21:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          atax
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/atax.c, Line: 6, Column: 11 }
+Function:        atax
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=buff_A'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  atax
+  - String:          ' '
+  - varLoc:          'src/atax.c:6:11'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                       Line: 11, Column: 9 }
+  - VarName:         buff_A
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                   Line: 11, Column: 9 }
+Function:        atax
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            buff_A
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/atax.c, Line: 7, Column: 11 }
+Function:        atax
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=2 variable=buff_x'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  atax
+  - String:          ' '
+  - varLoc:          'src/atax.c:7:11'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:8:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                       Line: 8, Column: 9 }
+  - VarName:         buff_x
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                   Line: 8, Column: 9 }
+Function:        atax
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            buff_x
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/atax.c, Line: 8, Column: 11 }
+Function:        atax
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=4 variable=buff_y_out'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  atax
+  - String:          ' '
+  - varLoc:          'src/atax.c:8:11'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                       Line: 11, Column: 9 }
+  - VarName:         buff_y_out
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl, 
+                   Line: 11, Column: 9 }
+Function:        atax
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '4'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            buff_y_out
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/atax.c, Line: 6, Column: 11 }
+Function:        atax
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/atax.c, Line: 7, Column: 11 }
+Function:        atax
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_x
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/atax.c, Line: 8, Column: 11 }
+Function:        atax
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_y_out
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '4'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+DebugLoc:        { File: src/atax.c, Line: 4, Column: 0 }
+Function:        atax
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            y_out
+  - String:          ''''
+...

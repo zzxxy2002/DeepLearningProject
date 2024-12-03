@@ -1,0 +1,111 @@
+{
+    "1": {
+        "name": "k2mm_Pipeline_lpwr_1_lpwr_2",
+        "file": "src\/k2mm.c",
+        "fileloc": "6",
+        "instructions": "39",
+        "total_instructions": "39",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "5"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "2": {
+        "name": "k2mm_Pipeline_lp3",
+        "file": "src\/k2mm.c",
+        "fileloc": "6",
+        "instructions": "68",
+        "total_instructions": "68",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "4"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "k2mm_Pipeline_lprd_1_lprd_2",
+        "file": "src\/k2mm.c",
+        "fileloc": "6",
+        "instructions": "478",
+        "total_instructions": "478",
+        "calls": "",
+        "basicblocks": "146",
+        "loads": {
+            "L": "3",
+            "T": "4"
+        },
+        "stores": {
+            "L": "144"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "k2mm_Pipeline_lp7_lp8",
+        "file": "src\/k2mm.c",
+        "fileloc": "6",
+        "instructions": "66",
+        "total_instructions": "66",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "11"
+        },
+        "stores": {
+            "L": "10"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "k2mm",
+        "file": "src\/k2mm.c",
+        "fileloc": "4",
+        "instructions": "449",
+        "total_instructions": "1527",
+        "calls": "3 5 4 1 2",
+        "basicblocks": "69",
+        "loads": {
+            "L": "68"
+        },
+        "stores": {
+            "L": "70"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "5": {
+        "name": "k2mm_Pipeline_lp4_lp5",
+        "file": "src\/k2mm.c",
+        "fileloc": "6",
+        "instructions": "427",
+        "total_instructions": "427",
+        "calls": "",
+        "basicblocks": "7",
+        "loads": {
+            "L": "133"
+        },
+        "stores": {
+            "L": "8"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

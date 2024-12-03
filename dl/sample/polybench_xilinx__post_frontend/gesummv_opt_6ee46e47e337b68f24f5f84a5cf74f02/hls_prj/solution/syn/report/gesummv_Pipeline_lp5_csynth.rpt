@@ -1,0 +1,165 @@
+
+
+================================================================
+== Vitis HLS Report for 'gesummv_Pipeline_lp5'
+================================================================
+* Date:           Mon Dec  2 12:52:41 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        hls_prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.437 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       71|       71|  0.710 us|  0.710 us|   71|   71|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- lp5     |       69|       69|         7|          1|          1|    64|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      31|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       -|       -|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       -|      36|    -|
+|Register         |        -|     -|     187|      32|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|     187|      99|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     1824|  2520|  548160|  274080|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------+----------+----+---+----+------------+------------+
+    |    Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------+----------+----+---+----+------------+------------+
+    |add_ln37_fu_93_p2   |         +|   0|  0|  14|           7|           1|
+    |icmp_ln37_fu_87_p2  |      icmp|   0|  0|  15|           7|           8|
+    |ap_enable_pp0       |       xor|   0|  0|   2|           1|           2|
+    +--------------------+----------+----+---+----+------------+------------+
+    |Total               |          |   0|  0|  31|          15|          11|
+    +--------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_2     |   9|          2|    7|         14|
+    |i_fu_32                  |   9|          2|    7|         14|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  36|          8|   16|         32|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------+----+----+-----+-----------+
+    |               Name               | FF | LUT| Bits| Const Bits|
+    +----------------------------------+----+----+-----+-----------+
+    |add1_reg_146                      |  32|   0|   32|          0|
+    |ap_CS_fsm                         |   1|   0|    1|          0|
+    |ap_done_reg                       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg  |   1|   0|    1|          0|
+    |empty_14_reg_141                  |  32|   0|   32|          0|
+    |empty_reg_136                     |  32|   0|   32|          0|
+    |i_fu_32                           |   7|   0|    7|          0|
+    |zext_ln37_reg_121                 |   7|   0|   64|         57|
+    |zext_ln37_reg_121                 |  64|  32|   64|         57|
+    +----------------------------------+----+----+-----+-----------+
+    |Total                             | 187|  32|  244|        114|
+    +----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+----------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |     Source Object    |    C Type    |
++---------------------+-----+-----+------------+----------------------+--------------+
+|ap_clk               |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_375_p_din0    |  out|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_375_p_din1    |  out|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_375_p_opcode  |  out|    2|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_375_p_dout0   |   in|   32|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|grp_fu_375_p_ce      |  out|    1|  ap_ctrl_hs|  gesummv_Pipeline_lp5|  return value|
+|tmp1_address0        |  out|    6|   ap_memory|                  tmp1|         array|
+|tmp1_ce0             |  out|    1|   ap_memory|                  tmp1|         array|
+|tmp1_q0              |   in|   32|   ap_memory|                  tmp1|         array|
+|tmp2_address0        |  out|    6|   ap_memory|                  tmp2|         array|
+|tmp2_ce0             |  out|    1|   ap_memory|                  tmp2|         array|
+|tmp2_q0              |   in|   32|   ap_memory|                  tmp2|         array|
+|buff_y_out_address0  |  out|    6|   ap_memory|            buff_y_out|         array|
+|buff_y_out_ce0       |  out|    1|   ap_memory|            buff_y_out|         array|
+|buff_y_out_we0       |  out|    1|   ap_memory|            buff_y_out|         array|
+|buff_y_out_d0        |  out|   32|   ap_memory|            buff_y_out|         array|
++---------------------+-----+-----+------------+----------------------+--------------+
+

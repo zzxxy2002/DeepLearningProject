@@ -1,0 +1,50 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'k3mm'" level="0">
+<item name = "Date">Mon Dec  2 12:52:57 2024
+</item>
+<item name = "Version">2023.2.2 (Build 4101106 on Feb  9 2024)</item>
+<item name = "Project">hls_prj</item>
+<item name = "Solution">solution (Vivado IP Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu9eg-ffvb1156-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.114 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1061144, 1061144, 10.611 ms, 10.611 ms, 1061145, 1061145, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_k3mm_Pipeline_lprd_1_lprd_2_fu_1614">k3mm_Pipeline_lprd_1_lprd_2, 4098, 4098, 40.980 us, 40.980 us, 4098, 4098, no</column>
+<column name="grp_k3mm_Pipeline_lp1_lp2_lp3_fu_2412">k3mm_Pipeline_lp1_lp2_lp3, 1048583, 1048583, 10.486 ms, 10.486 ms, 1048583, 1048583, no</column>
+<column name="grp_k3mm_Pipeline_lp4_lp5_fu_2421">k3mm_Pipeline_lp4_lp5, 4357, 4357, 43.570 us, 43.570 us, 4357, 4357, no</column>
+<column name="grp_k3mm_Pipeline_lp7_lp8_fu_2809">k3mm_Pipeline_lp7_lp8, 4358, 4358, 43.580 us, 43.580 us, 4358, 4358, no</column>
+<column name="grp_k3mm_Pipeline_lpwr_1_lpwr_2_fu_3074">k3mm_Pipeline_lpwr_1_lpwr_2, 4098, 4098, 40.980 us, 40.980 us, 4098, 4098, no</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

@@ -1,0 +1,166 @@
+
+
+================================================================
+== Vitis HLS Report for 'gemm_Pipeline_lpwr_1_lpwr_2'
+================================================================
+* Date:           Mon Dec  2 12:52:41 2024
+
+* Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+* Project:        hls_prj
+* Solution:       solution (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.606 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     4098|     4098|  40.980 us|  40.980 us|  4098|  4098|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- lpwr_1_lpwr_2  |     4096|     4096|         2|          1|          1|  4096|       yes|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.60>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%j = alloca i32 1" [src/gemm.c:5]   --->   Operation 5 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [src/gemm.c:5]   --->   Operation 6 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%indvar_flatten20 = alloca i32 1"   --->   Operation 7 'alloca' 'indvar_flatten20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %D_out, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.42ns)   --->   "%store_ln0 = store i13 0, i13 %indvar_flatten20"   --->   Operation 9 'store' 'store_ln0' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 10 [1/1] (0.42ns)   --->   "%store_ln5 = store i7 0, i7 %i" [src/gemm.c:5]   --->   Operation 10 'store' 'store_ln5' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 11 [1/1] (0.42ns)   --->   "%store_ln5 = store i7 0, i7 %j" [src/gemm.c:5]   --->   Operation 11 'store' 'store_ln5' <Predicate = true> <Delay = 0.42>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc108"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%indvar_flatten20_load = load i13 %indvar_flatten20" [src/gemm.c:35]   --->   Operation 13 'load' 'indvar_flatten20_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.82ns)   --->   "%icmp_ln35 = icmp_eq  i13 %indvar_flatten20_load, i13 4096" [src/gemm.c:35]   --->   Operation 14 'icmp' 'icmp_ln35' <Predicate = true> <Delay = 0.82> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.82ns)   --->   "%add_ln35_1 = add i13 %indvar_flatten20_load, i13 1" [src/gemm.c:35]   --->   Operation 15 'add' 'add_ln35_1' <Predicate = true> <Delay = 0.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%br_ln35 = br i1 %icmp_ln35, void %for.inc111, void %for.end113.exitStub" [src/gemm.c:35]   --->   Operation 16 'br' 'br_ln35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%j_load = load i7 %j" [src/gemm.c:36]   --->   Operation 17 'load' 'j_load' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%i_load = load i7 %i" [src/gemm.c:35]   --->   Operation 18 'load' 'i_load' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.77ns)   --->   "%add_ln35 = add i7 %i_load, i7 1" [src/gemm.c:35]   --->   Operation 19 'add' 'add_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.77ns)   --->   "%icmp_ln36 = icmp_eq  i7 %j_load, i7 64" [src/gemm.c:36]   --->   Operation 20 'icmp' 'icmp_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (0.36ns)   --->   "%select_ln5 = select i1 %icmp_ln36, i7 0, i7 %j_load" [src/gemm.c:5]   --->   Operation 21 'select' 'select_ln5' <Predicate = (!icmp_ln35)> <Delay = 0.36> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.36> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.36ns)   --->   "%select_ln35 = select i1 %icmp_ln36, i7 %add_ln35, i7 %i_load" [src/gemm.c:35]   --->   Operation 22 'select' 'select_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.36> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.36> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%trunc_ln37 = trunc i7 %select_ln35" [src/gemm.c:37]   --->   Operation 23 'trunc' 'trunc_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i6.i6, i6 %trunc_ln37, i6 0" [src/gemm.c:37]   --->   Operation 24 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%zext_ln37 = zext i7 %select_ln5" [src/gemm.c:37]   --->   Operation 25 'zext' 'zext_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.80ns)   --->   "%add_ln37 = add i12 %tmp_3, i12 %zext_ln37" [src/gemm.c:37]   --->   Operation 26 'add' 'add_ln37' <Predicate = (!icmp_ln35)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln37_1 = zext i12 %add_ln37" [src/gemm.c:37]   --->   Operation 27 'zext' 'zext_ln37_1' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%buff_C_addr = getelementptr i32 %buff_C, i64 0, i64 %zext_ln37_1" [src/gemm.c:37]   --->   Operation 28 'getelementptr' 'buff_C_addr' <Predicate = (!icmp_ln35)> <Delay = 0.00>
+ST_1 : Operation 29 [2/2] (1.23ns)   --->   "%buff_C_load = load i12 %buff_C_addr" [src/gemm.c:37]   --->   Operation 29 'load' 'buff_C_load' <Predicate = (!icmp_ln35)> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_1 : Operation 30 [1/1] (0.77ns)   --->   "%add_ln36 = add i7 %select_ln5, i7 1" [src/gemm.c:36]   --->   Operation 30 'add' 'add_ln36' <Predicate = (!icmp_ln35)> <Delay = 0.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.42ns)   --->   "%store_ln35 = store i13 %add_ln35_1, i13 %indvar_flatten20" [src/gemm.c:35]   --->   Operation 31 'store' 'store_ln35' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_1 : Operation 32 [1/1] (0.42ns)   --->   "%store_ln5 = store i7 %select_ln35, i7 %i" [src/gemm.c:5]   --->   Operation 32 'store' 'store_ln5' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_1 : Operation 33 [1/1] (0.42ns)   --->   "%store_ln5 = store i7 %add_ln36, i7 %j" [src/gemm.c:5]   --->   Operation 33 'store' 'store_ln5' <Predicate = (!icmp_ln35)> <Delay = 0.42>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 42 'ret' 'ret_ln0' <Predicate = (icmp_ln35)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.47>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @lpwr_1_lpwr_2_str"   --->   Operation 34 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 4096, i64 4096, i64 4096"   --->   Operation 35 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%D_out_addr = getelementptr i32 %D_out, i64 0, i64 %zext_ln37_1" [src/gemm.c:37]   --->   Operation 36 'getelementptr' 'D_out_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%specpipeline_ln5 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [src/gemm.c:5]   --->   Operation 37 'specpipeline' 'specpipeline_ln5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/2] (1.23ns)   --->   "%buff_C_load = load i12 %buff_C_addr" [src/gemm.c:37]   --->   Operation 38 'load' 'buff_C_load' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%bitcast_ln37 = bitcast i32 %buff_C_load" [src/gemm.c:37]   --->   Operation 39 'bitcast' 'bitcast_ln37' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (1.23ns)   --->   "%store_ln37 = store i32 %bitcast_ln37, i12 %D_out_addr" [src/gemm.c:37]   --->   Operation 40 'store' 'store_ln37' <Predicate = true> <Delay = 1.23> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.23> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4096> <RAM>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln36 = br void %for.inc108" [src/gemm.c:36]   --->   Operation 41 'br' 'br_ln36' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 3.606ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln5', src/gemm.c:5) of constant 0 on local variable 'i', src/gemm.c:5 [8]  (0.427 ns)
+	'load' operation 7 bit ('i_load', src/gemm.c:35) on local variable 'i', src/gemm.c:5 [18]  (0.000 ns)
+	'add' operation 7 bit ('add_ln35', src/gemm.c:35) [19]  (0.773 ns)
+	'select' operation 7 bit ('select_ln35', src/gemm.c:35) [24]  (0.360 ns)
+	'add' operation 12 bit ('add_ln37', src/gemm.c:37) [28]  (0.809 ns)
+	'getelementptr' operation 12 bit ('buff_C_addr', src/gemm.c:37) [31]  (0.000 ns)
+	'load' operation 32 bit ('buff_C_load', src/gemm.c:37) on array 'buff_C' [33]  (1.237 ns)
+
+ <State 2>: 2.474ns
+The critical path consists of the following:
+	'load' operation 32 bit ('buff_C_load', src/gemm.c:37) on array 'buff_C' [33]  (1.237 ns)
+	'store' operation 0 bit ('store_ln37', src/gemm.c:37) of variable 'bitcast_ln37', src/gemm.c:37 on array 'D_out' [35]  (1.237 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

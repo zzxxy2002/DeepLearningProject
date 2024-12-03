@@ -1,0 +1,309 @@
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                   Line: 1, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                       Line: 1, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                   Line: 2, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                       Line: 2, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                   Line: 3, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl, 
+                       Line: 3, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 26, Column: 14 }
+Function:        gesummv
+Args:            
+  - String:          'Loop '''
+  - LoopName:        lp2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lpwr
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:41:8'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp4
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:32:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp2
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:26:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' completely with a factor of '
+  - Factor:          '64'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lprd_2
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:19:11'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 7, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 8, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 9, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_x
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 10, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_y_out
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 11, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tmp1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 12, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          tmp2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        lp4
+  - String:          '> at '
+  - LoopLoc:         'src/gesummv.c:32:14'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        lp5
+  - String:          '> at '
+  - LoopLoc:         'src/gesummv.c:37:7'
+  - String:          ' '
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            y_out
+  - String:          ''''
+...

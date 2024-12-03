@@ -1,0 +1,225 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 1,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "B"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 2,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "x"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 3,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 3,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "ap_fifo",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "y_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 4,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 4,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lprd_2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 5,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 5,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lpwr",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 6,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 6,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 9,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 7,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp2",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 10,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 8,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp4",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 12,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 9,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp4",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl",
+    "sourceLine": 13,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "gesummv",
+    "id": 10,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "gesummv"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/hls_template.tcl",
+    "sourceLine": 9,
+    "success": true
+  }
+]

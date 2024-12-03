@@ -1,0 +1,830 @@
+{
+  "Top": "bicg",
+  "RtlTop": "bicg",
+  "RtlPrefix": "",
+  "RtlSubPrefix": "bicg_",
+  "SourceLanguage": "c",
+  "HostMachineBits": "64",
+  "FunctionProtocol": "ap_ctrl_hs",
+  "ResetStyle": "control",
+  "Target": {
+    "Family": "zynquplus",
+    "Device": "xczu9eg",
+    "Package": "-ffvb1156",
+    "Speed": "-2-i",
+    "Triple": "fpga64-xilinx-none"
+  },
+  "Args": {
+    "A": {
+      "index": "0",
+      "direction": "in",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "A_0_address0",
+          "name": "A_0_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_0_ce0",
+          "name": "A_0_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_0_q0",
+          "name": "A_0_q0",
+          "usage": "data",
+          "direction": "in"
+        },
+        {
+          "type": "port",
+          "interface": "A_1_address0",
+          "name": "A_1_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_1_ce0",
+          "name": "A_1_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "A_1_q0",
+          "name": "A_1_q0",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    },
+    "p": {
+      "index": "1",
+      "direction": "in",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "p_address0",
+          "name": "p_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "p_ce0",
+          "name": "p_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "p_q0",
+          "name": "p_q0",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    },
+    "r": {
+      "index": "2",
+      "direction": "in",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [
+        {
+          "type": "port",
+          "interface": "r_address0",
+          "name": "r_address0",
+          "usage": "address",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "r_ce0",
+          "name": "r_ce0",
+          "usage": "control",
+          "direction": "out"
+        },
+        {
+          "type": "port",
+          "interface": "r_q0",
+          "name": "r_q0",
+          "usage": "data",
+          "direction": "in"
+        }
+      ]
+    },
+    "s_out": {
+      "index": "3",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "interface",
+          "interface": "s_out",
+          "name": "",
+          "usage": "data",
+          "direction": "out"
+        }]
+    },
+    "q_out": {
+      "index": "4",
+      "direction": "out",
+      "srcType": "float*",
+      "srcSize": "32",
+      "hwRefs": [{
+          "type": "interface",
+          "interface": "q_out",
+          "name": "",
+          "usage": "data",
+          "direction": "out"
+        }]
+    }
+  },
+  "HlsSolution": {
+    "FlowTarget": "vivado",
+    "DirectiveTcl": [
+      "set_directive_resource bicg -core RAM_1P A",
+      "set_directive_resource bicg -core RAM_1P r",
+      "set_directive_resource bicg -core RAM_1P p",
+      "set_directive_interface bicg -mode ap_fifo s_out",
+      "set_directive_interface bicg -mode ap_fifo q_out",
+      "set_directive_pipeline bicg\/lprd_2",
+      "set_directive_pipeline bicg\/lpwr",
+      "set_directive_array_partition bicg -type cyclic -dim 2 -factor 2 A",
+      "set_directive_array_partition bicg -type cyclic -dim 2 -factor 2 buff_A",
+      "set_directive_array_partition bicg -type cyclic -dim 1 -factor 2 buff_p",
+      "set_directive_array_partition bicg -type cyclic -dim 1 -factor 2 buff_r",
+      "set_directive_array_partition bicg -type cyclic -dim 1 -factor 2 buff_s_out",
+      "set_directive_array_partition bicg -type cyclic -dim 1 -factor 2 buff_q_out",
+      "set_directive_unroll bicg\/lprd_2 -factor 2",
+      "set_directive_unroll bicg\/lpwr -factor 2",
+      "set_directive_pipeline bicg\/lp1",
+      "set_directive_unroll bicg\/lp1 -factor 1",
+      "set_directive_unroll bicg\/lp4 -factor 2",
+      "set_directive_top bicg -name bicg"
+    ],
+    "ProfileOption": "0",
+    "ProfileType": "none",
+    "KernelName": "bicg"
+  },
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "10",
+    "Uncertainty": "2.7",
+    "IsCombinational": "0",
+    "II": "19696",
+    "Latency": "19695"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "xilinx.com",
+    "Library": "hls",
+    "Name": "bicg",
+    "Version": "1.0",
+    "DisplayName": "Bicg",
+    "Revision": "2113848172",
+    "Description": "An IP generated by Vitis HLS",
+    "Taxonomy": "\/VITIS_HLS_IP",
+    "AutoFamilySupport": "",
+    "ZipFile": "xilinx_com_hls_bicg_1_0.zip"
+  },
+  "Files": {
+    "CSource": ["..\/..\/src\/bicg.c"],
+    "Vhdl": [
+      "impl\/vhdl\/bicg_bicg_Pipeline_lp1.vhd",
+      "impl\/vhdl\/bicg_bicg_Pipeline_lp4.vhd",
+      "impl\/vhdl\/bicg_bicg_Pipeline_lprd_2.vhd",
+      "impl\/vhdl\/bicg_bicg_Pipeline_lpwr.vhd",
+      "impl\/vhdl\/bicg_buff_A_RAM_1WNR_AUTO_1R1W.vhd",
+      "impl\/vhdl\/bicg_buff_p_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/bicg_buff_s_out_RAM_AUTO_1R1W.vhd",
+      "impl\/vhdl\/bicg_fadd_32ns_32ns_32_4_full_dsp_1.vhd",
+      "impl\/vhdl\/bicg_flow_control_loop_pipe_sequential_init.vhd",
+      "impl\/vhdl\/bicg_fmul_32ns_32ns_32_3_max_dsp_1.vhd",
+      "impl\/vhdl\/bicg.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/bicg_bicg_Pipeline_lp1.v",
+      "impl\/verilog\/bicg_bicg_Pipeline_lp4.v",
+      "impl\/verilog\/bicg_bicg_Pipeline_lprd_2.v",
+      "impl\/verilog\/bicg_bicg_Pipeline_lpwr.v",
+      "impl\/verilog\/bicg_buff_A_RAM_1WNR_AUTO_1R1W.dat",
+      "impl\/verilog\/bicg_buff_A_RAM_1WNR_AUTO_1R1W.v",
+      "impl\/verilog\/bicg_buff_p_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/bicg_buff_s_out_RAM_AUTO_1R1W.v",
+      "impl\/verilog\/bicg_fadd_32ns_32ns_32_4_full_dsp_1.v",
+      "impl\/verilog\/bicg_flow_control_loop_pipe_sequential_init.v",
+      "impl\/verilog\/bicg_fmul_32ns_32ns_32_3_max_dsp_1.v",
+      "impl\/verilog\/bicg.v"
+    ],
+    "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/bicg_fadd_32ns_32ns_32_4_full_dsp_1_ip.tcl",
+      "impl\/misc\/bicg_fmul_32ns_32ns_32_3_max_dsp_1_ip.tcl"
+    ],
+    "CsynthXml": "syn\/report\/csynth.xml",
+    "DebugDir": ".debug",
+    "KernelXml": ".autopilot\/db\/kernel.internal.xml",
+    "Xo": "",
+    "XoHlsDir": "",
+    "ProtoInst": [".debug\/bicg.protoinst"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "Ip": [
+      {
+        "Name": "bicg_fadd_32ns_32ns_32_4_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name bicg_fadd_32ns_32ns_32_4_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "bicg_fmul_32ns_32ns_32_3_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 1 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name bicg_fmul_32ns_32ns_32_3_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
+  },
+  "Interfaces": {
+    "ap_clk": {
+      "type": "clock",
+      "busTypeName": "clock",
+      "mode": "slave",
+      "busParams": {"ASSOCIATED_RESET": "ap_rst"},
+      "portMap": {"ap_clk": "CLK"},
+      "ports": ["ap_clk"]
+    },
+    "ap_rst": {
+      "type": "reset",
+      "busTypeName": "reset",
+      "mode": "slave",
+      "busParams": {"POLARITY": "ACTIVE_HIGH"},
+      "portMap": {"ap_rst": "RST"},
+      "ports": ["ap_rst"]
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "busTypeName": "acc_handshake",
+      "mode": "slave",
+      "portMap": {
+        "ap_start": "start",
+        "ap_done": "done",
+        "ap_idle": "idle",
+        "ap_ready": "ready"
+      },
+      "ports": [
+        "ap_done",
+        "ap_idle",
+        "ap_ready",
+        "ap_start"
+      ]
+    },
+    "A_0_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "11",
+      "portMap": {"A_0_address0": "DATA"},
+      "ports": ["A_0_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "A_0_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"A_0_q0": "DATA"},
+      "ports": ["A_0_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "A_1_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "11",
+      "portMap": {"A_1_address0": "DATA"},
+      "ports": ["A_1_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "A_1_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"A_1_q0": "DATA"},
+      "ports": ["A_1_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "A"
+        }]
+    },
+    "p_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "6",
+      "portMap": {"p_address0": "DATA"},
+      "ports": ["p_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "p"
+        }]
+    },
+    "p_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"p_q0": "DATA"},
+      "ports": ["p_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "p"
+        }]
+    },
+    "r_address0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "master",
+      "dataWidth": "6",
+      "portMap": {"r_address0": "DATA"},
+      "ports": ["r_address0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "r"
+        }]
+    },
+    "r_q0": {
+      "type": "data",
+      "busTypeName": "data",
+      "protocol": "ap_memory",
+      "mode": "slave",
+      "dataWidth": "32",
+      "portMap": {"r_q0": "DATA"},
+      "ports": ["r_q0"],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_memory",
+          "register_option": "0",
+          "argName": "r"
+        }]
+    },
+    "s_out": {
+      "type": "ap_fifo",
+      "busTypeName": "acc_fifo_write",
+      "mode": "master",
+      "dataWidth": "32",
+      "portPrefix": "s_out_",
+      "portMap": {
+        "s_out_din": "WR_DATA",
+        "s_out_full_n": "FULL_N",
+        "s_out_write": "WR_EN"
+      },
+      "ports": [
+        "s_out_din",
+        "s_out_full_n",
+        "s_out_write"
+      ],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_fifo",
+          "register_option": "0",
+          "argName": "s_out"
+        }]
+    },
+    "q_out": {
+      "type": "ap_fifo",
+      "busTypeName": "acc_fifo_write",
+      "mode": "master",
+      "dataWidth": "32",
+      "portPrefix": "q_out_",
+      "portMap": {
+        "q_out_din": "WR_DATA",
+        "q_out_full_n": "FULL_N",
+        "q_out_write": "WR_EN"
+      },
+      "ports": [
+        "q_out_din",
+        "q_out_full_n",
+        "q_out_write"
+      ],
+      "constraints": [{
+          "constraint_type": "pragma interface",
+          "mode": "ap_fifo",
+          "register_option": "0",
+          "argName": "q_out"
+        }]
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "A_0_address0": {
+      "dir": "out",
+      "width": "11"
+    },
+    "A_0_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "A_0_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "A_1_address0": {
+      "dir": "out",
+      "width": "11"
+    },
+    "A_1_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "A_1_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "p_address0": {
+      "dir": "out",
+      "width": "6"
+    },
+    "p_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "p_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "r_address0": {
+      "dir": "out",
+      "width": "6"
+    },
+    "r_ce0": {
+      "dir": "out",
+      "width": "1"
+    },
+    "r_q0": {
+      "dir": "in",
+      "width": "32"
+    },
+    "s_out_din": {
+      "dir": "out",
+      "width": "32"
+    },
+    "s_out_full_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "s_out_write": {
+      "dir": "out",
+      "width": "1"
+    },
+    "q_out_din": {
+      "dir": "out",
+      "width": "32"
+    },
+    "q_out_full_n": {
+      "dir": "in",
+      "width": "1"
+    },
+    "q_out_write": {
+      "dir": "out",
+      "width": "1"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {
+      "ModuleName": "bicg",
+      "Instances": [
+        {
+          "ModuleName": "bicg_Pipeline_lprd_2",
+          "InstanceName": "grp_bicg_Pipeline_lprd_2_fu_1096"
+        },
+        {
+          "ModuleName": "bicg_Pipeline_lp1",
+          "InstanceName": "grp_bicg_Pipeline_lp1_fu_1107"
+        },
+        {
+          "ModuleName": "bicg_Pipeline_lpwr",
+          "InstanceName": "grp_bicg_Pipeline_lpwr_fu_1247"
+        },
+        {
+          "ModuleName": "bicg_Pipeline_lp4",
+          "InstanceName": "grp_bicg_Pipeline_lp4_fu_1259"
+        }
+      ]
+    },
+    "Info": {
+      "bicg_Pipeline_lprd_2": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "bicg_Pipeline_lp1": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "bicg_Pipeline_lp4": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "bicg_Pipeline_lpwr": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "1",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      },
+      "bicg": {
+        "FunctionProtocol": "ap_ctrl_hs",
+        "isTaskLevelControl": "0",
+        "isPipelined": "0",
+        "isCombinational": "0",
+        "isOneStateSeq": "0"
+      }
+    },
+    "Metrics": {
+      "bicg_Pipeline_lprd_2": {
+        "Latency": {
+          "LatencyBest": "34",
+          "LatencyAvg": "34",
+          "LatencyWorst": "34",
+          "PipelineII": "34",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "2.474"
+        },
+        "Loops": [{
+            "Name": "lprd_2",
+            "TripCount": "32",
+            "Latency": "32",
+            "PipelineII": "1",
+            "PipelineDepth": "2"
+          }],
+        "Area": {
+          "FF": "21",
+          "AVAIL_FF": "548160",
+          "UTIL_FF": "~0",
+          "LUT": "52",
+          "AVAIL_LUT": "274080",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "1824",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "2520",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "bicg_Pipeline_lp1": {
+        "Latency": {
+          "LatencyBest": "201",
+          "LatencyAvg": "201",
+          "LatencyWorst": "201",
+          "PipelineII": "201",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.016"
+        },
+        "Loops": [{
+            "Name": "lp1",
+            "TripCount": "64",
+            "Latency": "199",
+            "PipelineII": "3",
+            "PipelineDepth": "11"
+          }],
+        "Area": {
+          "DSP": "105",
+          "AVAIL_DSP": "2520",
+          "UTIL_DSP": "4",
+          "FF": "13720",
+          "AVAIL_FF": "548160",
+          "UTIL_FF": "2",
+          "LUT": "10721",
+          "AVAIL_LUT": "274080",
+          "UTIL_LUT": "3",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "1824",
+          "UTIL_BRAM": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "bicg_Pipeline_lp4": {
+        "Latency": {
+          "LatencyBest": "262",
+          "LatencyAvg": "262",
+          "LatencyWorst": "262",
+          "PipelineII": "262",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.016"
+        },
+        "Loops": [{
+            "Name": "lp4",
+            "TripCount": "32",
+            "Latency": "260",
+            "PipelineII": "8",
+            "PipelineDepth": "13"
+          }],
+        "Area": {
+          "FF": "275",
+          "AVAIL_FF": "548160",
+          "UTIL_FF": "~0",
+          "LUT": "184",
+          "AVAIL_LUT": "274080",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "1824",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "2520",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "bicg_Pipeline_lpwr": {
+        "Latency": {
+          "LatencyBest": "66",
+          "LatencyAvg": "66",
+          "LatencyWorst": "66",
+          "PipelineII": "66",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "2.873"
+        },
+        "Loops": [{
+            "Name": "lpwr",
+            "TripCount": "32",
+            "Latency": "64",
+            "PipelineII": "2",
+            "PipelineDepth": "3"
+          }],
+        "Area": {
+          "FF": "77",
+          "AVAIL_FF": "548160",
+          "UTIL_FF": "~0",
+          "LUT": "138",
+          "AVAIL_LUT": "274080",
+          "UTIL_LUT": "~0",
+          "BRAM_18K": "0",
+          "AVAIL_BRAM": "1824",
+          "UTIL_BRAM": "0",
+          "DSP": "0",
+          "AVAIL_DSP": "2520",
+          "UTIL_DSP": "0",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      },
+      "bicg": {
+        "Latency": {
+          "LatencyBest": "19695",
+          "LatencyAvg": "19695",
+          "LatencyWorst": "19695",
+          "PipelineII": "19696",
+          "PipelineDepth": "",
+          "PipelineType": "no"
+        },
+        "Timing": {
+          "Target": "10.00",
+          "Uncertainty": "2.70",
+          "Estimate": "7.016"
+        },
+        "Loops": [
+          {
+            "Name": "lprd_1",
+            "TripCount": "64",
+            "Latency": "2368",
+            "PipelineII": "",
+            "PipelineDepth": "37"
+          },
+          {
+            "Name": "lp3",
+            "TripCount": "64",
+            "Latency": "17024",
+            "PipelineII": "",
+            "PipelineDepth": "266"
+          }
+        ],
+        "Area": {
+          "BRAM_18K": "90",
+          "AVAIL_BRAM": "1824",
+          "UTIL_BRAM": "4",
+          "DSP": "110",
+          "AVAIL_DSP": "2520",
+          "UTIL_DSP": "4",
+          "FF": "16631",
+          "AVAIL_FF": "548160",
+          "UTIL_FF": "3",
+          "LUT": "13338",
+          "AVAIL_LUT": "274080",
+          "UTIL_LUT": "4",
+          "URAM": "0",
+          "AVAIL_URAM": "0",
+          "UTIL_URAM": "0"
+        }
+      }
+    }
+  },
+  "GenerateBdFiles": "0",
+  "GenData": {
+    "DataVersion": "0.2",
+    "Time": "2024-12-02 12:52:46 EST",
+    "ToolName": "vitis_hls",
+    "ToolVersion": "2023.2.2"
+  }
+}

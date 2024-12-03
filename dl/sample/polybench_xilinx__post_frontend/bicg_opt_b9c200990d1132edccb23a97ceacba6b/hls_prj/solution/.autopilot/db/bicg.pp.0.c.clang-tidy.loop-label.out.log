@@ -1,0 +1,9 @@
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c:3229:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c:3233:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=r
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/.autopilot/db/bicg.pp.0.c:3237:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=p
+        ^

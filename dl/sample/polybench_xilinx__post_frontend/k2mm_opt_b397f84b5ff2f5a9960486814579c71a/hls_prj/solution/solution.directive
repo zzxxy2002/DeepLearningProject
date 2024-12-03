@@ -1,0 +1,62 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="A"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="B"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="C"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="RESOURCE">
+                <option name="core" value="RAM_1P"/>
+                <option name="variable" positionalBoolean="4" value="D"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="ap_fifo" value="" positionalBoolean="mode"/>
+                <option name="port" positionalBoolean="4" value="E_out"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="lprd_2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="k2mm" label="lpwr_2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="k2mm" label="lp3" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="k2mm" label="lp3" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="lp8" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="k2mm" label="lp8" functionLabel="">
+            <pragma name="UNROLL">
+                <option name="factor" value="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="k2mm" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="k2mm"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

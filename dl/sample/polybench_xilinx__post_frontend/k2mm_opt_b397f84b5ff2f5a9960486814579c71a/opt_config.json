@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"k2mm\" A\nset_directive_resource -core RAM_1P \"k2mm\" B\nset_directive_resource -core RAM_1P \"k2mm\" C\nset_directive_resource -core RAM_1P \"k2mm\" D\nset_directive_interface -mode ap_fifo \"k2mm\" E_out\nset_directive_pipeline \"k2mm/lprd_2\"\nset_directive_pipeline \"k2mm/lpwr_2\"\n",
+    "array_partition_lines": [
+        ""
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline k2mm/lp3\nset_directive_unroll -factor 4 k2mm/lp3\n",
+        "set_directive_pipeline k2mm/lp8\nset_directive_unroll -factor 4 k2mm/lp8\n"
+    ]
+}

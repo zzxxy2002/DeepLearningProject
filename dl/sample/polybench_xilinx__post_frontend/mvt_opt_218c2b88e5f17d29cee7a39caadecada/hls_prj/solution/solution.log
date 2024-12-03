@@ -1,0 +1,234 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2.2 (64-bit)
+Tool Version Limit: 2024.02
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xczu9eg-ffvb1156-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: source opt.tcl
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P mvt A 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P mvt x1 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P mvt x2 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P mvt y1 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo mvt y2 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo mvt x1_out 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo mvt x2_out 
+INFO: [HLS 200-1510] Running: set_directive_pipeline mvt/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline mvt/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 mvt A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 mvt buff_A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 mvt buff_x1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 mvt buff_x2 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 mvt buff_y1 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 mvt buff_y2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 mvt/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 mvt/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_pipeline mvt/lp1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 1 mvt/lp1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 mvt/lp4 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 293.051 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/mvt.c' ... 
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:1:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:2:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:3:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:4:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.75 seconds. Elapsed time: 2.17 seconds; current allocated memory: 296.363 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 173 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 526 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 499 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 490 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 490 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 806 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 581 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 582 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 582 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 578 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 577 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 577 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 577 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 577 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 594 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 631 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/hls_prj/solution/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:1:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:2:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:3:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/mvt_opt_218c2b88e5f17d29cee7a39caadecada/opt.tcl:4:9)
+INFO: [HLS 214-291] Loop 'lp2' is marked as complete unroll implied by the pipeline pragma (src/mvt.c:24:11)
+INFO: [HLS 214-188] Unrolling loop 'lpwr' (src/mvt.c:35:8) in function 'mvt' partially with a factor of 2 (src/mvt.c:5:0)
+INFO: [HLS 214-188] Unrolling loop 'lp4' (src/mvt.c:30:8) in function 'mvt' partially with a factor of 2 (src/mvt.c:5:0)
+INFO: [HLS 214-186] Unrolling loop 'lp2' (src/mvt.c:24:11) in function 'mvt' completely with a factor of 64 (src/mvt.c:5:0)
+INFO: [HLS 214-188] Unrolling loop 'lprd_2' (src/mvt.c:18:14) in function 'mvt' partially with a factor of 2 (src/mvt.c:5:0)
+INFO: [HLS 214-248] Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2. (src/mvt.c:7:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_x1': Cyclic partitioning with factor 2 on dimension 1. (src/mvt.c:8:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_x2': Cyclic partitioning with factor 2 on dimension 1. (src/mvt.c:9:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_y1': Cyclic partitioning with factor 2 on dimension 1. (src/mvt.c:10:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_y2': Cyclic partitioning with factor 2 on dimension 1. (src/mvt.c:11:8)
+INFO: [HLS 214-248] Applying array_partition to 'A': Cyclic partitioning with factor 2 on dimension 2. (src/mvt.c:5:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< lp4> at src/mvt.c:30:8 
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'y2' (src/mvt.c:5:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'x1_out' (src/mvt.c:5:0)
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'x2_out' (src/mvt.c:5:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.7 seconds. CPU system time: 0.48 seconds. Elapsed time: 9.98 seconds; current allocated memory: 297.969 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 297.969 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 298.906 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 299.055 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 322.754 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'lprd_1' (src/mvt.c:13:10) in function 'mvt' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'lp3' (src/mvt.c:29:7) in function 'mvt' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 353.984 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mvt' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvt_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lprd_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lprd_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 354.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 354.961 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvt_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp1'.
+WARNING: [HLS 200-885] The II Violation in module 'mvt_Pipeline_lp1' (loop 'lp1'): Unable to schedule 'load' operation 32 bit ('buff_A_load_16', src/mvt.c:25) on array 'buff_A' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'buff_A'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 263, loop 'lp1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.41 seconds; current allocated memory: 358.215 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 358.555 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvt_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp4'.
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add66_1', src/mvt.c:31) and 'fadd' operation 32 bit ('add1', src/mvt.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add66_1', src/mvt.c:31) and 'fadd' operation 32 bit ('add1', src/mvt.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add66_1', src/mvt.c:31) and 'fadd' operation 32 bit ('add1', src/mvt.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add66_1', src/mvt.c:31) and 'fadd' operation 32 bit ('add1', src/mvt.c:31).
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add66_1', src/mvt.c:31) and 'fadd' operation 32 bit ('add1', src/mvt.c:31).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 13, loop 'lp4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 360.098 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 360.273 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvt_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lpwr'.
+WARNING: [HLS 200-880] The II Violation in module 'mvt_Pipeline_lpwr' (loop 'lpwr'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between fifo write operation ('x1_out_write_ln36', src/mvt.c:36) on port 'x1_out' (src/mvt.c:36) and fifo write operation ('x1_out_write_ln36', src/mvt.c:36) on port 'x1_out' (src/mvt.c:36).
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'lpwr'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 360.555 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 360.672 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mvt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 362.855 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 362.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvt_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mvt_Pipeline_lprd_2' pipeline 'lprd_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvt_Pipeline_lprd_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.2 seconds; current allocated memory: 362.855 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvt_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mvt_Pipeline_lp1' pipeline 'lp1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'mvt_Pipeline_lp1' is 97578 from HDL expression: ((1'b0 == ap_block_pp0_stage1_11001) & (1'b1 == ap_CS_fsm_pp0_stage1))
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 32 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvt_Pipeline_lp1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.73 seconds. CPU system time: 0.02 seconds. Elapsed time: 2.05 seconds; current allocated memory: 380.406 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvt_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mvt_Pipeline_lp4' pipeline 'lp4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvt_Pipeline_lp4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.44 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.79 seconds; current allocated memory: 387.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvt_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'mvt_Pipeline_lpwr' pipeline 'lpwr' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvt_Pipeline_lpwr'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 387.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mvt' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/A_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/x1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/x2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/y1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/y2' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/x1_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mvt/x2_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mvt' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mvt'.
+INFO: [RTMG 210-278] Implementing memory 'mvt_buff_A_RAM_1WNR_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mvt_buff_x1_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mvt_buff_x2_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.43 seconds; current allocated memory: 391.348 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.33 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.11 seconds; current allocated memory: 397.465 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.46 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.84 seconds; current allocated memory: 402.098 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mvt.
+INFO: [VLOG 209-307] Generating Verilog RTL for mvt.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 142.53 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.71 seconds. CPU system time: 1.48 seconds. Elapsed time: 20.09 seconds; current allocated memory: 109.777 MB.
+INFO: [HLS 200-1510] Running: close_project 

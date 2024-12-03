@@ -1,0 +1,21 @@
+<pragmas>
+<pragma file="src/gesummv.c" line="17" pragmaType="unroll" parentfunction="gesummv" factor="2" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="6" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="22" pragmaType="unroll" parentfunction="gesummv" factor="2" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="20" pragmaType="unroll" parentfunction="gesummv" factor="1" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="19" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="16" pragmaType="unroll" parentfunction="gesummv" factor="2" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="5" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="1" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/gesummv.c" line="2" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="B"/>
+<pragma file="src/gesummv.c" line="3" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="x"/>
+<pragma file="src/gesummv.c" line="4" pragmaType="interface" parentfunction="gesummv" mode="ap_fifo" port="y_out" register="0" name="" depth="-1"/>
+<pragma file="src/gesummv.c" line="8" pragmaType="array_partition" parentfunction="gesummv" dim="2" factor="2" mode="cyclic" dynamic="0" variable="A"/>
+<pragma file="src/gesummv.c" line="9" pragmaType="array_partition" parentfunction="gesummv" dim="2" factor="2" mode="cyclic" dynamic="0" variable="B"/>
+<pragma file="src/gesummv.c" line="10" pragmaType="array_partition" parentfunction="gesummv" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_A"/>
+<pragma file="src/gesummv.c" line="11" pragmaType="array_partition" parentfunction="gesummv" dim="2" factor="2" mode="cyclic" dynamic="0" variable="buff_B"/>
+<pragma file="src/gesummv.c" line="12" pragmaType="array_partition" parentfunction="gesummv" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_x"/>
+<pragma file="src/gesummv.c" line="13" pragmaType="array_partition" parentfunction="gesummv" dim="1" factor="2" mode="cyclic" dynamic="0" variable="buff_y_out"/>
+<pragma file="src/gesummv.c" line="14" pragmaType="array_partition" parentfunction="gesummv" dim="1" factor="2" mode="cyclic" dynamic="0" variable="tmp1"/>
+<pragma file="src/gesummv.c" line="15" pragmaType="array_partition" parentfunction="gesummv" dim="1" factor="2" mode="cyclic" dynamic="0" variable="tmp2"/>
+</pragmas>

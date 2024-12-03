@@ -1,0 +1,12 @@
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_prj/solution/.autopilot/db/k3mm.pp.0.c:3222:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_prj/solution/.autopilot/db/k3mm.pp.0.c:3226:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=B
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_prj/solution/.autopilot/db/k3mm.pp.0.c:3230:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=C
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_prj/solution/.autopilot/db/k3mm.pp.0.c:3234:9: error: Resource with core_name: RAM_1P pragma is ignored, because this core doesn't exist at all  [clang-diagnostic-error]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=D
+        ^

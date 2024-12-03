@@ -1,0 +1,144 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:1:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=A" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:2:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=B" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:3:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=C" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:4:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=D" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_fifo port=E_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_template.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=k3mm" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="k3mm" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:1:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 1 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:2:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 2 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:3:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 3 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:4:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 4 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/k3mm.c:50:18" msg_body="Loop 'lp9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="lp9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/k3mm.c:9:0" msg_body="Unrolling loop 'lp8' (src/k3mm.c:49:14) in function 'k3mm' partially with a factor of 4">
+        <args Factor="4" LoopLoc="src/k3mm.c:49:14" LoopName="lp8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/k3mm.c:9:0" msg_body="Unrolling loop 'lp9' (src/k3mm.c:50:18) in function 'k3mm' completely with a factor of 64">
+        <args Factor="64" LoopLoc="src/k3mm.c:50:18" LoopName="lp9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/k3mm.c:9:0" msg_body="Unrolling loop 'lp3' (src/k3mm.c:34:18) in function 'k3mm' partially with a factor of 4">
+        <args Factor="4" LoopLoc="src/k3mm.c:34:18" LoopName="lp3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/k3mm.c:42:18" msg_body="Loop 'lp6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="lp6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/k3mm.c:9:0" msg_body="Unrolling loop 'lp6' (src/k3mm.c:42:18) in function 'k3mm' completely with a factor of 64">
+        <args Factor="64" LoopLoc="src/k3mm.c:42:18" LoopName="lp6"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:12:11" msg_body="array_partition dim=2 type=cyclic factor=2 variable=buff_A 1 k3mm src/k3mm.c:12:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9buff_A">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=2 variable=buff_A" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 10 Column 9" PragmaType="array_partition" VarName="buff_A" varLoc="src/k3mm.c:12:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'buff_A' due to pipeline pragma">
+        <args Dim="2" Factor="2" Mode="cyclic" Name="buff_A" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:13:11" msg_body="array_partition dim=1 type=cyclic factor=2 variable=buff_B 1 k3mm src/k3mm.c:13:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9buff_B">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=buff_B" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 10 Column 9" PragmaType="array_partition" VarName="buff_B" varLoc="src/k3mm.c:13:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:10:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'buff_B' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="buff_B" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:14:11" msg_body="array_partition dim=2 type=complete  variable=buff_C 1 k3mm src/k3mm.c:14:11 buff_C">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=2 type=complete  variable=buff_C" PragmaType="array_partition" VarName="buff_C" varLoc="src/k3mm.c:14:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="src/k3mm.c:14:11" msg_body="Inferring pragma 'array_partition type=complete dim=2' for array 'buff_C' due to pipeline pragma">
+        <args Dim="2" Mode="complete" Name="buff_C" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:15:11" msg_body="array_partition dim=1 type=complete  variable=buff_D 1 k3mm src/k3mm.c:15:11 buff_D">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=buff_D" PragmaType="array_partition" VarName="buff_D" varLoc="src/k3mm.c:15:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="src/k3mm.c:15:11" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'buff_D' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="buff_D" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:16:11" msg_body="array_partition dim=2 type=cyclic factor=4 variable=buff_E_out 1 k3mm src/k3mm.c:16:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9buff_E_out">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=4 variable=buff_E_out" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 13 Column 9" PragmaType="array_partition" VarName="buff_E_out" varLoc="src/k3mm.c:16:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=4 dim=2' for array 'buff_E_out' due to pipeline pragma">
+        <args Dim="2" Factor="4" Mode="cyclic" Name="buff_E_out" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:18:11" msg_body="array_partition dim=1 type=complete  variable=tmp2 1 k3mm src/k3mm.c:18:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9tmp2">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=tmp2" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 13 Column 9" PragmaType="array_partition" VarName="tmp2" varLoc="src/k3mm.c:18:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'tmp2' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="tmp2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/k3mm.c:18:11" msg_body="array_partition dim=2 type=cyclic factor=4 variable=tmp2 1 k3mm src/k3mm.c:18:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9tmp2">
+        <args PragmaFunction="k3mm" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=4 variable=tmp2" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl Line 13 Column 9" PragmaType="array_partition" VarName="tmp2" varLoc="src/k3mm.c:18:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl:13:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=4 dim=2' for array 'tmp2' due to pipeline pragma">
+        <args Dim="2" Factor="4" Mode="cyclic" Name="tmp2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:12:11" msg_body="Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="buff_A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:13:11" msg_body="Applying array_partition to 'buff_B': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_B"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:14:11" msg_body="Applying array_partition to 'buff_C': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="buff_C"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:15:11" msg_body="Applying array_partition to 'buff_D': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="buff_D"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:16:11" msg_body="Applying array_partition to 'buff_E_out': Cyclic partitioning with factor 4 on dimension 2.">
+        <args Dim="2" Factor="4" Mode="Cyclic" UOName="buff_E_out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/k3mm.c:18:11" msg_body="Applying array_partition to 'tmp2': Complete partitioning on dimension 1. Cyclic partitioning with factor 4 on dimension 2.">
+        <args Dim="islist 1 2" Factor="4" Mode="islist Complete Cyclic" UOName="tmp2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/k3mm.c:9:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'E_out'">
+        <args Name="E_out"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

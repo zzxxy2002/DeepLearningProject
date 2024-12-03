@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 33,
+    "calls": "",
+    "file": "bicg.c",
+    "fileloc": 3,
+    "instructions": 264,
+    "loads": {
+      "L": 23,
+      "T": 3
+    },
+    "name": "bicg",
+    "stores": {
+      "L": 17
+    },
+    "total_instructions": 264
+  }
+}

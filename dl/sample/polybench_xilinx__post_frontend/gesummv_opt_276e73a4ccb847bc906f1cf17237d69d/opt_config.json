@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"gesummv\" A\nset_directive_resource -core RAM_1P \"gesummv\" B\nset_directive_resource -core RAM_1P \"gesummv\" x\nset_directive_interface -mode ap_fifo \"gesummv\" y_out\nset_directive_pipeline \"gesummv/lprd_2\"\nset_directive_pipeline \"gesummv/lpwr\"\n",
+    "array_partition_lines": [
+        "set_directive_array_partition -type cyclic -factor 2 -dim 2 \"gesummv\" A\nset_directive_array_partition -type cyclic -factor 2 -dim 2 \"gesummv\" B\nset_directive_array_partition -type cyclic -factor 2 -dim 2 \"gesummv\" buff_A\nset_directive_array_partition -type cyclic -factor 2 -dim 2 \"gesummv\" buff_B\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"gesummv\" buff_x\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"gesummv\" buff_y_out\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"gesummv\" tmp1\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"gesummv\" tmp2\nset_directive_unroll -factor 2 \"gesummv/lprd_2\"\nset_directive_unroll -factor 2 \"gesummv/lpwr\"\n"
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline gesummv/lp1\nset_directive_unroll -factor 1 gesummv/lp1\n",
+        "set_directive_unroll -factor 2 gesummv/lp4\n"
+    ]
+}

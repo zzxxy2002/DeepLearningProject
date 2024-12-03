@@ -1,0 +1,12 @@
+<pragmas>
+<pragma file="src/gesummv.c" line="6" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="13" pragmaType="unroll" parentfunction="gesummv" factor="4" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="12" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="10" pragmaType="unroll" parentfunction="gesummv" factor="4" skip_exit_check="0"/>
+<pragma file="src/gesummv.c" line="9" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="5" pragmaType="pipeline" parentfunction="gesummv" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/gesummv.c" line="1" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/gesummv.c" line="2" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="B"/>
+<pragma file="src/gesummv.c" line="3" pragmaType="bind_storage" parentfunction="gesummv" op="666" impl="17" latency="-1" variable="x"/>
+<pragma file="src/gesummv.c" line="4" pragmaType="interface" parentfunction="gesummv" mode="ap_fifo" port="y_out" register="0" name="" depth="-1"/>
+</pragmas>

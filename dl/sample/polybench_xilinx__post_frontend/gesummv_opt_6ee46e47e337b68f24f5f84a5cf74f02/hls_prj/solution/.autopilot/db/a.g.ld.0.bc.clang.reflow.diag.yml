@@ -1,0 +1,287 @@
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 1, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 1, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 2, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 2, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-preprocess
+Name:            PragmaResourceTopArg
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 3, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'The resource pragma (bind_storage) on top-level function argument, in '''
+  - Pragma:          call
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 3, Column: 9 }
+  - String:          ''' is unsupported, please use INTERFACE pragma instead'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp4
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:32:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        lp2
+  - String:          ''' ('
+  - LoopLoc:         'src/gesummv.c:26:14'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          gesummv
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        lp5
+  - String:          '> at '
+  - LoopLoc:         'src/gesummv.c:37:7'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/gesummv.c, Line: 7, Column: 8 }
+Function:        gesummv
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=buff_A'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  gesummv
+  - String:          ' '
+  - varLoc:          'src/gesummv.c:7:8'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:9:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 9, Column: 9 }
+  - VarName:         buff_A
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 9, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            buff_A
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/gesummv.c, Line: 8, Column: 8 }
+Function:        gesummv
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=cyclic factor=2 variable=buff_B'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  gesummv
+  - String:          ' '
+  - varLoc:          'src/gesummv.c:8:8'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:12:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 12, Column: 9 }
+  - VarName:         buff_B
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 12, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            buff_B
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/gesummv.c, Line: 9, Column: 8 }
+Function:        gesummv
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=2 variable=buff_x'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  gesummv
+  - String:          ' '
+  - varLoc:          'src/gesummv.c:9:8'
+  - String:          ' '
+  - PragmaSrcLoc:    '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl:9:9'
+    DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                       Line: 9, Column: 9 }
+  - VarName:         buff_x
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_6ee46e47e337b68f24f5f84a5cf74f02/opt.tcl, 
+                   Line: 9, Column: 9 }
+Function:        gesummv
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            buff_x
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 7, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 8, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_B
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/gesummv.c, Line: 9, Column: 8 }
+Function:        gesummv
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          buff_x
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Missed
+Pass:            pasta-interface-builder
+Name:            UnsupportArrayToStream
+DebugLoc:        { File: src/gesummv.c, Line: 5, Column: 0 }
+Function:        gesummv
+Args:            
+  - String:          'Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port '''
+  - Name:            y_out
+  - String:          ''''
+...

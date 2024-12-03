@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"atax\" A\nset_directive_resource -core RAM_1P \"atax\" x\nset_directive_interface -mode ap_fifo \"atax\" y_out\nset_directive_pipeline \"atax/lprd_2\"\nset_directive_pipeline \"atax/lpwr_1\"\n",
+    "array_partition_lines": [
+        ""
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline atax/lp2\nset_directive_unroll -factor 4 atax/lp2\n",
+        "set_directive_pipeline atax/lp4\nset_directive_unroll -factor 4 atax/lp4\n"
+    ]
+}

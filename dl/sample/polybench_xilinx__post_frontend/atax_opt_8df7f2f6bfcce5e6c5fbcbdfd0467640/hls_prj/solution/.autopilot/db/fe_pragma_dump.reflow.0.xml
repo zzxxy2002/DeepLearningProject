@@ -1,0 +1,11 @@
+<pragmas>
+<pragma file="src/atax.c" line="5" pragmaType="pipeline" parentfunction="atax" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/atax.c" line="12" pragmaType="unroll" parentfunction="atax" factor="4" skip_exit_check="0"/>
+<pragma file="src/atax.c" line="11" pragmaType="pipeline" parentfunction="atax" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/atax.c" line="9" pragmaType="unroll" parentfunction="atax" factor="4" skip_exit_check="0"/>
+<pragma file="src/atax.c" line="8" pragmaType="pipeline" parentfunction="atax" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/atax.c" line="4" pragmaType="pipeline" parentfunction="atax" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/atax.c" line="1" pragmaType="bind_storage" parentfunction="atax" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/atax.c" line="2" pragmaType="bind_storage" parentfunction="atax" op="666" impl="17" latency="-1" variable="x"/>
+<pragma file="src/atax.c" line="3" pragmaType="interface" parentfunction="atax" mode="ap_fifo" port="y_out" register="0" name="" depth="-1"/>
+</pragmas>

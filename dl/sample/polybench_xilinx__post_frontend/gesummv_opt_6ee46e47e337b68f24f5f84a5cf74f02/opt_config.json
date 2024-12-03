@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"gesummv\" A\nset_directive_resource -core RAM_1P \"gesummv\" B\nset_directive_resource -core RAM_1P \"gesummv\" x\nset_directive_interface -mode ap_fifo \"gesummv\" y_out\nset_directive_pipeline \"gesummv/lprd_2\"\nset_directive_pipeline \"gesummv/lpwr\"\n",
+    "array_partition_lines": [
+        ""
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline gesummv/lp2\nset_directive_unroll -factor 4 gesummv/lp2\n",
+        "set_directive_pipeline gesummv/lp4\nset_directive_unroll -factor 4 gesummv/lp4\n"
+    ]
+}

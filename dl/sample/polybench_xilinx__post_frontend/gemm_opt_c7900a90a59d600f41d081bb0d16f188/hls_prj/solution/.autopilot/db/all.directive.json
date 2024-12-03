@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "gemm",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "gemm"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gemm_opt_c7900a90a59d600f41d081bb0d16f188/hls_template.tcl",
+    "sourceLine": 9,
+    "success": true
+  }
+]

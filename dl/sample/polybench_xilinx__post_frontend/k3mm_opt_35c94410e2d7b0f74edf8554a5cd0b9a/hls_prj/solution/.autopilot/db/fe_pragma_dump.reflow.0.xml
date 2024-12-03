@@ -1,0 +1,13 @@
+<pragmas>
+<pragma file="src/k3mm.c" line="7" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="14" pragmaType="unroll" parentfunction="k3mm" factor="4" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="13" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="11" pragmaType="unroll" parentfunction="k3mm" factor="4" skip_exit_check="0"/>
+<pragma file="src/k3mm.c" line="10" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="6" pragmaType="pipeline" parentfunction="k3mm" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="src/k3mm.c" line="1" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="A"/>
+<pragma file="src/k3mm.c" line="2" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="B"/>
+<pragma file="src/k3mm.c" line="3" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="C"/>
+<pragma file="src/k3mm.c" line="4" pragmaType="bind_storage" parentfunction="k3mm" op="666" impl="17" latency="-1" variable="D"/>
+<pragma file="src/k3mm.c" line="5" pragmaType="interface" parentfunction="k3mm" mode="ap_fifo" port="E_out" register="0" name="" depth="-1"/>
+</pragmas>

@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"bicg\" A\nset_directive_resource -core RAM_1P \"bicg\" r\nset_directive_resource -core RAM_1P \"bicg\" p\nset_directive_interface -mode ap_fifo \"bicg\" s_out\nset_directive_interface -mode ap_fifo \"bicg\" q_out\nset_directive_pipeline \"bicg/lprd_2\"\nset_directive_pipeline \"bicg/lpwr\"\n",
+    "array_partition_lines": [
+        ""
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline bicg/lp2\nset_directive_unroll -factor 4 bicg/lp2\n",
+        "set_directive_pipeline bicg/lp4\nset_directive_unroll -factor 4 bicg/lp4\n"
+    ]
+}

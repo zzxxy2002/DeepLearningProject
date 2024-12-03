@@ -1,0 +1,260 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2023.2.2 (64-bit)
+  **** SW Build 4101106 on Feb  9 2024
+  **** IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+  **** SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /tools/software/xilinx/Vitis_HLS/2023.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/software/xilinx/Vitis_HLS/2023.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'xxu425' on host 'chao-srv1.ece.gatech.edu' (Linux_x86_64 version 4.18.0-553.16.1.el8_10.x86_64) on Mon Dec 02 12:52:24 EST 2024
+INFO: [HLS 200-10] On os "Red Hat Enterprise Linux release 8.10 (Ootpa)"
+INFO: [HLS 200-10] In directory '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b'
+INFO: [HLS 200-2053] The vitis_hls executable is being deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'dataset_hls.tcl'
+INFO: [HLS 200-1510] Running: source dataset_hls.tcl
+INFO: [HLS 200-1510] Running: source hls_template.tcl
+INFO: [HLS 200-1510] Running: open_project -reset hls_prj 
+INFO: [HLS 200-10] Creating and opening project '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj'.
+INFO: [HLS 200-1510] Running: set_top bicg 
+INFO: [HLS 200-1510] Running: add_files src/bicg.c 
+INFO: [HLS 200-10] Adding design file 'src/bicg.c' to the project
+INFO: [HLS 200-1510] Running: add_files src/bicg.h 
+INFO: [HLS 200-10] Adding design file 'src/bicg.h' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution 
+INFO: [HLS 200-10] Creating and opening solution '/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xczu9eg-ffvb1156-2-i 
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-i'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: source opt.tcl
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg A 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg r 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_resource -core RAM_1P bicg p 
+WARNING: [HLS 200-484] The 'set_directive_resource -core' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_resource -location' command is deprecated and will be removed in a future release.
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo bicg s_out 
+INFO: [HLS 200-1510] Running: set_directive_interface -mode ap_fifo bicg q_out 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 2 bicg buff_A 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_p 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_r 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_s_out 
+INFO: [HLS 200-1510] Running: set_directive_array_partition -type cyclic -factor 2 -dim 1 bicg buff_q_out 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lprd_2 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lpwr 
+INFO: [HLS 200-1510] Running: set_directive_pipeline bicg/lp1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 1 bicg/lp1 
+INFO: [HLS 200-1510] Running: set_directive_unroll -factor 2 bicg/lp4 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 293.020 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/bicg.c' ... 
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:1:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:2:9)
+WARNING: [HLS 207-5536] 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:3:9)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.73 seconds. Elapsed time: 2.17 seconds; current allocated memory: 296.168 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 165 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 646 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 557 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 612 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 612 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 919 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 687 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 747 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 682 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 695 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 730 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/hls_prj/solution/syn/report/csynth_design_size.rpt
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:1:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:3:9)
+WARNING: [HLS 214-340] The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead (/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_b9c200990d1132edccb23a97ceacba6b/opt.tcl:2:9)
+INFO: [HLS 214-291] Loop 'lp2' is marked as complete unroll implied by the pipeline pragma (src/bicg.c:24:14)
+INFO: [HLS 214-188] Unrolling loop 'lpwr' (src/bicg.c:35:8) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-188] Unrolling loop 'lp4' (src/bicg.c:30:14) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-186] Unrolling loop 'lp2' (src/bicg.c:24:14) in function 'bicg' completely with a factor of 64 (src/bicg.c:4:0)
+INFO: [HLS 214-188] Unrolling loop 'lprd_2' (src/bicg.c:18:11) in function 'bicg' partially with a factor of 2 (src/bicg.c:4:0)
+INFO: [HLS 214-248] Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2. (src/bicg.c:7:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_p': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:8:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_r': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:9:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_s_out': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:10:8)
+INFO: [HLS 214-248] Applying array_partition to 'buff_q_out': Cyclic partitioning with factor 2 on dimension 1. (src/bicg.c:11:8)
+INFO: [HLS 214-248] Applying array_partition to 'A': Cyclic partitioning with factor 2 on dimension 2. (src/bicg.c:4:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< lp4> at src/bicg.c:30:14 
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 's_out' (src/bicg.c:4:0)
+Resolution: For help on HLS 214-142 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=214-142.html
+WARNING: [HLS 214-142] Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'q_out' (src/bicg.c:4:0)
+Resolution: For help on HLS 214-142 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=214-142.html
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.7 seconds. CPU system time: 0.45 seconds. Elapsed time: 9.95 seconds; current allocated memory: 297.855 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 297.855 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 298.793 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 299.043 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 322.871 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'lprd_1' (src/bicg.c:13:10) in function 'bicg' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [HLS 200-960] Cannot flatten loop 'lp3' (src/bicg.c:29:7) in function 'bicg' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.22 seconds; current allocated memory: 355.883 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'bicg' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lprd_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'lprd_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.17 seconds; current allocated memory: 356.430 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 356.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp1'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp1' (loop 'lp1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation 0 bit ('add18_write_ln25', src/bicg.c:25) of variable 'add', src/bicg.c:25 on local variable 'add18' and 'load' operation 32 bit ('add18_load', src/bicg.c:25) on local variable 'add18'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp1' (loop 'lp1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation 0 bit ('add18_write_ln25', src/bicg.c:25) of variable 'add', src/bicg.c:25 on local variable 'add18' and 'load' operation 32 bit ('add18_load', src/bicg.c:25) on local variable 'add18'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 3, Depth = 11, loop 'lp1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.44 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.51 seconds; current allocated memory: 362.660 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 362.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A_1'. Use bind_storage pragma to override this type.
+INFO: [HLS 200-1457] Automatically inferring inferring RAM_1WNR storage type for array 'buff_A'. Use bind_storage pragma to override this type.
+INFO: [SCHED 204-61] Pipelining loop 'lp4'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lp4' (loop 'lp4'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'fadd' operation 32 bit ('add62_1', src/bicg.c:31) and 'fadd' operation 32 bit ('add1', src/bicg.c:31).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 13, loop 'lp4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 363.145 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 363.254 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'lpwr'.
+WARNING: [HLS 200-880] The II Violation in module 'bicg_Pipeline_lpwr' (loop 'lpwr'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between fifo write operation ('s_out_write_ln36', src/bicg.c:36) on port 's_out' (src/bicg.c:36) and fifo write operation ('s_out_write_ln36', src/bicg.c:36) on port 's_out' (src/bicg.c:36).
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2023.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 3, loop 'lpwr'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 363.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 363.648 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'bicg' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.26 seconds; current allocated memory: 367.543 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.28 seconds; current allocated memory: 367.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lprd_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lprd_2' pipeline 'lprd_2' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lprd_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 367.543 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lp1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lp1' pipeline 'lp1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 22 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 22 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lp1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.06 seconds; current allocated memory: 372.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lp4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lp4' pipeline 'lp4' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lp4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.63 seconds; current allocated memory: 387.422 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg_Pipeline_lpwr' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'bicg_Pipeline_lpwr' pipeline 'lpwr' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg_Pipeline_lpwr'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 387.422 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'bicg' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/A_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/A_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/p' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/s_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'bicg/q_out' to 'ap_fifo'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'bicg' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'bicg'.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_A_RAM_1WNR_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_p_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'bicg_buff_s_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 390.562 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.36 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.11 seconds; current allocated memory: 398.121 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.42 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.78 seconds; current allocated memory: 403.484 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for bicg.
+INFO: [VLOG 209-307] Generating Verilog RTL for bicg.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 142.53 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.3 seconds. CPU system time: 1.38 seconds. Elapsed time: 19.25 seconds; current allocated memory: 111.156 MB.
+INFO: [HLS 200-1510] Running: close_project 
+INFO: [HLS 200-112] Total CPU user time: 9.23 seconds. Total CPU system time: 1.92 seconds. Total elapsed time: 22.43 seconds; peak allocated memory: 403.820 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Mon Dec  2 12:52:46 2024...

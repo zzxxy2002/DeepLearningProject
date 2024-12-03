@@ -1,0 +1,19 @@
+{
+  "0": {
+    "basicblocks": 36,
+    "calls": "",
+    "file": "mvt.c",
+    "fileloc": 4,
+    "instructions": 173,
+    "loads": {
+      "L": 8,
+      "T": 5
+    },
+    "name": "mvt",
+    "stores": {
+      "L": 7,
+      "T": 2
+    },
+    "total_instructions": 173
+  }
+}

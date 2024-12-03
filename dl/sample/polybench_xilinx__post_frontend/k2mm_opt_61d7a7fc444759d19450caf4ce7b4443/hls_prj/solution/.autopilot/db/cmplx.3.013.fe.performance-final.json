@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 92,
+    "calls": "",
+    "file": "k2mm.c",
+    "fileloc": 4,
+    "instructions": 3795,
+    "loads": {
+      "L": 394,
+      "T": 8
+    },
+    "name": "k2mm",
+    "stores": {
+      "L": 272
+    },
+    "total_instructions": 3795
+  }
+}

@@ -1,0 +1,176 @@
+
+
+================================================================
+== Synthesis Summary Report of 'atax'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 12:52:40 2024
+    * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+    * Project:        hls_prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu9eg-ffvb1156-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |          Modules         | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |          |          |            |            |     |
+    |          & Loops         | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |+ atax                    |     -|  0.19|    21912|  2.191e+05|         -|    21913|     -|        no|  13 (~0%)|  20 (~0%)|  2967 (~0%)|   3097 (1%)|    -|
+    | + atax_Pipeline_lp1_lp2  |     -|  0.28|    16391|  1.639e+05|         -|    16391|     -|        no|         -|         -|   547 (~0%)|   378 (~0%)|    -|
+    |  o lp1_lp2               |    II|  7.30|    16389|  1.639e+05|        22|       16|  1024|       yes|         -|         -|           -|           -|    -|
+    | + atax_Pipeline_lp3_lp4  |     -|  0.19|     1033|  1.033e+04|         -|     1033|     -|        no|         -|  15 (~0%)|  1735 (~0%)|  1365 (~0%)|    -|
+    |  o lp3_lp4               |     -|  7.30|     1031|  1.031e+04|         9|        1|  1024|       yes|         -|         -|           -|           -|    -|
+    | + atax_Pipeline_lpwr_1   |     -|  4.46|       66|    660.000|         -|       66|     -|        no|         -|         -|    12 (~0%)|    98 (~0%)|    -|
+    |  o lpwr_1                |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|         -|         -|           -|           -|    -|
+    | o lprd_1                 |     -|  7.30|     4416|  4.416e+04|        69|        -|    64|        no|         -|         -|           -|           -|    -|
+    |  + atax_Pipeline_lprd_2  |     -|  4.83|       66|    660.000|         -|       66|     -|        no|         -|         -|    16 (~0%)|    86 (~0%)|    -|
+    |   o lprd_2               |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|         -|         -|           -|           -|    -|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+-----------+------------+
+| Interface | Direction | Data Width |
++-----------+-----------+------------+
+| y_out     | out       | 32         |
++-----------+-----------+------------+
+
+* AP_MEMORY
++------------+-----------+----------+
+| Port       | Direction | Bitwidth |
++------------+-----------+----------+
+| A_address0 | out       | 12       |
+| A_q0       | in        | 32       |
+| x_address0 | out       | 6        |
+| x_q0       | in        | 32       |
++------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| x        | in        | float*   |
+| y_out    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+
+| Argument | HW Interface | HW Type   | HW Usage |
++----------+--------------+-----------+----------+
+| A        | A_address0   | port      | offset   |
+| A        | A_ce0        | port      |          |
+| A        | A_q0         | port      |          |
+| x        | x_address0   | port      | offset   |
+| x        | x_ce0        | port      |          |
+| x        | x_q0         | port      |          |
+| y_out    | y_out        | interface |          |
++----------+--------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                  | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+| + atax                                | 20  |        |            |      |         |         |
+|   add_ln11_fu_274_p2                  |     |        | add_ln11   | add  | fabric  | 0       |
+|  + atax_Pipeline_lp1_lp2              | 0   |        |            |      |         |         |
+|    add_ln20_1_fu_236_p2               |     |        | add_ln20_1 | add  | fabric  | 0       |
+|    add_ln20_fu_248_p2                 |     |        | add_ln20   | add  | fabric  | 0       |
+|    add_ln21_fu_367_p2                 |     |        | add_ln21   | add  | fabric  | 0       |
+|  + atax_Pipeline_lprd_2               | 0   |        |            |      |         |         |
+|    add_ln15_fu_119_p2                 |     |        | add_ln15   | add  | fabric  | 0       |
+|    add_ln16_fu_129_p2                 |     |        | add_ln16   | add  | fabric  | 0       |
+|  + atax_Pipeline_lp3_lp4              | 15  |        |            |      |         |         |
+|    add_ln26_1_fu_269_p2               |     |        | add_ln26_1 | add  | fabric  | 0       |
+|    add_ln26_fu_281_p2                 |     |        | add_ln26   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U18  | 3   |        | mul57_1    | fmul | maxdsp  | 2       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U19  | 3   |        | mul57_2    | fmul | maxdsp  | 2       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U20  | 3   |        | mul57_3    | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U14 | 2   |        | add58_1    | fadd | fulldsp | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U15 | 2   |        | add58_2    | fadd | fulldsp | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U16 | 2   |        | add58_3    | fadd | fulldsp | 3       |
+|    add_ln27_fu_374_p2                 |     |        | add_ln27   | add  | fabric  | 0       |
+|  + atax_Pipeline_lpwr_1               | 0   |        |            |      |         |         |
+|    add_ln32_fu_137_p2                 |     |        | add_ln32   | add  | fabric  | 0       |
++---------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| Name             | Usage         | Type | BRAM | URAM | Pragma | Variable     | Impl | Latency | Bitwidth, Depth, |
+|                  |               |      |      |      |        |              |      |         | Banks            |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| + atax           |               |      | 13   | 0    |        |              |      |         |                  |
+|   buff_A_U       | ram_s2p array |      | 4    |      |        | buff_A       | auto | 1       | 32, 2048, 1      |
+|   buff_A_1_U     | ram_s2p array |      | 4    |      |        | buff_A_1     | auto | 1       | 32, 2048, 1      |
+|   buff_x_U       | ram_s2p array |      | 2    |      |        | buff_x       | auto | 1       | 32, 32, 1        |
+|   buff_x_1_U     | ram_s2p array |      | 2    |      |        | buff_x_1     | auto | 1       | 32, 32, 1        |
+|   buff_y_out_U   | ram_s2p array |      |      |      |        | buff_y_out   | auto | 1       | 32, 16, 1        |
+|   buff_y_out_1_U | ram_s2p array |      |      |      |        | buff_y_out_1 | auto | 1       | 32, 16, 1        |
+|   buff_y_out_2_U | ram_s2p array |      |      |      |        | buff_y_out_2 | auto | 1       | 32, 16, 1        |
+|   buff_y_out_3_U | ram_s2p array |      |      |      |        | buff_y_out_3 | auto | 1       | 32, 16, 1        |
+|   tmp1_U         | ram_1p array  |      | 1    |      |        | tmp1         | auto | 1       | 32, 64, 1        |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                | Location             | Messages                                                                                                                         |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | core=RAM_1P variable=A | opt.tcl:1 in atax, A | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=x | opt.tcl:2 in atax, x | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+--------------------+--------------------------+
+| Type      | Options            | Location                 |
++-----------+--------------------+--------------------------+
+| interface | ap_fifo port=y_out | opt.tcl:3 in atax, y_out |
+| pipeline  |                    | opt.tcl:4 in atax        |
+| pipeline  |                    | opt.tcl:5 in atax        |
+| pipeline  |                    | opt.tcl:8 in atax        |
+| pipeline  |                    | opt.tcl:11 in atax       |
+| unroll    | factor=4           | opt.tcl:9 in atax        |
+| unroll    | factor=4           | opt.tcl:12 in atax       |
++-----------+--------------------+--------------------------+
+
+* Inferred Pragmas
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| Source Pragma       | Inferred Pragma | Options                                        | Location                    |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| pipeline opt.tcl:8  | array_partition | dim=1 type=cyclic factor=2 variable=buff_x     | variable buff_x in atax     |
+| pipeline opt.tcl:11 | array_partition | dim=2 type=cyclic factor=2 variable=buff_A     | variable buff_A in atax     |
+| pipeline opt.tcl:11 | array_partition | dim=1 type=cyclic factor=4 variable=buff_y_out | variable buff_y_out in atax |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+
+

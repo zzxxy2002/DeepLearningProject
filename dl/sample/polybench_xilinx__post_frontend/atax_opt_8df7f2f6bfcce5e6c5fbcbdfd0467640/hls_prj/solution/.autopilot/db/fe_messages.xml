@@ -1,0 +1,81 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:1:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=A" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5536" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:2:9" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead">
+        <args ClangWarningOption="ignored-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:2:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="core=RAM_1P variable=x" ARG_PragmaType="resource" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:3:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_fifo port=y_out" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/hls_template.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=atax" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:4:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:8:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaOptions="factor=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:5:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="atax" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:1:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl Line 1 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-340" msg_severity="WARNING" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:2:9" msg_body="The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead">
+        <args Pragma="call" Pragma-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl Line 2 Column 9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/atax.c:4:0" msg_body="Unrolling loop 'lp4' (src/atax.c:27:14) in function 'atax' partially with a factor of 4">
+        <args Factor="4" LoopLoc="src/atax.c:27:14" LoopName="lp4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="src/atax.c:4:0" msg_body="Unrolling loop 'lp2' (src/atax.c:21:14) in function 'atax' partially with a factor of 4">
+        <args Factor="4" LoopLoc="src/atax.c:21:14" LoopName="lp2"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/atax.c:6:11" msg_body="array_partition dim=2 type=cyclic factor=2 variable=buff_A 1 atax src/atax.c:6:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9buff_A">
+        <args PragmaFunction="atax" PragmaIsAuto="1" PragmaOptions="dim=2 type=cyclic factor=2 variable=buff_A" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl Line 11 Column 9" PragmaType="array_partition" VarName="buff_A" varLoc="src/atax.c:6:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=2' for array 'buff_A' due to pipeline pragma">
+        <args Dim="2" Factor="2" Mode="cyclic" Name="buff_A" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/atax.c:7:11" msg_body="array_partition dim=1 type=cyclic factor=2 variable=buff_x 1 atax src/atax.c:7:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:8:9buff_x">
+        <args PragmaFunction="atax" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=2 variable=buff_x" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:8:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl Line 8 Column 9" PragmaType="array_partition" VarName="buff_x" varLoc="src/atax.c:7:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:8:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=1' for array 'buff_x' due to pipeline pragma">
+        <args Dim="1" Factor="2" Mode="cyclic" Name="buff_x" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="src/atax.c:8:11" msg_body="array_partition dim=1 type=cyclic factor=4 variable=buff_y_out 1 atax src/atax.c:8:11 /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9buff_y_out">
+        <args PragmaFunction="atax" PragmaIsAuto="1" PragmaOptions="dim=1 type=cyclic factor=4 variable=buff_y_out" PragmaSrcLoc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9" PragmaSrcLoc-DebugLoc="File /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl Line 11 Column 9" PragmaType="array_partition" VarName="buff_y_out" varLoc="src/atax.c:8:11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/atax_opt_8df7f2f6bfcce5e6c5fbcbdfd0467640/opt.tcl:11:9" msg_body="Inferring pragma 'array_partition type=cyclic factor=4 dim=1' for array 'buff_y_out' due to pipeline pragma">
+        <args Dim="1" Factor="4" Mode="cyclic" Name="buff_y_out" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/atax.c:6:11" msg_body="Applying array_partition to 'buff_A': Cyclic partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Cyclic" UOName="buff_A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/atax.c:7:11" msg_body="Applying array_partition to 'buff_x': Cyclic partitioning with factor 2 on dimension 1.">
+        <args Dim="1" Factor="2" Mode="Cyclic" UOName="buff_x"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/atax.c:8:11" msg_body="Applying array_partition to 'buff_y_out': Cyclic partitioning with factor 4 on dimension 1.">
+        <args Dim="1" Factor="4" Mode="Cyclic" UOName="buff_y_out"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-142" msg_severity="WARNING" msg_loc="src/atax.c:4:0" msg_body="Implementing stream: may cause mismatch if read and write accesses are not in sequential order on port 'y_out'">
+        <args Name="y_out"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

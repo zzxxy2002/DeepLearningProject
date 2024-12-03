@@ -1,0 +1,4 @@
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gemm_opt_0f87ed52e3236b9b117eb316e1581bc4/hls_template.tcl:9:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gemm_XLX_SEP_ PragmaOptions=name=gemm_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=gemm
+        ^
+1 warning generated.

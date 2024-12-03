@@ -1,0 +1,250 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 1,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "r"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 2,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "p"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 3,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 3,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "ap_fifo",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "s_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 4,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 4,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "ap_fifo",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "q_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 5,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 5,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lprd_2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 6,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 6,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lpwr",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 7,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 10,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 8,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp2",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 11,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 9,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp4",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 13,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 10,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp4",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl",
+    "sourceLine": 14,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "bicg",
+    "id": 11,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "bicg"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/hls_template.tcl",
+    "sourceLine": 9,
+    "success": true
+  }
+]

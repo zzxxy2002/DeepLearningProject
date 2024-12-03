@@ -1,0 +1,250 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "A"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 1,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "B"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 2,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 2,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "C"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 3,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 3,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "RESOURCE",
+      "option": [
+        {
+          "name": "core",
+          "value": "RAM_1P"
+        },
+        {
+          "name": "variable",
+          "value": "D"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 4,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 4,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "INTERFACE",
+      "option": [
+        {
+          "name": "ap_fifo",
+          "value": ""
+        },
+        {
+          "name": "port",
+          "value": "E_out"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 5,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 5,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lprd_2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 6,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 6,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lpwr_2",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 7,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp3",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 10,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 8,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp3",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 11,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 9,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp8",
+    "pragma": {
+      "name": "PIPELINE"
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 13,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 10,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "lp8",
+    "pragma": {
+      "name": "UNROLL",
+      "option": [
+        {
+          "name": "factor",
+          "value": "4"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/opt.tcl",
+    "sourceLine": 14,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "k3mm",
+    "id": 11,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "k3mm"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/k3mm_opt_35c94410e2d7b0f74edf8554a5cd0b9a/hls_template.tcl",
+    "sourceLine": 9,
+    "success": true
+  }
+]

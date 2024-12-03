@@ -1,0 +1,10 @@
+{
+    "static_lines": "set_directive_resource -core RAM_1P \"atax\" A\nset_directive_resource -core RAM_1P \"atax\" x\nset_directive_interface -mode ap_fifo \"atax\" y_out\nset_directive_pipeline \"atax/lprd_2\"\nset_directive_pipeline \"atax/lpwr_1\"\n",
+    "array_partition_lines": [
+        "set_directive_array_partition -type cyclic -factor 2 -dim 2 \"atax\" A\nset_directive_array_partition -type cyclic -factor 2 -dim 2 \"atax\" buff_A\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"atax\" tmp1\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"atax\" buff_x\nset_directive_array_partition -type cyclic -factor 2 -dim 1 \"atax\" buff_y_out\nset_directive_unroll -factor 2 \"atax/lprd_2\"\nset_directive_unroll -factor 2 \"atax/lpwr_1\"\n"
+    ],
+    "loop_opt_lines": [
+        "set_directive_pipeline atax/lp1\nset_directive_unroll -factor 1 atax/lp1\n",
+        "set_directive_unroll -factor 2 atax/lp4\n"
+    ]
+}

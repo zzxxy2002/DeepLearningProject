@@ -1,0 +1,19 @@
+---
+MainSourceFile:  /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/hls_prj/solution/.autopilot/db/bicg.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Resource with core_name: RAM_1P pragma is ignored, because this core doesn''t exist at all '
+    FileOffset:      1
+    FilePath:        /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Resource with core_name: RAM_1P pragma is ignored, because this core doesn''t exist at all '
+    FileOffset:      2
+    FilePath:        /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Resource with core_name: RAM_1P pragma is ignored, because this core doesn''t exist at all '
+    FileOffset:      3
+    FilePath:        /nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/bicg_opt_c7d275d43101429d85af7820539d5595/opt.tcl
+    Replacements:    
+...

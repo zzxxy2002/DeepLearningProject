@@ -1,0 +1,194 @@
+
+
+================================================================
+== Synthesis Summary Report of 'gesummv'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 12:52:43 2024
+    * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+    * Project:        hls_prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu9eg-ffvb1156-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+    |           Modules           | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |         |            |            |     |
+    |           & Loops           | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF     |     LUT    | URAM|
+    +-----------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+    |+ gesummv                    |     -|  0.28|    37349|  3.735e+05|         -|    37350|     -|        no|  23 (1%)|  5 (~0%)|  1717 (~0%)|  2162 (~0%)|    -|
+    | + gesummv_Pipeline_lp1_lp2  |     -|  0.28|    16394|  1.639e+05|         -|    16394|     -|        no|        -|        -|   547 (~0%)|   406 (~0%)|    -|
+    |  o lp1_lp2                  |    II|  7.30|    16392|  1.639e+05|        25|       16|  1024|       yes|        -|        -|           -|           -|    -|
+    | + gesummv_Pipeline_lp3_lp4  |     -|  0.28|    16394|  1.639e+05|         -|    16394|     -|        no|        -|        -|   547 (~0%)|   406 (~0%)|    -|
+    |  o lp3_lp4                  |    II|  7.30|    16392|  1.639e+05|        25|       16|  1024|       yes|        -|        -|           -|           -|    -|
+    | + gesummv_Pipeline_lp5      |     -|  0.86|       71|    710.000|         -|       71|     -|        no|        -|        -|   187 (~0%)|    99 (~0%)|    -|
+    |  o lp5                      |     -|  7.30|       69|    690.000|         7|        1|    64|       yes|        -|        -|           -|           -|    -|
+    | + gesummv_Pipeline_lpwr     |     -|  4.43|       66|    660.000|         -|       66|     -|        no|        -|        -|    10 (~0%)|    78 (~0%)|    -|
+    |  o lpwr                     |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|        -|        -|           -|           -|    -|
+    | o lprd_1                    |     -|  7.30|     4416|  4.416e+04|        69|        -|    64|        no|        -|        -|           -|           -|    -|
+    |  + gesummv_Pipeline_lprd_2  |     -|  4.83|       66|    660.000|         -|       66|     -|        no|        -|        -|    16 (~0%)|    86 (~0%)|    -|
+    |   o lprd_2                  |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|        -|        -|           -|           -|    -|
+    +-----------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+-----------+------------+
+| Interface | Direction | Data Width |
++-----------+-----------+------------+
+| y_out     | out       | 32         |
++-----------+-----------+------------+
+
+* AP_MEMORY
++------------+-----------+----------+
+| Port       | Direction | Bitwidth |
++------------+-----------+----------+
+| A_address0 | out       | 12       |
+| A_q0       | in        | 32       |
+| B_address0 | out       | 12       |
+| B_q0       | in        | 32       |
+| x_address0 | out       | 6        |
+| x_q0       | in        | 32       |
++------------+-----------+----------+
+
+* Other Ports
++-------+---------+-----------+----------+
+| Port  | Mode    | Direction | Bitwidth |
++-------+---------+-----------+----------+
+| alpha | ap_none | in        | 32       |
+| beta  | ap_none | in        | 32       |
++-------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| alpha    | in        | float    |
+| beta     | in        | float    |
+| A        | in        | float*   |
+| B        | in        | float*   |
+| x        | in        | float*   |
+| y_out    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+
+| Argument | HW Interface | HW Type   | HW Usage |
++----------+--------------+-----------+----------+
+| alpha    | alpha        | port      |          |
+| beta     | beta         | port      |          |
+| A        | A_address0   | port      | offset   |
+| A        | A_ce0        | port      |          |
+| A        | A_q0         | port      |          |
+| B        | B_address0   | port      | offset   |
+| B        | B_ce0        | port      |          |
+| B        | B_q0         | port      |          |
+| x        | x_address0   | port      | offset   |
+| x        | x_ce0        | port      |          |
+| x        | x_q0         | port      |          |
+| y_out    | y_out        | interface |          |
++----------+--------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------+-----+--------+------------+-----+--------+---------+
+| Name                        | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++-----------------------------+-----+--------+------------+-----+--------+---------+
+| + gesummv                   | 5   |        |            |     |        |         |
+|   add_ln14_fu_270_p2        |     |        | add_ln14   | add | fabric | 0       |
+|  + gesummv_Pipeline_lp1_lp2 | 0   |        |            |     |        |         |
+|    add_ln25_1_fu_270_p2     |     |        | add_ln25_1 | add | fabric | 0       |
+|    add_ln25_fu_282_p2       |     |        | add_ln25   | add | fabric | 0       |
+|    add_ln26_fu_401_p2       |     |        | add_ln26   | add | fabric | 0       |
+|  + gesummv_Pipeline_lprd_2  | 0   |        |            |     |        |         |
+|    add_ln19_fu_164_p2       |     |        | add_ln19   | add | fabric | 0       |
+|    add_ln20_fu_174_p2       |     |        | add_ln20   | add | fabric | 0       |
+|  + gesummv_Pipeline_lp3_lp4 | 0   |        |            |     |        |         |
+|    add_ln31_1_fu_270_p2     |     |        | add_ln31_1 | add | fabric | 0       |
+|    add_ln31_fu_282_p2       |     |        | add_ln31   | add | fabric | 0       |
+|    add_ln32_fu_401_p2       |     |        | add_ln32   | add | fabric | 0       |
+|  + gesummv_Pipeline_lp5     | 0   |        |            |     |        |         |
+|    add_ln37_fu_93_p2        |     |        | add_ln37   | add | fabric | 0       |
+|  + gesummv_Pipeline_lpwr    | 0   |        |            |     |        |         |
+|    add_ln41_fu_74_p2        |     |        | add_ln41   | add | fabric | 0       |
++-----------------------------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------+---------------+------+------+------+--------+------------+------+---------+------------------+
+| Name           | Usage         | Type | BRAM | URAM | Pragma | Variable   | Impl | Latency | Bitwidth, Depth, |
+|                |               |      |      |      |        |            |      |         | Banks            |
++----------------+---------------+------+------+------+--------+------------+------+---------+------------------+
+| + gesummv      |               |      | 23   | 0    |        |            |      |         |                  |
+|   buff_A_U     | ram_s2p array |      | 4    |      |        | buff_A     | auto | 1       | 32, 2048, 1      |
+|   buff_A_1_U   | ram_s2p array |      | 4    |      |        | buff_A_1   | auto | 1       | 32, 2048, 1      |
+|   buff_B_U     | ram_s2p array |      | 4    |      |        | buff_B     | auto | 1       | 32, 2048, 1      |
+|   buff_B_1_U   | ram_s2p array |      | 4    |      |        | buff_B_1   | auto | 1       | 32, 2048, 1      |
+|   buff_x_U     | ram_s2p array |      | 2    |      |        | buff_x     | auto | 1       | 32, 32, 1        |
+|   buff_x_1_U   | ram_s2p array |      | 2    |      |        | buff_x_1   | auto | 1       | 32, 32, 1        |
+|   buff_y_out_U | ram_1p array  |      | 1    |      |        | buff_y_out | auto | 1       | 32, 64, 1        |
+|   tmp1_U       | ram_1p array  |      | 1    |      |        | tmp1       | auto | 1       | 32, 64, 1        |
+|   tmp2_U       | ram_1p array  |      | 1    |      |        | tmp2       | auto | 1       | 32, 64, 1        |
++----------------+---------------+------+------+------+--------+------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                | Location                | Messages                                                                                                                         |
++----------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | core=RAM_1P variable=A | opt.tcl:1 in gesummv, A | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                         | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=B | opt.tcl:2 in gesummv, B | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                         | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=x | opt.tcl:3 in gesummv, x | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                         | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
++----------+------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+--------------------+-----------------------------+
+| Type      | Options            | Location                    |
++-----------+--------------------+-----------------------------+
+| interface | ap_fifo port=y_out | opt.tcl:4 in gesummv, y_out |
+| pipeline  |                    | opt.tcl:5 in gesummv        |
+| pipeline  |                    | opt.tcl:6 in gesummv        |
+| pipeline  |                    | opt.tcl:9 in gesummv        |
+| pipeline  |                    | opt.tcl:12 in gesummv       |
+| unroll    | factor=4           | opt.tcl:10 in gesummv       |
+| unroll    | factor=4           | opt.tcl:13 in gesummv       |
++-----------+--------------------+-----------------------------+
+
+* Inferred Pragmas
++---------------------+-----------------+--------------------------------------------+----------------------------+
+| Source Pragma       | Inferred Pragma | Options                                    | Location                   |
++---------------------+-----------------+--------------------------------------------+----------------------------+
+| pipeline opt.tcl:9  | array_partition | dim=2 type=cyclic factor=2 variable=buff_A | variable buff_A in gesummv |
+| pipeline opt.tcl:9  | array_partition | dim=1 type=cyclic factor=2 variable=buff_x | variable buff_x in gesummv |
+| pipeline opt.tcl:12 | array_partition | dim=2 type=cyclic factor=2 variable=buff_B | variable buff_B in gesummv |
++---------------------+-----------------+--------------------------------------------+----------------------------+
+
+

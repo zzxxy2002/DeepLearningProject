@@ -1,0 +1,189 @@
+
+
+================================================================
+== Synthesis Summary Report of 'bicg'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 12:52:43 2024
+    * Version:        2023.2.2 (Build 4101106 on Feb  9 2024)
+    * Project:        hls_prj
+    * Solution:       solution (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu9eg-ffvb1156-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |          Modules         | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |          |          |            |            |     |
+    |          & Loops         | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |+ bicg                    |     -|  0.19|    21976|  2.198e+05|         -|    21977|     -|        no|  14 (~0%)|  20 (~0%)|  2986 (~0%)|   3150 (1%)|    -|
+    | + bicg_Pipeline_lp1_lp2  |     -|  0.19|     1033|  1.033e+04|         -|     1033|     -|        no|         -|  15 (~0%)|  1735 (~0%)|  1365 (~0%)|    -|
+    |  o lp1_lp2               |     -|  7.30|     1031|  1.031e+04|         9|        1|  1024|       yes|         -|         -|           -|           -|    -|
+    | + bicg_Pipeline_lp3_lp4  |     -|  0.28|    16391|  1.639e+05|         -|    16391|     -|        no|         -|         -|   547 (~0%)|   378 (~0%)|    -|
+    |  o lp3_lp4               |    II|  7.30|    16389|  1.639e+05|        22|       16|  1024|       yes|         -|         -|           -|           -|    -|
+    | + bicg_Pipeline_lpwr     |     -|  4.43|       66|    660.000|         -|       66|     -|        no|         -|         -|    12 (~0%)|   109 (~0%)|    -|
+    |  o lpwr                  |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|         -|         -|           -|           -|    -|
+    | o lprd_1                 |     -|  7.30|     4480|  4.480e+04|        70|        -|    64|        no|         -|         -|           -|           -|    -|
+    |  + bicg_Pipeline_lprd_2  |     -|  4.83|       66|    660.000|         -|       66|     -|        no|         -|         -|    16 (~0%)|    86 (~0%)|    -|
+    |   o lprd_2               |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|         -|         -|           -|           -|    -|
+    +--------------------------+------+------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* AP_FIFO
++-----------+-----------+------------+
+| Interface | Direction | Data Width |
++-----------+-----------+------------+
+| q_out     | out       | 32         |
+| s_out     | out       | 32         |
++-----------+-----------+------------+
+
+* AP_MEMORY
++------------+-----------+----------+
+| Port       | Direction | Bitwidth |
++------------+-----------+----------+
+| A_address0 | out       | 12       |
+| A_q0       | in        | 32       |
+| p_address0 | out       | 6        |
+| p_q0       | in        | 32       |
+| r_address0 | out       | 6        |
+| r_q0       | in        | 32       |
++------------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| A        | in        | float*   |
+| p        | in        | float*   |
+| r        | in        | float*   |
+| s_out    | out       | float*   |
+| q_out    | out       | float*   |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+-----------+----------+
+| Argument | HW Interface | HW Type   | HW Usage |
++----------+--------------+-----------+----------+
+| A        | A_address0   | port      | offset   |
+| A        | A_ce0        | port      |          |
+| A        | A_q0         | port      |          |
+| p        | p_address0   | port      | offset   |
+| p        | p_ce0        | port      |          |
+| p        | p_q0         | port      |          |
+| r        | r_address0   | port      | offset   |
+| r        | r_ce0        | port      |          |
+| r        | r_q0         | port      |          |
+| s_out    | s_out        | interface |          |
+| q_out    | q_out        | interface |          |
++----------+--------------+-----------+----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------+-----+--------+------------+------+---------+---------+
+| Name                                 | DSP | Pragma | Variable   | Op   | Impl    | Latency |
++--------------------------------------+-----+--------+------------+------+---------+---------+
+| + bicg                               | 20  |        |            |      |         |         |
+|   add_ln13_fu_306_p2                 |     |        | add_ln13   | add  | fabric  | 0       |
+|  + bicg_Pipeline_lp1_lp2             | 15  |        |            |      |         |         |
+|    add_ln23_1_fu_269_p2              |     |        | add_ln23_1 | add  | fabric  | 0       |
+|    add_ln23_fu_281_p2                |     |        | add_ln23   | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U11 | 3   |        | mul_1      | fmul | maxdsp  | 2       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U12 | 3   |        | mul_2      | fmul | maxdsp  | 2       |
+|    fmul_32ns_32ns_32_3_max_dsp_1_U13 | 3   |        | mul_3      | fmul | maxdsp  | 2       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U7 | 2   |        | add_1      | fadd | fulldsp | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U8 | 2   |        | add_2      | fadd | fulldsp | 3       |
+|    fadd_32ns_32ns_32_4_full_dsp_1_U9 | 2   |        | add_3      | fadd | fulldsp | 3       |
+|    add_ln24_fu_374_p2                |     |        | add_ln24   | add  | fabric  | 0       |
+|  + bicg_Pipeline_lprd_2              | 0   |        |            |      |         |         |
+|    add_ln18_fu_119_p2                |     |        | add_ln18   | add  | fabric  | 0       |
+|    add_ln19_fu_129_p2                |     |        | add_ln19   | add  | fabric  | 0       |
+|  + bicg_Pipeline_lp3_lp4             | 0   |        |            |      |         |         |
+|    add_ln29_1_fu_236_p2              |     |        | add_ln29_1 | add  | fabric  | 0       |
+|    add_ln29_fu_248_p2                |     |        | add_ln29   | add  | fabric  | 0       |
+|    add_ln30_fu_367_p2                |     |        | add_ln30   | add  | fabric  | 0       |
+|  + bicg_Pipeline_lpwr                | 0   |        |            |      |         |         |
+|    add_ln35_fu_161_p2                |     |        | add_ln35   | add  | fabric  | 0       |
++--------------------------------------+-----+--------+------------+------+---------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| Name             | Usage         | Type | BRAM | URAM | Pragma | Variable     | Impl | Latency | Bitwidth, Depth, |
+|                  |               |      |      |      |        |              |      |         | Banks            |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+| + bicg           |               |      | 14   | 0    |        |              |      |         |                  |
+|   buff_A_U       | ram_s2p array |      | 4    |      |        | buff_A       | auto | 1       | 32, 2048, 1      |
+|   buff_A_1_U     | ram_s2p array |      | 4    |      |        | buff_A_1     | auto | 1       | 32, 2048, 1      |
+|   buff_p_U       | ram_s2p array |      | 2    |      |        | buff_p       | auto | 1       | 32, 32, 1        |
+|   buff_p_1_U     | ram_s2p array |      | 2    |      |        | buff_p_1     | auto | 1       | 32, 32, 1        |
+|   buff_r_U       | ram_1p array  |      | 1    |      |        | buff_r       | auto | 1       | 32, 64, 1        |
+|   buff_s_out_U   | ram_s2p array |      |      |      |        | buff_s_out   | auto | 1       | 32, 16, 1        |
+|   buff_s_out_1_U | ram_s2p array |      |      |      |        | buff_s_out_1 | auto | 1       | 32, 16, 1        |
+|   buff_s_out_2_U | ram_s2p array |      |      |      |        | buff_s_out_2 | auto | 1       | 32, 16, 1        |
+|   buff_s_out_3_U | ram_s2p array |      |      |      |        | buff_s_out_3 | auto | 1       | 32, 16, 1        |
+|   buff_q_out_U   | ram_1p array  |      | 1    |      |        | buff_q_out   | auto | 1       | 32, 64, 1        |
++------------------+---------------+------+------+------+--------+--------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options                | Location             | Messages                                                                                                                         |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+| resource | core=RAM_1P variable=A | opt.tcl:1 in bicg, A | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=p | opt.tcl:3 in bicg, p | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
+| resource | core=RAM_1P variable=r | opt.tcl:2 in bicg, r | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead                                                       |
+|          |                        |                      | The resource pragma (bind_storage) on top-level function argument, in 'call' is unsupported, please use INTERFACE pragma instead |
++----------+------------------------+----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+--------------------+--------------------------+
+| Type      | Options            | Location                 |
++-----------+--------------------+--------------------------+
+| interface | ap_fifo port=q_out | opt.tcl:5 in bicg, q_out |
+| interface | ap_fifo port=s_out | opt.tcl:4 in bicg, s_out |
+| pipeline  |                    | opt.tcl:6 in bicg        |
+| pipeline  |                    | opt.tcl:7 in bicg        |
+| pipeline  |                    | opt.tcl:10 in bicg       |
+| pipeline  |                    | opt.tcl:13 in bicg       |
+| unroll    | factor=4           | opt.tcl:11 in bicg       |
+| unroll    | factor=4           | opt.tcl:14 in bicg       |
++-----------+--------------------+--------------------------+
+
+* Inferred Pragmas
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| Source Pragma       | Inferred Pragma | Options                                        | Location                    |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+| pipeline opt.tcl:10 | array_partition | dim=2 type=cyclic factor=2 variable=buff_A     | variable buff_A in bicg     |
+| pipeline opt.tcl:10 | array_partition | dim=1 type=cyclic factor=4 variable=buff_s_out | variable buff_s_out in bicg |
+| pipeline opt.tcl:13 | array_partition | dim=1 type=cyclic factor=2 variable=buff_p     | variable buff_p in bicg     |
++---------------------+-----------------+------------------------------------------------+-----------------------------+
+
+

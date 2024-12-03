@@ -1,0 +1,64 @@
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:1:9: warning: 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead [-Wignored-hls-pragmas]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=resource_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=core=RAM_1P variable=A_XLX_SEP_ [-Wdump-hls-pragmas]
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:2:9: warning: 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead [-Wignored-hls-pragmas]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=B
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:2:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=resource_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=core=RAM_1P variable=B_XLX_SEP_ [-Wdump-hls-pragmas]
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:3:9: warning: 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead [-Wignored-hls-pragmas]
+#pragma HLSDIRECTIVE RESOURCE core=RAM_1P variable=x
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:3:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=resource_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=core=RAM_1P variable=x_XLX_SEP_ [-Wdump-hls-pragmas]
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:4:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=ap_fifo port=y_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE INTERFACE ap_fifo port=y_out
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:8:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=2 factor=2 variable=A_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=2 factor=2 variable=A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/hls_template.tcl:9:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=name=gesummv_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=gesummv
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:9:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=2 factor=2 variable=B_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=2 factor=2 variable=B
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:10:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=2 factor=2 variable=buff_A_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=2 factor=2 variable=buff_A
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:11:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=2 factor=2 variable=buff_B_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=2 factor=2 variable=buff_B
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:12:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=1 factor=2 variable=buff_x_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=1 factor=2 variable=buff_x
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:13:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=1 factor=2 variable=buff_y_out_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=1 factor=2 variable=buff_y_out
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:14:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=1 factor=2 variable=tmp1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=1 factor=2 variable=tmp1
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=cyclic dim=1 factor=2 variable=tmp2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE ARRAY_PARTITION cyclic dim=1 factor=2 variable=tmp2
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE UNROLL factor=2
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:5:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE PIPELINE
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE PIPELINE
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:20:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=factor=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE UNROLL factor=1
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:22:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE UNROLL factor=2
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:17:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=factor=2_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE UNROLL factor=2
+        ^
+/nethome/xxu425/DeepLearningProject/dl/ssam/polybench_xilinx__post_frontend/gesummv_opt_276e73a4ccb847bc906f1cf17237d69d/opt.tcl:6:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=gesummv_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE PIPELINE
+        ^
+23 warnings generated.
